@@ -217,7 +217,7 @@
     </ul>
 
     <div class="hidden lg:flex items-center gap-3">
-      <a href="#inquiry" class="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-600 text-white font-semibold text-sm px-5 py-2.5 rounded-full shadow-soft transition-all hover:shadow-soft-lg hover:-translate-y-0.5">
+      <a href="#inquiry" class="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-sm px-5 py-2.5 rounded-full shadow-soft transition-all hover:shadow-soft-lg hover:-translate-y-0.5">
         Project Inquiry
       </a>
     </div>
@@ -249,7 +249,7 @@
       <li><a href="#inquiry" class="mobile-nav-link block py-3 border-b border-white/10">Contact</a></li>
     </ul>
     <div class="px-5 mt-auto mb-10">
-      <a href="#inquiry" class="mobile-nav-link block text-center bg-teal-500 text-white font-semibold py-3.5 rounded-full">Project Inquiry</a>
+      <a href="#inquiry" class="mobile-nav-link block text-center bg-teal-600 text-white font-semibold py-3.5 rounded-full">Project Inquiry</a>
       <p class="text-slate-400 text-sm text-center mt-5">(240) 813-8030</p>
     </div>
   </div>
@@ -294,7 +294,7 @@
       </div>
 
       <div class="reveal flex flex-col sm:flex-row flex-wrap gap-4">
-        <a href="#inquiry" class="inline-flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-400 text-white font-bold px-7 py-4 rounded-full shadow-glow transition-all hover:-translate-y-0.5">
+        <a href="#inquiry" class="inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold px-7 py-4 rounded-full shadow-glow transition-all hover:-translate-y-0.5">
           Request Quote
           <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
@@ -410,7 +410,7 @@
       <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white mt-3 mb-4">Industries We Engineer For</h2>
       <p class="text-slate-400 leading-relaxed">Wireless requirements differ by mission. Our designs are built around each environment's real constraints.</p>
     </div>
-    <div id="industries-grid" class="grid sm:grid-cols-2 lg:grid-cols-5 gap-5"></div>
+    <div id="industries-grid" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5"></div>
   </div>
 </section>
 
@@ -677,7 +677,7 @@
         <form id="newsletter-form" class="flex w-full sm:w-auto gap-2">
           <label for="newsletter-email" class="sr-only">Email address</label>
           <input id="newsletter-email" type="email" required placeholder="you@company.com" class="flex-1 sm:w-64 rounded-full px-4 py-3 text-sm text-navy-900 focus:outline-none">
-          <button type="submit" class="bg-teal-500 hover:bg-teal-400 text-white font-semibold px-5 py-3 rounded-full text-sm whitespace-nowrap transition-colors">Sign Up</button>
+          <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-5 py-3 rounded-full text-sm whitespace-nowrap transition-colors">Sign Up</button>
         </form>
       </div>
       <p id="newsletter-success" class="text-teal-700 text-sm mt-3" role="status" hidden>Thanks for signing up &mdash; we'll be in touch.</p>
@@ -754,7 +754,7 @@
 </footer>
 
 <!-- ================= FLOATING BUTTONS ================= -->
-<a href="#inquiry" id="floating-quote" class="fixed bottom-6 right-6 z-40 hidden md:flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-white font-bold text-sm px-5 py-3.5 rounded-full shadow-soft-lg transition-all hover:-translate-y-0.5" aria-label="Request a quote">
+<a href="#inquiry" id="floating-quote" class="fixed bottom-6 right-6 z-40 hidden md:flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold text-sm px-5 py-3.5 rounded-full shadow-soft-lg transition-all hover:-translate-y-0.5" aria-label="Request a quote">
   <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-6l-4 4v-4z"/></svg>
   Request Quote
 </a>
@@ -1064,7 +1064,7 @@
     var li = document.createElement('li');
     li.className = 'flex gap-4';
     li.innerHTML =
-      '<span class="shrink-0 w-10 h-10 rounded-full bg-teal-500 text-white font-display font-bold flex items-center justify-center">' + (i+1) + '</span>' +
+      '<span class="shrink-0 w-10 h-10 rounded-full bg-teal-600 text-white font-display font-bold flex items-center justify-center">' + (i+1) + '</span>' +
       '<div><p class="font-display font-bold text-navy-900 mb-1">' + s.t + '</p><p class="text-slate-600 text-sm leading-relaxed">' + s.d + '</p></div>';
     stepsWrap.appendChild(li);
   });
@@ -1242,7 +1242,7 @@
   .highlight-pill { @apply bg-teal-50 text-teal-800 text-xs sm:text-sm font-semibold rounded-xl px-3.5 py-3 text-center; }
   .contact-card { @apply flex items-center gap-4 bg-white rounded-xl p-4 shadow-soft; }
   .contact-icon { @apply w-10 h-10 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center shrink-0; }
-  .social-icon { @apply w-9 h-9 rounded-full bg-white/10 hover:bg-teal-500 text-white flex items-center justify-center transition-colors; }
+  .social-icon { @apply w-11 h-11 rounded-full bg-white/10 hover:bg-teal-600 text-white flex items-center justify-center transition-colors; }
   .footer-link { @apply hover:text-teal-400 transition-colors; }
   .form-label { @apply block text-xs font-bold uppercase tracking-wide text-slate-500 mb-1.5; }
   .form-input { @apply w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-navy-900 focus:border-teal-500 focus:ring-2 focus:ring-teal-100 transition-colors; }
