@@ -578,13 +578,23 @@
     </div>
 
     <div class="lg:col-span-3 reveal">
-      <form id="inquiry-form" class="bg-white rounded-3xl shadow-soft-lg p-6 sm:p-10 grid sm:grid-cols-2 gap-5" novalidate>
+      <form id="inquiry-form" action="https://formspree.io/f/maqggbwq" method="POST" class="bg-white rounded-3xl shadow-soft-lg p-6 sm:p-10 grid sm:grid-cols-2 gap-5" novalidate>
         <div class="sm:col-span-2" id="form-success" role="status" hidden>
           <div class="flex items-start gap-3 bg-teal-50 border border-teal-200 text-teal-800 rounded-xl px-4 py-3 text-sm font-medium">
             <svg class="w-5 h-5 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span>Thanks &mdash; your email client should now be open with your project details pre-filled. Prefer to skip that? Call us directly at (240) 813-8030.</span>
+            <span>Thanks &mdash; your inquiry has been sent to our team. We'll follow up shortly. Prefer not to wait? Call us directly at (240) 813-8030.</span>
           </div>
         </div>
+        <div class="sm:col-span-2" id="form-error" role="alert" hidden>
+          <div class="flex items-start gap-3 bg-amber-50 border border-amber-200 text-amber-800 rounded-xl px-4 py-3 text-sm font-medium">
+            <svg class="w-5 h-5 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/></svg>
+            <span>Something went wrong sending your inquiry. Please try again, or <a href="#" id="form-error-mailto" class="underline font-semibold">email us directly</a> / call (240) 813-8030.</span>
+          </div>
+        </div>
+
+        <!-- Honeypot spam trap: hidden from real visitors, Formspree silently discards submissions where this is filled -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
+        <input type="hidden" name="_subject" id="f-subject">
 
         <div>
           <label for="f-name" class="form-label">Name <span class="text-teal-600">*</span></label>
@@ -1189,46 +1199,76 @@
     });
   });
 
-  /* ---------- Form handling (static site: builds a mailto with details, no backend) ---------- */
+  /* ---------- Form handling (submits to Formspree: https://formspree.io/f/maqggbwq) ---------- */
   var inquiryForm = document.getElementById('inquiry-form');
-  var inquiryFieldLabels = {
-    name: 'Name',
-    company: 'Company',
-    email: 'Email',
-    phone: 'Phone',
-    address: 'Project Address',
-    industry: 'Industry',
-    project_type: 'Project Type',
-    project_size: 'Project Size',
-    timeline: 'Timeline',
-    message: 'Message'
-  };
-  inquiryForm.addEventListener('submit', function(e){
-    e.preventDefault();
-    if (!inquiryForm.checkValidity()) { inquiryForm.reportValidity(); return; }
-    var fd = new FormData(inquiryForm);
+  var inquirySubmitBtn = inquiryForm.querySelector('button[type="submit"]');
+  var inquirySubmitLabel = inquirySubmitBtn.innerHTML;
+  var formSuccessEl = document.getElementById('form-success');
+  var formErrorEl = document.getElementById('form-error');
+
+  function buildMailtoFallback(fd){
+    var inquiryFieldLabels = {
+      name: 'Name', company: 'Company', email: 'Email', phone: 'Phone',
+      address: 'Project Address', industry: 'Industry', project_type: 'Project Type',
+      project_size: 'Project Size', timeline: 'Timeline', message: 'Message'
+    };
     var fieldOrder = ['name','company','email','phone','address','industry','project_type','project_size','timeline','message'];
     var lines = ['New project inquiry submitted via the BWDS website:', ''];
     fieldOrder.forEach(function(key){
       var val = (fd.get(key) || '').toString().trim();
-      if (key === 'message') return; // message rendered separately below, after the field block
+      if (key === 'message') return;
       lines.push(inquiryFieldLabels[key] + ': ' + (val || '—'));
     });
     var messageVal = (fd.get('message') || '').toString().trim();
-    if (messageVal) {
-      lines.push('');
-      lines.push('Message:');
-      lines.push(messageVal);
-    }
+    if (messageVal) { lines.push(''); lines.push('Message:'); lines.push(messageVal); }
     lines.push('');
     lines.push('— Sent from the Project Inquiry form at nadnetworkservices.com');
     var subjectName = (fd.get('name') || 'New Lead').toString().trim();
     var subjectIndustry = (fd.get('industry') || '').toString().trim();
     var subject = encodeURIComponent('New Project Inquiry: ' + subjectName + (subjectIndustry ? ' (' + subjectIndustry + ')' : ''));
     var body = encodeURIComponent(lines.join('\n'));
-    window.location.href = 'mailto:support@nadnetworkservices.com?subject=' + subject + '&body=' + body;
-    document.getElementById('form-success').hidden = false;
-    document.getElementById('form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return 'mailto:support@nadnetworkservices.com?subject=' + subject + '&body=' + body;
+  }
+
+  inquiryForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!inquiryForm.checkValidity()) { inquiryForm.reportValidity(); return; }
+
+    var fd = new FormData(inquiryForm);
+    var subjectName = (fd.get('name') || 'New Lead').toString().trim();
+    var subjectIndustry = (fd.get('industry') || '').toString().trim();
+    fd.set('_subject', 'New Project Inquiry: ' + subjectName + (subjectIndustry ? ' (' + subjectIndustry + ')' : ''));
+
+    var mailtoFallback = buildMailtoFallback(fd);
+    document.getElementById('form-error-mailto').href = mailtoFallback;
+
+    formSuccessEl.hidden = true;
+    formErrorEl.hidden = true;
+    inquirySubmitBtn.disabled = true;
+    inquirySubmitBtn.classList.add('opacity-60','cursor-not-allowed');
+    inquirySubmitBtn.innerHTML = 'Sending&hellip;';
+
+    fetch(inquiryForm.action, {
+      method: 'POST',
+      body: fd,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response){
+      if (response.ok) {
+        inquiryForm.reset();
+        formSuccessEl.hidden = false;
+        formSuccessEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        throw new Error('Formspree responded with status ' + response.status);
+      }
+    }).catch(function(err){
+      console.error('Inquiry form submission failed:', err);
+      formErrorEl.hidden = false;
+      formErrorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }).finally(function(){
+      inquirySubmitBtn.disabled = false;
+      inquirySubmitBtn.classList.remove('opacity-60','cursor-not-allowed');
+      inquirySubmitBtn.innerHTML = inquirySubmitLabel;
+    });
   });
 
   var newsletterForm = document.getElementById('newsletter-form');
