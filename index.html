@@ -1191,16 +1191,40 @@
 
   /* ---------- Form handling (static site: builds a mailto with details, no backend) ---------- */
   var inquiryForm = document.getElementById('inquiry-form');
+  var inquiryFieldLabels = {
+    name: 'Name',
+    company: 'Company',
+    email: 'Email',
+    phone: 'Phone',
+    address: 'Project Address',
+    industry: 'Industry',
+    project_type: 'Project Type',
+    project_size: 'Project Size',
+    timeline: 'Timeline',
+    message: 'Message'
+  };
   inquiryForm.addEventListener('submit', function(e){
     e.preventDefault();
     if (!inquiryForm.checkValidity()) { inquiryForm.reportValidity(); return; }
     var fd = new FormData(inquiryForm);
-    var lines = [];
-    ['name','company','email','phone','address','industry','project_type','project_size','timeline','message'].forEach(function(key){
-      var val = fd.get(key);
-      if (val) lines.push(key.replace('_',' ').toUpperCase() + ': ' + val);
+    var fieldOrder = ['name','company','email','phone','address','industry','project_type','project_size','timeline','message'];
+    var lines = ['New project inquiry submitted via the BWDS website:', ''];
+    fieldOrder.forEach(function(key){
+      var val = (fd.get(key) || '').toString().trim();
+      if (key === 'message') return; // message rendered separately below, after the field block
+      lines.push(inquiryFieldLabels[key] + ': ' + (val || '—'));
     });
-    var subject = encodeURIComponent('Project Inquiry: ' + (fd.get('name') || 'New Lead'));
+    var messageVal = (fd.get('message') || '').toString().trim();
+    if (messageVal) {
+      lines.push('');
+      lines.push('Message:');
+      lines.push(messageVal);
+    }
+    lines.push('');
+    lines.push('— Sent from the Project Inquiry form at nadnetworkservices.com');
+    var subjectName = (fd.get('name') || 'New Lead').toString().trim();
+    var subjectIndustry = (fd.get('industry') || '').toString().trim();
+    var subject = encodeURIComponent('New Project Inquiry: ' + subjectName + (subjectIndustry ? ' (' + subjectIndustry + ')' : ''));
     var body = encodeURIComponent(lines.join('\n'));
     window.location.href = 'mailto:support@nadnetworkservices.com?subject=' + subject + '&body=' + body;
     document.getElementById('form-success').hidden = false;
