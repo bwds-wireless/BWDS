@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP-on-a-Stick 101: What a Site Survey Actually Involves | BWDS Knowledge Base</title>
+<meta name="description" content="A walkthrough of what happens during an Ekahau active survey, from Sidekick calibration to the deliverable your facilities team will actually use.">
+<meta name="author" content="Beersheba Wireless Design Solutions">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://nadnetworkservices.com/articles/ap-on-a-stick-101.html">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="AP-on-a-Stick 101: What a Site Survey Actually Involves | BWDS Knowledge Base">
+<meta property="og:description" content="A walkthrough of what happens during an Ekahau active survey, from Sidekick calibration to the deliverable your facilities team will actually use.">
+<meta property="og:url" content="https://nadnetworkservices.com/articles/ap-on-a-stick-101.html">
+<meta property="og:site_name" content="Beersheba Wireless Design Solutions">
+<meta property="og:image" content="https://nadnetworkservices.com/images/hiveradar-apos-kit.jpg">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@BWDS_4WiFi">
+<meta name="twitter:title" content="AP-on-a-Stick 101: What a Site Survey Actually Involves | BWDS Knowledge Base">
+<meta name="twitter:description" content="A walkthrough of what happens during an Ekahau active survey, from Sidekick calibration to the deliverable your facilities team will actually use.">
+
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AP-on-a-Stick 101: What a Site Survey Actually Involves",
+  "description": "A walkthrough of what happens during an Ekahau active survey, from Sidekick calibration to the deliverable your facilities team will actually use.",
+  "image": "https://nadnetworkservices.com/images/hiveradar-apos-kit.jpg",
+  "datePublished": "2026-03-01",
+  "author": { "@type": "Organization", "name": "Beersheba Wireless Design Solutions" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Beersheba Wireless Design Solutions",
+    "logo": { "@type": "ImageObject", "url": "https://nadnetworkservices.com/images/bwds-logo.png" }
+  },
+  "mainEntityOfPage": "https://nadnetworkservices.com/articles/ap-on-a-stick-101.html"
+}
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+        colors: {
+          navy: { 50:'#eef3f8', 100:'#d7e3ee', 200:'#b0c7dd', 300:'#82a4c6', 400:'#5680ab', 500:'#3a6390', 600:'#284c74', 700:'#1e3a5c', 800:'#152a45', 900:'#0d1c30', 950:'#070f1c' },
+          cyan: { 50:'#eafcfc', 100:'#cef7f7', 200:'#a0edee', 300:'#67dee0', 400:'#31c4c8', 500:'#1ba6ab', 600:'#16858c', 700:'#186a70', 800:'#19555a', 900:'#19484c' },
+          teal: { 50:'#eefbf8', 100:'#d3f5ed', 200:'#a8ebdc', 300:'#72dac6', 400:'#3fc0aa', 500:'#22a390', 600:'#178275', 700:'#16685f', 800:'#16534d', 900:'#154540' }
+        },
+        boxShadow: {
+          'soft': '0 4px 24px -4px rgba(13,28,48,0.10)',
+          'soft-lg': '0 20px 48px -12px rgba(13,28,48,0.20)',
+          'glow': '0 0 0 1px rgba(255,255,255,0.06), 0 8px 32px -8px rgba(27,166,171,0.35)'
+        }
+      }
+    }
+  }
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+  h1,h2,h3,h4,.font-display { font-family: 'Manrope', 'Inter', ui-sans-serif, system-ui, sans-serif; }
+  ::selection { background: #1ba6ab; color: #ffffff; }
+  a:focus-visible, button:focus-visible { outline: 3px solid #31c4c8; outline-offset: 2px; border-radius: 4px; }
+  .skip-link { position: absolute; left: -9999px; top: 0; z-index: 100; background: #0d1c30; color: #fff; padding: 12px 20px; border-radius: 0 0 8px 0; }
+  .skip-link:focus { left: 0; }
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+  .glass { background: rgba(13, 28, 48, 0.55); backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); border: 1px solid rgba(255,255,255,0.08); }
+  .bg-grid { background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.14) 1px, transparent 0); background-size: 28px 28px; }
+  article :is(p,ul,ol) { max-width: 68ch; }
+  article h2 { margin-top: 2.25rem; }
+</style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+<a href="#main-content" class="skip-link font-semibold text-sm">Skip to main content</a>
+
+<header id="site-header" class="sticky top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-md shadow-soft">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-5 sm:px-8 py-3" aria-label="Primary">
+    <a href="../index.html#home" class="flex items-center gap-3 group" aria-label="BWDS Home">
+      <img src="../images/bwds-logo.png" alt="Beersheba Wireless Design Solutions logo" class="w-11 h-11 sm:w-12 sm:h-12 rounded-full shadow-soft transition-transform group-hover:scale-105" width="48" height="48" loading="eager">
+      <span class="leading-tight">
+        <span class="block font-display font-extrabold text-base sm:text-lg tracking-tight text-navy-900">BWDS</span>
+        <span class="block text-[10px] sm:text-[11px] uppercase tracking-[0.14em] font-semibold text-teal-600">Wireless Design Solutions</span>
+      </span>
+    </a>
+    <ul class="hidden lg:flex items-center gap-8 font-semibold text-sm">
+      <li><a href="../index.html#home" class="text-navy-800 hover:text-teal-600 transition-colors">Home</a></li>
+      <li><a href="../index.html#services" class="text-navy-800 hover:text-teal-600 transition-colors">Services</a></li>
+      <li><a href="../index.html#industries" class="text-navy-800 hover:text-teal-600 transition-colors">Industries</a></li>
+      <li><a href="../index.html#knowledge-base" class="text-teal-600 transition-colors">Knowledge Base</a></li>
+      <li><a href="../index.html#about" class="text-navy-800 hover:text-teal-600 transition-colors">About</a></li>
+      <li><a href="../index.html#inquiry" class="text-navy-800 hover:text-teal-600 transition-colors">Contact</a></li>
+    </ul>
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="../index.html#inquiry" class="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-sm px-5 py-2.5 rounded-full shadow-soft transition-all hover:shadow-soft-lg hover:-translate-y-0.5">Project Inquiry</a>
+    </div>
+    <a href="../index.html#knowledge-base" class="lg:hidden inline-flex items-center gap-1.5 text-navy-800 font-semibold text-sm">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      Back
+    </a>
+  </nav>
+</header>
+
+<main id="main-content">
+<article class="py-16 sm:py-20">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8">
+    <p class="reveal text-xs font-bold uppercase tracking-[0.16em] text-teal-600 mb-4">
+      <a href="../index.html#knowledge-base" class="hover:underline">Knowledge Base</a> / Field Notes
+    </p>
+    <h1 class="reveal font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-navy-900 leading-tight mb-5">AP-on-a-Stick 101: What a Site Survey Actually Involves</h1>
+    <p class="reveal text-slate-400 text-sm font-medium mb-8">March 2026</p>
+    <div class="reveal rounded-3xl overflow-hidden shadow-soft-lg mb-10 aspect-[16/9]">
+      <img src="../images/hiveradar-apos-kit.jpg" alt="AP-on-a-Stick 101: What a Site Survey Actually Involves" class="w-full h-full object-cover">
+    </div>
+
+    <div class="prose-article">
+<p class="reveal text-slate-600 leading-relaxed mb-5">"AP-on-a-Stick" sounds informal for what is actually one of the more precise steps in a wireless design engagement. The name describes exactly what it is: a temporary access point mounted on an adjustable pole or tripod, positioned at the intended final mounting height and location, used to simulate real-world coverage from that exact spot before anything is permanently installed. It's the step that turns a predictive model into a field-verified design, and it's worth understanding what actually happens during one of these surveys.</p>
+<h2 class="reveal font-display font-extrabold text-2xl text-navy-900 mb-4">Before the Walkthrough Starts</h2>
+<p class="reveal text-slate-600 leading-relaxed mb-5">A survey engagement doesn't begin with the equipment going up. It starts with a kickoff to confirm the scope of the space, review any existing floor plans or predictive design output, and identify areas that need particular attention &mdash; a mezzanine, a cold storage room, an imaging suite, anywhere coverage is likely to be contested. From there, the survey hardware gets calibrated. For Ekahau-based surveys, that means calibrating the Sidekick 2 sensor against the specific access point hardware and antenna pattern being used, so the data collected actually reflects real-world radio behavior rather than a generic assumption.</p>
+<h2 class="reveal font-display font-extrabold text-2xl text-navy-900 mb-4">Setting Up the AP-on-a-Stick</h2>
+<p class="reveal text-slate-600 leading-relaxed mb-5">The temporary access point &mdash; whether a vendor demo unit or, for BWDS's own field kit, the HiveRadar APoS rig built on the Acceltex WSSK platform &mdash; goes up at each planned mounting location, at the actual height and orientation the final AP would use. This matters more than it sounds: coverage from an AP at nine feet behaves differently than the same AP at twelve feet, and orientation affects antenna pattern and downtilt. Simulating the real mounting condition is what makes the survey data trustworthy instead of approximate.</p>
+<h2 class="reveal font-display font-extrabold text-2xl text-navy-900 mb-4">Walking the Active and Passive Survey</h2>
+<p class="reveal text-slate-600 leading-relaxed mb-5">With the AP-on-a-Stick powered up, the surveyor walks the space carrying the calibrated Sidekick and a connected client device, recording data continuously as they move through every area the network needs to cover &mdash; not just the open floor, but corners, storage rooms, stairwells, and anywhere staff or equipment will actually need connectivity. An active survey associates to the network and measures real throughput, signal-to-noise ratio, and roaming behavior as the walk continues from one AP's coverage into the next. A passive survey listens to the RF environment without associating, capturing coverage, channel utilization, and interference from every visible access point and non-Wi-Fi RF source in range &mdash; giving a clean picture of the noise floor a design has to work around.</p>
+<p class="reveal text-slate-600 leading-relaxed mb-5">This gets repeated at each candidate AP location identified in the predictive design, building up a real dataset across the entire facility rather than a single spot check.</p>
+<h2 class="reveal font-display font-extrabold text-2xl text-navy-900 mb-4">Turning the Walk Into a Deliverable</h2>
+<p class="reveal text-slate-600 leading-relaxed mb-5">All of that walked data comes back into the survey software as a set of heatmaps overlaid on the facility's floor plan &mdash; signal strength, SNR, channel overlap, and interference, all georeferenced to actual physical locations in the building. That's cross-referenced against the original predictive design to confirm where the model held up and where reality diverged enough to warrant an adjustment &mdash; an added access point, a relocated one, or a channel plan change.</p>
+<p class="reveal text-slate-600 leading-relaxed mb-5">The final deliverable a facilities team receives isn't just a heatmap. It's a validated, as-built floor plan with documented AP locations, channel assignments, and coverage data that becomes the reference point for every future troubleshooting call, expansion, or renovation in that space &mdash; proof the design works, not just a projection that it should.</p>
+<h2 class="reveal font-display font-extrabold text-2xl text-navy-900 mb-4">Why This Step Doesn't Get Skipped</h2>
+<p class="reveal text-slate-600 leading-relaxed mb-5">It would be faster to skip straight from predictive design to permanent installation. The AP-on-a-Stick survey exists because "faster" and "correct" aren't the same thing in RF design, and the cost of finding a coverage gap during a walked survey &mdash; a pole moved a few feet, a channel reassigned &mdash; is a rounding error compared to the cost of finding that same gap after cabling, mounting, and commissioning are already done.</p>
+    </div>
+
+    <div class="reveal mt-12 bg-navy-950 rounded-3xl p-8 sm:p-10 text-center relative overflow-hidden">
+      <div class="absolute inset-0 bg-grid opacity-10"></div>
+      <p class="relative font-display font-extrabold text-2xl text-white mb-3">Ready to talk through your space?</p>
+      <p class="relative text-slate-400 mb-6 max-w-xl mx-auto">Tell us about your facility and we'll scope the right survey and design approach &mdash; no obligation.</p>
+      <a href="../index.html#inquiry" class="relative inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold px-7 py-4 rounded-full shadow-soft transition-all hover:-translate-y-0.5">
+        Start a Project Inquiry
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+    <div class="reveal mt-16">
+      <p class="font-display font-bold text-navy-900 text-lg mb-5">More from the Knowledge Base</p>
+      <div class="grid sm:grid-cols-3 gap-5">
+        <a href="predictive-rf-design-isnt-enough.html" class="kb-card-related block bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all">
+          <div class="h-36 overflow-hidden"><img src="../images/floor-plan.jpg" alt="Why Predictive RF Design Isn't Enough on Its Own" loading="lazy" class="w-full h-full object-cover"></div>
+          <div class="p-4">
+            <p class="text-xs font-semibold text-teal-600 mb-1">RF Engineering</p>
+            <p class="font-display font-bold text-navy-900 text-sm leading-snug">Why Predictive RF Design Isn't Enough on Its Own</p>
+          </div>
+        </a>
+        <a href="designing-wireless-networks-that-cant-fail.html" class="kb-card-related block bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all">
+          <div class="h-36 overflow-hidden"><img src="../images/healthcare.jpg" alt="Designing Wireless Networks That Can't Fail" loading="lazy" class="w-full h-full object-cover"></div>
+          <div class="p-4">
+            <p class="text-xs font-semibold text-teal-600 mb-1">Healthcare</p>
+            <p class="font-display font-bold text-navy-900 text-sm leading-snug">Designing Wireless Networks That Can't Fail</p>
+          </div>
+        </a>
+        <a href="hidden-cost-of-under-surveyed-warehouse-wifi.html" class="kb-card-related block bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all">
+          <div class="h-36 overflow-hidden"><img src="../images/warehouse.jpg" alt="The Hidden Cost of Under-Surveyed Warehouse Wi-Fi" loading="lazy" class="w-full h-full object-cover"></div>
+          <div class="p-4">
+            <p class="text-xs font-semibold text-teal-600 mb-1">Warehousing</p>
+            <p class="font-display font-bold text-navy-900 text-sm leading-snug">The Hidden Cost of Under-Surveyed Warehouse Wi-Fi</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer class="bg-navy-950 text-slate-400 pt-16 pb-8 mt-24">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-14 border-b border-white/10">
+      <div>
+        <a href="../index.html#home" class="flex items-center gap-3 mb-5">
+          <img src="../images/bwds-logo.png" alt="Beersheba Wireless Design Solutions logo" class="w-12 h-12 rounded-full" width="48" height="48" loading="lazy">
+          <span class="font-display font-extrabold text-white">BWDS</span>
+        </a>
+        <p class="text-sm leading-relaxed mb-5">Enterprise wireless design and network infrastructure engineering for organizations that cannot afford downtime.</p>
+      </div>
+      <div>
+        <p class="font-display font-bold text-white mb-4">Quick Links</p>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../index.html#home" class="hover:text-teal-400 transition-colors">Home</a></li>
+          <li><a href="../index.html#industries" class="hover:text-teal-400 transition-colors">Industries</a></li>
+          <li><a href="../index.html#knowledge-base" class="hover:text-teal-400 transition-colors">Knowledge Base</a></li>
+          <li><a href="../index.html#about" class="hover:text-teal-400 transition-colors">About BWDS</a></li>
+          <li><a href="../index.html#inquiry" class="hover:text-teal-400 transition-colors">Project Inquiry</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-display font-bold text-white mb-4">Services</p>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="../index.html#services" class="hover:text-teal-400 transition-colors">Wireless Site Surveys</a></li>
+          <li><a href="../index.html#services" class="hover:text-teal-400 transition-colors">Predictive Wireless Design</a></li>
+          <li><a href="../index.html#services" class="hover:text-teal-400 transition-colors">Wireless Validation</a></li>
+          <li><a href="../index.html#services" class="hover:text-teal-400 transition-colors">AP Deployment Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-display font-bold text-white mb-4">Contact</p>
+        <ul class="space-y-2.5 text-sm">
+          <li>(240) 813-8030</li>
+          <li>support@nadnetworkservices.com</li>
+          <li>Serving MD &middot; DC &middot; VA &middot; Nationwide</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>&copy; <span id="footer-year"></span> NAD Network Services LLC | BWDS. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+</script>
+</body>
+</html>

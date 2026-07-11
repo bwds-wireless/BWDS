@@ -654,15 +654,9 @@
           <input id="f-size" name="project_size" type="text" class="form-input" placeholder="e.g. 120,000 sq ft">
         </div>
         <div>
-          <label for="f-timeline" class="form-label">Timeline</label>
-          <select id="f-timeline" name="timeline" class="form-input">
-            <option value="">Select a timeline</option>
-            <option>Immediate / Emergency</option>
-            <option>Within 30 Days</option>
-            <option>1&ndash;3 Months</option>
-            <option>3&ndash;6 Months</option>
-            <option>Planning Stage</option>
-          </select>
+          <label for="f-requested-date" class="form-label">Requested Start Date</label>
+          <input id="f-requested-date" name="requested_date" type="date" class="form-input" aria-describedby="f-requested-date-hint">
+          <p id="f-requested-date-hint" class="text-[11px] text-slate-400 mt-1">Earliest available date is 7 days out &mdash; we'll confirm exact scheduling with you.</p>
         </div>
         <div class="sm:col-span-2">
           <label for="f-message" class="form-label">Message</label>
@@ -1087,25 +1081,29 @@
       date: "June 2026", category: "RF Engineering",
       title: "Why Predictive RF Design Isn't Enough on Its Own",
       excerpt: "Predictive modeling gets AP placement close &mdash; but only an on-site active and passive survey confirms a design holds up against real building materials and device load.",
-      img: IMG.floorPlan
+      img: IMG.floorPlan,
+      slug: "predictive-rf-design-isnt-enough"
     },
     {
       date: "May 2026", category: "Healthcare",
       title: "Designing Wireless Networks That Can't Fail",
       excerpt: "Clinical Wi-Fi has to support real-time locating, mobile carts, and life-safety systems simultaneously. Here's how healthcare wireless design differs from a standard office rollout.",
-      img: IMG.healthcare
+      img: IMG.healthcare,
+      slug: "designing-wireless-networks-that-cant-fail"
     },
     {
       date: "April 2026", category: "Warehousing",
       title: "The Hidden Cost of Under-Surveyed Warehouse Wi-Fi",
       excerpt: "High racking, metal shelving, and forklift-mounted scanners create RF challenges a desk-based design will miss. A proper survey pays for itself in reduced downtime.",
-      img: IMG.warehouse
+      img: IMG.warehouse,
+      slug: "hidden-cost-of-under-surveyed-warehouse-wifi"
     },
     {
       date: "March 2026", category: "Field Notes",
       title: "AP-on-a-Stick 101: What a Site Survey Actually Involves",
       excerpt: "A walkthrough of what happens during an Ekahau active survey &mdash; from Sidekick calibration to the deliverable your facilities team will actually use.",
-      img: IMG.hiveradarKit
+      img: IMG.hiveradarKit,
+      slug: "ap-on-a-stick-101"
     }
   ];
   var kbGrid = document.getElementById('knowledge-grid');
@@ -1118,7 +1116,7 @@
         '<div class="flex items-center gap-2 text-xs font-semibold text-teal-600 mb-2"><span>' + a.category + '</span><span class="text-slate-300">&bull;</span><span class="text-slate-400">' + a.date + '</span></div>' +
         '<h3 class="font-display font-bold text-navy-900 text-base leading-snug mb-2">' + a.title + '</h3>' +
         '<p class="text-slate-600 text-sm leading-relaxed mb-4 flex-1">' + a.excerpt + '</p>' +
-        '<a href="https://nadnetworkservices.com/home" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-teal-600 font-semibold text-sm mt-auto">Read More ' +
+        '<a href="articles/' + a.slug + '.html" class="inline-flex items-center gap-1.5 text-teal-600 font-semibold text-sm mt-auto">Read More ' +
           '<svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>' +
       '</div>';
     kbGrid.appendChild(card);
@@ -1206,13 +1204,22 @@
   var formSuccessEl = document.getElementById('form-success');
   var formErrorEl = document.getElementById('form-error');
 
+  /* Requested Start Date: earliest selectable date is 7 days from whenever the page is loaded */
+  var requestedDateInput = document.getElementById('f-requested-date');
+  if (requestedDateInput) {
+    var minDate = new Date();
+    minDate.setDate(minDate.getDate() + 7);
+    var minDateStr = minDate.getFullYear() + '-' + String(minDate.getMonth() + 1).padStart(2, '0') + '-' + String(minDate.getDate()).padStart(2, '0');
+    requestedDateInput.min = minDateStr;
+  }
+
   function buildMailtoFallback(fd){
     var inquiryFieldLabels = {
       name: 'Name', company: 'Company', email: 'Email', phone: 'Phone',
       address: 'Project Address', industry: 'Industry', project_type: 'Project Type',
-      project_size: 'Project Size', timeline: 'Timeline', message: 'Message'
+      project_size: 'Project Size', requested_date: 'Requested Start Date', message: 'Message'
     };
-    var fieldOrder = ['name','company','email','phone','address','industry','project_type','project_size','timeline','message'];
+    var fieldOrder = ['name','company','email','phone','address','industry','project_type','project_size','requested_date','message'];
     var lines = ['New project inquiry submitted via the BWDS website:', ''];
     fieldOrder.forEach(function(key){
       var val = (fd.get(key) || '').toString().trim();
