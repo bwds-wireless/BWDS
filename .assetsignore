@@ -1,0 +1,18 @@
+# Cloudflare Workers static assets ignore file.
+# These are raw/original source photos kept in the repo for editing history,
+# but the live site only ever references the optimized copies under images/.
+# Excluding them keeps the deployed asset bundle small and avoids publishing
+# unedited originals (with messy filenames/spacing) at the site root.
+/*.jpg
+/*.jpeg
+/*.JPG
+/*.JPEG
+/*.png
+/*.PNG
+
+# Repo housekeeping files that don't belong in the public site
+README.md
+.gitignore
+.DS_Store
+wrangler.jsonc
+.assetsignore
