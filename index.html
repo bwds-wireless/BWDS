@@ -562,7 +562,7 @@
     </div>
 
     <div class="lg:col-span-3 reveal">
-      <form id="inquiry-form" action="https://formspree.io/f/maqggbwq" method="POST" class="bg-white rounded-3xl shadow-soft-lg p-6 sm:p-10 grid sm:grid-cols-2 gap-5" novalidate>
+      <form id="inquiry-form" action="https://api.web3forms.com/submit" method="POST" class="bg-white rounded-3xl shadow-soft-lg p-6 sm:p-10 grid sm:grid-cols-2 gap-5" novalidate>
         <div class="sm:col-span-2" id="form-success" role="status" hidden>
           <div class="flex items-start gap-3 bg-teal-50 border border-teal-200 text-teal-800 rounded-xl px-4 py-3 text-sm font-medium">
             <svg class="w-5 h-5 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
@@ -576,9 +576,11 @@
           </div>
         </div>
 
-        <!-- Honeypot spam trap: hidden from real visitors, Formspree silently discards submissions where this is filled -->
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
-        <input type="hidden" name="_subject" id="f-subject">
+        <!-- Web3Forms config: access key is safe to be public (it's an alias to the destination inbox, not a secret). Honeypot: hidden from real visitors, Web3Forms silently discards submissions where this checkbox is checked. -->
+        <input type="hidden" name="access_key" value="7668906b-e111-47ec-bef3-6db83c6d0641">
+        <input type="hidden" name="from_name" value="BWDS Website — Project Inquiry">
+        <input type="hidden" name="subject" id="f-subject">
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
 
         <div>
           <label for="f-name" class="form-label">Name <span class="text-teal-600">*</span></label>
@@ -662,15 +664,18 @@
           <p class="text-white font-display font-bold text-lg">Join Our Network</p>
           <p class="text-slate-400 text-sm mt-1">Occasional updates on wireless design insights, HiveRadar gear, and BWDS news.</p>
         </div>
-        <form id="newsletter-form" action="https://formspree.io/f/maqggbwq" method="POST" class="flex w-full sm:w-auto gap-2">
+        <form id="newsletter-form" action="https://api.web3forms.com/submit" method="POST" class="flex w-full sm:w-auto gap-2">
           <label for="newsletter-email" class="sr-only">Email address</label>
           <input id="newsletter-email" name="email" type="email" required placeholder="you@company.com" class="flex-1 sm:w-64 rounded-full px-4 py-3 text-sm text-navy-900 focus:outline-none">
-          <input type="hidden" name="_subject" value="Join Our Network — Signup Request">
+          <input type="hidden" name="access_key" value="7668906b-e111-47ec-bef3-6db83c6d0641">
+          <input type="hidden" name="from_name" value="BWDS Website — Join Our Network">
+          <input type="hidden" name="subject" value="Join Our Network — Signup Request">
+          <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
           <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-5 py-3 rounded-full text-sm whitespace-nowrap transition-colors">Sign Up</button>
         </form>
       </div>
       <p id="newsletter-success" class="text-teal-700 text-sm mt-3" role="status" hidden>Thanks for signing up &mdash; we'll be in touch.</p>
-      <p id="newsletter-error" class="text-red-600 text-sm mt-3" role="alert" hidden>Something went wrong signing up. Please try again, or email <a href="mailto:info@nadnetworkservices.com" class="underline font-semibold">info@nadnetworkservices.com</a> directly.</p>
+      <p id="newsletter-error" class="text-red-600 text-sm mt-3" role="alert" hidden>Something went wrong signing up. Please try again, or email <a href="mailto:support@nadnetworkservices.com" class="underline font-semibold">support@nadnetworkservices.com</a> directly.</p>
     </div>
   </div>
 </section>
@@ -1154,7 +1159,7 @@
     });
   });
 
-  /* ---------- Form handling (submits to Formspree: https://formspree.io/f/maqggbwq) ---------- */
+  /* ---------- Form handling (submits to Web3Forms: https://api.web3forms.com/submit) ---------- */
   var inquiryForm = document.getElementById('inquiry-form');
   var inquirySubmitBtn = inquiryForm.querySelector('button[type="submit"]');
   var inquirySubmitLabel = inquirySubmitBtn.innerHTML;
@@ -1201,7 +1206,7 @@
     var fd = new FormData(inquiryForm);
     var subjectName = (fd.get('name') || 'New Lead').toString().trim();
     var subjectIndustry = (fd.get('industry') || '').toString().trim();
-    fd.set('_subject', 'New Project Inquiry: ' + subjectName + (subjectIndustry ? ' (' + subjectIndustry + ')' : ''));
+    fd.set('subject', 'New Project Inquiry: ' + subjectName + (subjectIndustry ? ' (' + subjectIndustry + ')' : ''));
 
     var mailtoFallback = buildMailtoFallback(fd);
     document.getElementById('form-error-mailto').href = mailtoFallback;
@@ -1217,13 +1222,15 @@
       body: fd,
       headers: { 'Accept': 'application/json' }
     }).then(function(response){
-      if (response.ok) {
-        inquiryForm.reset();
-        formSuccessEl.hidden = false;
-        formSuccessEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      } else {
-        throw new Error('Formspree responded with status ' + response.status);
-      }
+      return response.json().catch(function(){ return {}; }).then(function(data){
+        if (response.ok && data.success !== false) {
+          inquiryForm.reset();
+          formSuccessEl.hidden = false;
+          formSuccessEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          throw new Error('Web3Forms responded with status ' + response.status + (data.message ? ': ' + data.message : ''));
+        }
+      });
     }).catch(function(err){
       console.error('Inquiry form submission failed:', err);
       formErrorEl.hidden = false;
@@ -1256,12 +1263,14 @@
       body: fd,
       headers: { 'Accept': 'application/json' }
     }).then(function(response){
-      if (response.ok) {
-        newsletterForm.reset();
-        newsletterSuccessEl.hidden = false;
-      } else {
-        throw new Error('Formspree responded with status ' + response.status);
-      }
+      return response.json().catch(function(){ return {}; }).then(function(data){
+        if (response.ok && data.success !== false) {
+          newsletterForm.reset();
+          newsletterSuccessEl.hidden = false;
+        } else {
+          throw new Error('Web3Forms responded with status ' + response.status + (data.message ? ': ' + data.message : ''));
+        }
+      });
     }).catch(function(err){
       console.error('Newsletter signup failed:', err);
       newsletterErrorEl.hidden = false;
