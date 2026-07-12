@@ -536,16 +536,29 @@
       </div>
 
       <div class="reveal rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 aspect-[4/3] relative">
-        <!-- Google Maps embed zoomed to just the 20871 zip code area (not the wider region). Swap the query string for a full street address once one is finalized. -->
+        <!--
+          BWDS is a service-area business with no public storefront, so the map is centered on the
+          Washington Metropolitan Area (the DC-MD-VA "DMV" region) as a neutral benchmark reference
+          point rather than zoomed to a specific street address or residential zip code. This mirrors
+          how Google itself recommends service-area businesses appear on Maps: a shaded coverage
+          region instead of a precise pin. Zoom is wide enough to keep DC, the closer MD counties
+          (Montgomery, PG), and the closer VA counties (Arlington, Fairfax, Alexandria, Loudoun) all
+          in frame together.
+        -->
         <iframe
-          src="https://maps.google.com/maps?q=20871&z=13&output=embed"
-          title="Map of the 20871 zip code area"
+          src="https://maps.google.com/maps?q=Washington+Metropolitan+Area&z=9&output=embed"
+          title="Map of the Washington, D.C., Maryland &amp; Virginia (DMV) service area"
           class="absolute inset-0 w-full h-full border-0"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          aria-label="Google Map showing the 20871 zip code area">
+          aria-label="Map of the Washington, D.C., Maryland and Virginia service area BWDS serves">
         </iframe>
+        <a href="https://www.google.com/maps/search/?api=1&query=Washington+Metropolitan+Area" target="_blank" rel="noopener noreferrer" class="absolute bottom-3 right-3 inline-flex items-center gap-1.5 bg-white/95 hover:bg-white text-navy-900 text-xs font-semibold px-3 py-2 rounded-full shadow-soft transition-colors">
+          Open in Google Maps
+          <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
       </div>
+      <p class="text-slate-500 text-xs mt-3">BWDS is a service-area business &mdash; we travel to your site rather than host visitors at a fixed office, so this map reflects our DC &middot; MD &middot; VA coverage region rather than a single address.</p>
     </div>
 
     <div class="lg:col-span-3 reveal">
