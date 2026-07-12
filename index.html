@@ -361,6 +361,31 @@
   </div>
 </section>
 
+<!-- ================= ABOUT ================= -->
+<section id="about" class="py-24 sm:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal relative order-2 lg:order-1">
+      <div class="rounded-3xl overflow-hidden shadow-soft-lg aspect-[4/5]">
+        <img src="images/planning-table.jpg" loading="lazy" alt="BWDS team reviewing wireless design plans on a digital planning table" class="w-full h-full object-cover">
+      </div>
+      <div class="hidden sm:block absolute -bottom-8 -right-8 glass-light rounded-2xl p-6 shadow-soft-lg max-w-[240px]">
+        <p class="font-display font-extrabold text-3xl text-navy-900">12+</p>
+        <p class="text-slate-600 text-sm font-medium">years engineering enterprise wireless networks</p>
+      </div>
+    </div>
+    <div class="order-1 lg:order-2">
+      <span class="text-teal-600 font-bold uppercase tracking-[0.16em] text-xs reveal">About BWDS</span>
+      <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl text-navy-900 mt-3 mb-5">Beersheba Wireless Design Solutions</h2>
+      <p class="reveal text-slate-600 leading-relaxed mb-4">
+        Beersheba Wireless Design Solutions (BWDS), a NAD Network Services LLC company, specializes in tailored enterprise wireless network solutions. Our team brings over a decade of experience delivering reliable Wi-Fi surveys, predictive RF engineering, and secure wireless architecture for organizations that cannot afford network downtime.
+      </p>
+      <p class="reveal text-slate-600 leading-relaxed">
+        We work independently of any single hardware vendor &mdash; engineering the RF environment first, then deploying and validating on the platform that fits your environment, from Cisco Enterprise Networks to Ekahau and Hamina survey tooling to our partner HiveRadar APoS gear.
+      </p>
+    </div>
+  </div>
+</section>
+
 <!-- ================= SERVICES ================= -->
 <section id="services" class="py-24 sm:py-28 bg-slate-50">
   <div class="max-w-7xl mx-auto px-5 sm:px-8">
@@ -442,42 +467,6 @@
       <p class="text-slate-600 leading-relaxed">Field notes and engineering perspective from the BWDS team.</p>
     </div>
     <div id="knowledge-grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-7"></div>
-  </div>
-</section>
-
-<!-- ================= ABOUT ================= -->
-<section id="about" class="py-24 sm:py-28 bg-white">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-2 gap-14 items-center">
-    <div class="reveal relative order-2 lg:order-1">
-      <div class="rounded-3xl overflow-hidden shadow-soft-lg aspect-[4/5]">
-        <img src="images/planning-table.jpg" loading="lazy" alt="BWDS team reviewing wireless design plans on a digital planning table" class="w-full h-full object-cover">
-      </div>
-      <div class="hidden sm:block absolute -bottom-8 -right-8 glass-light rounded-2xl p-6 shadow-soft-lg max-w-[240px]">
-        <p class="font-display font-extrabold text-3xl text-navy-900">12+</p>
-        <p class="text-slate-600 text-sm font-medium">years engineering enterprise wireless networks</p>
-      </div>
-    </div>
-    <div class="order-1 lg:order-2">
-      <span class="text-teal-600 font-bold uppercase tracking-[0.16em] text-xs reveal">About BWDS</span>
-      <h2 class="reveal font-display font-extrabold text-3xl sm:text-4xl text-navy-900 mt-3 mb-5">Beersheba Wireless Design Solutions</h2>
-      <p class="reveal text-slate-600 leading-relaxed mb-4">
-        Beersheba Wireless Design Solutions (BWDS), a NAD Network Services LLC company, specializes in tailored enterprise wireless network solutions. Our team brings over a decade of experience delivering reliable Wi-Fi surveys, predictive RF engineering, and secure wireless architecture for organizations that cannot afford network downtime.
-      </p>
-      <p class="reveal text-slate-600 leading-relaxed mb-8">
-        We work independently of any single hardware vendor &mdash; engineering the RF environment first, then deploying and validating on the platform that fits your environment, from Cisco Enterprise Networks to Ekahau and Hamina survey tooling to our own HiveRadar APoS gear.
-      </p>
-      <div class="reveal grid grid-cols-2 gap-3">
-        <div class="highlight-pill">Enterprise Wireless Design</div>
-        <div class="highlight-pill">Predictive RF Engineering</div>
-        <div class="highlight-pill">Healthcare Wi-Fi</div>
-        <div class="highlight-pill">Warehouse Wi-Fi</div>
-        <div class="highlight-pill">Government</div>
-        <div class="highlight-pill">Cisco Enterprise Networks</div>
-        <div class="highlight-pill">Ekahau</div>
-        <div class="highlight-pill">Hamina</div>
-        <div class="highlight-pill">HiveRadar APoS</div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -660,13 +649,15 @@
           <p class="text-white font-display font-bold text-lg">Join Our Network</p>
           <p class="text-slate-400 text-sm mt-1">Occasional updates on wireless design insights, HiveRadar gear, and BWDS news.</p>
         </div>
-        <form id="newsletter-form" class="flex w-full sm:w-auto gap-2">
+        <form id="newsletter-form" action="https://formspree.io/f/maqggbwq" method="POST" class="flex w-full sm:w-auto gap-2">
           <label for="newsletter-email" class="sr-only">Email address</label>
-          <input id="newsletter-email" type="email" required placeholder="you@company.com" class="flex-1 sm:w-64 rounded-full px-4 py-3 text-sm text-navy-900 focus:outline-none">
+          <input id="newsletter-email" name="email" type="email" required placeholder="you@company.com" class="flex-1 sm:w-64 rounded-full px-4 py-3 text-sm text-navy-900 focus:outline-none">
+          <input type="hidden" name="_subject" value="Join Our Network — Signup Request">
           <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-5 py-3 rounded-full text-sm whitespace-nowrap transition-colors">Sign Up</button>
         </form>
       </div>
-      <p id="newsletter-success" class="text-teal-700 text-sm mt-3" role="status" hidden>Opening your email app to send the signup request to info@nadnetworkservices.com.</p>
+      <p id="newsletter-success" class="text-teal-700 text-sm mt-3" role="status" hidden>Thanks for signing up &mdash; we'll be in touch.</p>
+      <p id="newsletter-error" class="text-red-600 text-sm mt-3" role="alert" hidden>Something went wrong signing up. Please try again, or email <a href="mailto:info@nadnetworkservices.com" class="underline font-semibold">info@nadnetworkservices.com</a> directly.</p>
     </div>
   </div>
 </section>
@@ -976,16 +967,14 @@
 
   /* ---------- Data: Industries ---------- */
   var industries = [
-    { name: "Healthcare", icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z", video: "https://youtu.be/Ft0qGPwDqR4?si=74Cze-qVOF_YnBk_&t=259" },
-    { name: "Hospitals", icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0H5m14 0h2M5 21H3m8-14v4m-2-2h4m-8 6h.01M17 15h.01M9 15h.01" },
+    { name: "Healthcare &amp; Hospitals", icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z", video: "https://youtu.be/Ft0qGPwDqR4?si=74Cze-qVOF_YnBk_&t=259" },
     { name: "Warehouses", icon: "M3 9.5L12 3l9 6.5V21a1 1 0 01-1 1h-4a1 1 0 01-1-1v-5H9v5a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z", video: "https://youtu.be/ArmTkP_OTi4?si=uGUYqgYDB9Tqh9hT&t=67" },
     { name: "Distribution Centers", icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" },
-    { name: "Manufacturing", icon: "M19 21V10l-6 3V4L9 7v14M5 21h14M5 21v-6l4-2" },
-    { name: "Corporate Offices", icon: "M3 21h18M9 8h1m-1 4h1m-1 4h1m4-8h1m-1 4h1m-1 4h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16" },
-    { name: "Universities", icon: "M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" },
-    { name: "Government", icon: "M3 21h18M4 21V9l8-6 8 6v12M9 21V12h6v9" },
-    { name: "Research Facilities", icon: "M9 3v6l-6 9a2 2 0 001.66 3h14.68A2 2 0 0021 18l-6-9V3M9 3h6M10 14h4" },
-    { name: "Stadiums &amp; Convention Centers", icon: "M12 3a9 9 0 100 18 9 9 0 000-18zm0 0v18m-9-9h18" }
+    { name: "Manufacturing", icon: "M19 21V10l-6 3V4L9 7v14M5 21h14M5 21v-6l4-2", video: "https://youtu.be/I1YBIMFWUU0?si=Hk6gZNBzeG-crLC_&t=424" },
+    { name: "Corporate Offices", icon: "M3 21h18M9 8h1m-1 4h1m-1 4h1m4-8h1m-1 4h1m-1 4h1M5 21V5a2 2 0 012-2h10a2 2 0 012 2v16", video: "https://youtu.be/2qzbsPrBIj8?si=jEEqyxRk8iyGAW0-&t=1399" },
+    { name: "Universities &amp; Research Facilities", icon: "M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z", video: "https://youtu.be/aEFqIO3mqMA?si=zzKvMuGRk1KzokRD&t=141" },
+    { name: "Government", icon: "M3 21h18M4 21V9l8-6 8 6v12M9 21V12h6v9", video: "https://youtu.be/QeYIeVisNXk?si=DYIiRhtLZ1qdPmhX&t=544" },
+    { name: "Stadiums &amp; Convention Centers", icon: "M12 3a9 9 0 100 18 9 9 0 000-18zm0 0v18m-9-9h18", video: "https://youtu.be/hLYSOctFt4A?si=ph7kPZgpByG_CcJd&t=252" }
   ];
   var indGrid = document.getElementById('industries-grid');
   industries.forEach(function(ind){
@@ -1235,14 +1224,40 @@
   });
 
   var newsletterForm = document.getElementById('newsletter-form');
+  var newsletterSubmitBtn = newsletterForm.querySelector('button[type="submit"]');
+  var newsletterSubmitLabel = newsletterSubmitBtn.innerHTML;
+  var newsletterSuccessEl = document.getElementById('newsletter-success');
+  var newsletterErrorEl = document.getElementById('newsletter-error');
   newsletterForm.addEventListener('submit', function(e){
     e.preventDefault();
-    var enteredEmail = document.getElementById('newsletter-email').value.trim();
-    var subject = encodeURIComponent('Join Our Network — Signup Request');
-    var body = encodeURIComponent('Please add this email address to the BWDS mailing list: ' + enteredEmail);
-    window.location.href = 'mailto:info@nadnetworkservices.com?subject=' + subject + '&body=' + body;
-    document.getElementById('newsletter-success').hidden = false;
-    newsletterForm.reset();
+    if (!newsletterForm.checkValidity()) { newsletterForm.reportValidity(); return; }
+
+    var fd = new FormData(newsletterForm);
+    newsletterSuccessEl.hidden = true;
+    newsletterErrorEl.hidden = true;
+    newsletterSubmitBtn.disabled = true;
+    newsletterSubmitBtn.classList.add('opacity-60','cursor-not-allowed');
+    newsletterSubmitBtn.innerHTML = 'Sending&hellip;';
+
+    fetch(newsletterForm.action, {
+      method: 'POST',
+      body: fd,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response){
+      if (response.ok) {
+        newsletterForm.reset();
+        newsletterSuccessEl.hidden = false;
+      } else {
+        throw new Error('Formspree responded with status ' + response.status);
+      }
+    }).catch(function(err){
+      console.error('Newsletter signup failed:', err);
+      newsletterErrorEl.hidden = false;
+    }).finally(function(){
+      newsletterSubmitBtn.disabled = false;
+      newsletterSubmitBtn.classList.remove('opacity-60','cursor-not-allowed');
+      newsletterSubmitBtn.innerHTML = newsletterSubmitLabel;
+    });
   });
 
   /* ---------- Footer year ---------- */
@@ -1272,7 +1287,6 @@
   .service-card { @apply bg-white rounded-2xl overflow-hidden shadow-soft transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1.5; }
   .industry-card { @apply bg-white/10 backdrop-blur-lg backdrop-saturate-150 border border-white/20 rounded-2xl p-5 shadow-soft-lg hover:bg-white/20 hover:border-teal-300/40 transition-colors; }
   .kb-card { @apply bg-white rounded-2xl overflow-hidden shadow-soft transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-1.5 flex flex-col; }
-  .highlight-pill { @apply bg-teal-50 text-teal-800 text-xs sm:text-sm font-semibold rounded-xl px-3.5 py-3 text-center; }
   .contact-card { @apply flex items-center gap-4 bg-white rounded-xl p-4 shadow-soft; }
   .contact-icon { @apply w-10 h-10 rounded-full bg-teal-50 text-teal-600 flex items-center justify-center shrink-0; }
   .social-icon { @apply w-11 h-11 rounded-full bg-white/10 hover:bg-teal-600 text-white flex items-center justify-center transition-colors; }
