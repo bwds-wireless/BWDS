@@ -244,28 +244,35 @@
     </button>
   </nav>
 
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="lg:hidden fixed inset-0 top-0 bg-navy-950/98 backdrop-blur-sm z-40 flex flex-col transition-transform duration-300 ease-out translate-x-full" aria-hidden="true">
-    <div class="flex items-center justify-between px-5 py-4 border-b border-white/10">
-      <span class="text-white font-display font-bold">Menu</span>
-      <button id="mobile-menu-close" class="text-white w-10 h-10 flex items-center justify-center" aria-label="Close menu">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
-    </div>
-    <ul class="flex flex-col gap-1 px-5 py-6 text-lg font-semibold text-white" id="mobile-nav-links">
-      <li><a href="#home" class="mobile-nav-link block py-3 border-b border-white/10">Home</a></li>
-      <li><a href="#services" class="mobile-nav-link block py-3 border-b border-white/10">Services</a></li>
-      <li><a href="#industries" class="mobile-nav-link block py-3 border-b border-white/10">Industries</a></li>
-      <li><a href="#knowledge-base" class="mobile-nav-link block py-3 border-b border-white/10">Knowledge Base</a></li>
-      <li><a href="#about" class="mobile-nav-link block py-3 border-b border-white/10">About</a></li>
-      <li><a href="#inquiry" class="mobile-nav-link block py-3 border-b border-white/10">Contact</a></li>
-    </ul>
-    <div class="px-5 mt-auto mb-10">
-      <a href="#inquiry" class="mobile-nav-link block text-center bg-teal-600 text-white font-semibold py-3.5 rounded-full">Project Inquiry</a>
-      <p class="text-slate-400 text-sm text-center mt-5">(240) 813-8030</p>
-    </div>
-  </div>
+
 </header>
+
+<!-- Mobile Menu: deliberately a sibling of <header>, not nested inside it. The header
+     gains a backdrop-blur effect once the page is scrolled (for the frosted nav look),
+     and backdrop-filter on an ancestor creates a new containing block for any
+     position:fixed descendant -- which was collapsing this menu down to the header's
+     own (short) height instead of the full screen. Keeping it outside the header avoids
+     that entirely, so it always fills the viewport regardless of scroll position. -->
+<div id="mobile-menu" class="lg:hidden fixed inset-0 top-0 bg-navy-950/98 backdrop-blur-sm z-40 flex flex-col transition-transform duration-300 ease-out translate-x-full" aria-hidden="true">
+  <div class="flex items-center justify-between px-5 py-4 border-b border-white/10">
+    <span class="text-white font-display font-bold">Menu</span>
+    <button id="mobile-menu-close" class="text-white w-10 h-10 flex items-center justify-center" aria-label="Close menu">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <ul class="flex flex-col gap-1 px-5 py-6 text-lg font-semibold text-white" id="mobile-nav-links">
+    <li><a href="#home" class="mobile-nav-link block py-3 border-b border-white/10">Home</a></li>
+    <li><a href="#services" class="mobile-nav-link block py-3 border-b border-white/10">Services</a></li>
+    <li><a href="#industries" class="mobile-nav-link block py-3 border-b border-white/10">Industries</a></li>
+    <li><a href="#knowledge-base" class="mobile-nav-link block py-3 border-b border-white/10">Knowledge Base</a></li>
+    <li><a href="#about" class="mobile-nav-link block py-3 border-b border-white/10">About</a></li>
+    <li><a href="#inquiry" class="mobile-nav-link block py-3 border-b border-white/10">Contact</a></li>
+  </ul>
+  <div class="px-5 mt-auto mb-10">
+    <a href="#inquiry" class="mobile-nav-link block text-center bg-teal-600 text-white font-semibold py-3.5 rounded-full">Project Inquiry</a>
+    <p class="text-slate-400 text-sm text-center mt-5">(240) 813-8030</p>
+  </div>
+</div>
 
 <main id="main-content">
 
