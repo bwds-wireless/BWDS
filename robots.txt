@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nadnetworkservices.com/sitemap.xml
+Sitemap: https://bwds4wifi.com/sitemap.xml
