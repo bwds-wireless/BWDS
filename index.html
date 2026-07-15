@@ -178,6 +178,15 @@
   .spinner-ring { border: 3px solid rgba(255,255,255,0.15); border-top-color: #31c4c8; border-radius: 9999px; animation: spin 0.9s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
 
+  /* Mobile menu overlay: explicit solid background (not left to a Tailwind opacity
+     utility) so it's always fully opaque behind the nav links, no matter which
+     section of the page (light or dark) is scrolled underneath it. */
+  #mobile-menu {
+    background-color: rgba(7, 15, 28, 0.97) !important;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+
   input[type="text"], input[type="email"], input[type="tel"], select, textarea {
     background-color: #f8fafc;
   }
