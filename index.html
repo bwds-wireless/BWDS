@@ -224,6 +224,7 @@
       <li><a href="#services" class="nav-link transition-colors">Services</a></li>
       <li><a href="#industries" class="nav-link transition-colors">Industries</a></li>
       <li><a href="#knowledge-base" class="nav-link transition-colors">Knowledge Base</a></li>
+      <li><a href="#wifi-check" class="nav-link transition-colors">WiFi Health Check</a></li>
       <li><a href="#about" class="nav-link transition-colors">About</a></li>
       <li><a href="#inquiry" class="nav-link transition-colors">Contact</a></li>
     </ul>
@@ -265,6 +266,7 @@
     <li><a href="#services" class="mobile-nav-link block py-3 border-b border-white/10">Services</a></li>
     <li><a href="#industries" class="mobile-nav-link block py-3 border-b border-white/10">Industries</a></li>
     <li><a href="#knowledge-base" class="mobile-nav-link block py-3 border-b border-white/10">Knowledge Base</a></li>
+    <li><a href="#wifi-check" class="mobile-nav-link block py-3 border-b border-white/10">WiFi Health Check</a></li>
     <li><a href="#about" class="mobile-nav-link block py-3 border-b border-white/10">About</a></li>
     <li><a href="#inquiry" class="mobile-nav-link block py-3 border-b border-white/10">Contact</a></li>
   </ul>
@@ -515,6 +517,53 @@
 </section>
 
 <!-- ================= PROJECT INQUIRY / CONTACT ================= -->
+
+<!-- ================= WIFI HEALTH CHECK ================= -->
+<section id="wifi-check" class="py-24 sm:py-28 bg-navy-950 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.06] pointer-events-none" aria-hidden="true" style="background-image:radial-gradient(circle at 20% 30%, #1ba6ab 0, transparent 40%), radial-gradient(circle at 80% 70%, #22a390 0, transparent 40%);"></div>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 relative text-center">
+    <span class="text-teal-400 font-bold uppercase tracking-[0.16em] text-xs">Free &middot; 30 Seconds &middot; No Install</span>
+    <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white mt-3 mb-5">Check Your WiFi&rsquo;s Health Right Now</h2>
+    <p class="text-slate-300 leading-relaxed">We&rsquo;ll measure your download speed, upload speed, and connection stability &mdash; then tell you what it means in plain language.</p>
+    <p class="text-slate-500 text-xs mt-3 leading-relaxed">This browser test reveals the symptoms. Full RF diagnosis &mdash; channels, interference, dead zones &mdash; requires a professional on-site survey.</p>
+
+    <button id="bwds-run" onclick="bwdsRunTest()" class="mt-9 inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold px-8 py-4 rounded-full shadow-glow transition-all hover:-translate-y-0.5">Run My WiFi Check</button>
+
+    <div id="bwds-progress" class="mt-9 hidden">
+      <div class="mx-auto h-1.5 max-w-sm overflow-hidden rounded-full bg-white/10"><div id="bwds-bar" class="h-full w-0 bg-gradient-to-r from-teal-500 to-cyan-400 transition-all duration-500"></div></div>
+      <p id="bwds-status" class="mt-3 font-mono text-xs text-slate-400">preparing&hellip;</p>
+    </div>
+
+    <div id="bwds-results" class="mt-10 hidden text-left">
+      <div class="text-center">
+        <p id="bwds-verdict" class="text-2xl font-extrabold"></p>
+        <p id="bwds-verdict-sub" class="mt-2 text-sm text-slate-300"></p>
+      </div>
+      <div id="bwds-metrics" class="mt-7 grid gap-4 sm:grid-cols-3"></div>
+      <div id="bwds-cta" class="mt-6 hidden rounded-2xl border border-amber-400/40 bg-amber-400/5 p-5">
+        <p class="font-bold text-amber-300">What this costs you</p>
+        <p id="bwds-impact" class="mt-1.5 text-sm leading-relaxed text-amber-50/90"></p>
+      </div>
+      <form id="bwds-lead" onsubmit="return bwdsSendLead(event)" class="mt-7 rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
+        <p class="font-bold text-white">Get the full picture &mdash; request a professional survey</p>
+        <p class="mt-1 font-mono text-xs text-teal-400">&#128206; your test results attach automatically</p>
+        <div class="mt-5 grid gap-3">
+          <input required name="name" placeholder="Name" autocomplete="name" class="rounded-xl border border-white/10 bg-navy-900/80 text-white px-4 py-3 text-sm placeholder:text-slate-500 focus:border-teal-500 focus:outline-none" />
+          <input required name="email" type="email" placeholder="Email" autocomplete="email" class="rounded-xl border border-white/10 bg-navy-900/80 text-white px-4 py-3 text-sm placeholder:text-slate-500 focus:border-teal-500 focus:outline-none" />
+          <input name="phone" type="tel" placeholder="Phone (optional)" autocomplete="tel" class="rounded-xl border border-white/10 bg-navy-900/80 text-white px-4 py-3 text-sm placeholder:text-slate-500 focus:border-teal-500 focus:outline-none" />
+          <div class="grid grid-cols-2 gap-3">
+            <select name="siteType" class="rounded-xl border border-white/10 bg-navy-900/80 text-white px-3 py-3 text-sm focus:border-teal-500 focus:outline-none"><option>Home</option><option>Office</option><option>Warehouse</option><option>Healthcare</option><option>School / campus</option><option>Other</option></select>
+            <select name="followUp" class="rounded-xl border border-white/10 bg-navy-900/80 text-white px-3 py-3 text-sm focus:border-teal-500 focus:outline-none"><option value="call">Call me</option><option value="email">Email me</option></select>
+          </div>
+          <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white font-bold px-6 py-3.5 rounded-full transition-all">Send to BWDS</button>
+          <p id="bwds-sent" class="hidden text-center text-sm font-bold text-teal-400">&#9989; Sent &mdash; a BWDS engineer will follow up within one business day.</p>
+        </div>
+      </form>
+      <div class="mt-5 text-center"><button onclick="bwdsRunTest()" class="rounded-full border border-white/15 px-6 py-2.5 text-sm text-slate-300 hover:bg-white/5 transition-colors">Test Again</button></div>
+    </div>
+  </div>
+</section>
+
 <section id="inquiry" class="py-24 sm:py-28 bg-slate-50">
   <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-5 gap-12">
 
@@ -1337,5 +1386,117 @@
   .faq-trigger { @apply w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-semibold text-navy-900; }
 </style>
 
+
+<script>
+(function(){
+  const EP = 'https://bwds-lead-webhook.nadnetworkservices.workers.dev';
+  let lastResult = null;
+  const $ = id => document.getElementById(id);
+  const setStatus = (pct, msg) => { $('bwds-bar').style.width = pct + '%'; $('bwds-status').textContent = msg; };
+  const gradeOf = s => s >= 75 ? 'good' : s >= 50 ? 'fair' : 'poor';
+  const colorOf = g => g === 'good' ? '#34d399' : g === 'fair' ? '#fbbf24' : '#f87171';
+
+  async function measureLatency() {
+    const t = [];
+    await fetch(EP + '/ping', { cache: 'no-store' });
+    for (let i = 0; i < 6; i++) {
+      const a = performance.now();
+      await fetch(EP + '/ping', { cache: 'no-store' });
+      t.push(performance.now() - a);
+    }
+    t.sort((a, b) => a - b);
+    const median = t[Math.floor(t.length / 2)];
+    const jitter = Math.round(Math.sqrt(t.reduce((s, x) => s + (x - median) ** 2, 0) / t.length));
+    return { latency: Math.round(median), jitter };
+  }
+  async function measureDownload() {
+    await (await fetch(EP + '/down?bytes=1000000', { cache: 'no-store' })).arrayBuffer();
+    const bytes = 10000000, a = performance.now();
+    await (await fetch(EP + '/down?bytes=' + bytes, { cache: 'no-store' })).arrayBuffer();
+    return Math.round((bytes * 8) / ((performance.now() - a) / 1000) / 1e6 * 10) / 10;
+  }
+  async function measureUpload() {
+    const bytes = 3000000, blob = new Uint8Array(bytes);
+    crypto.getRandomValues(blob.subarray(0, 65536));
+    const a = performance.now();
+    await fetch(EP + '/up', { method: 'POST', body: blob });
+    return Math.round((bytes * 8) / ((performance.now() - a) / 1000) / 1e6 * 10) / 10;
+  }
+
+  window.bwdsRunTest = async function(){
+    $('bwds-run').classList.add('hidden');
+    $('bwds-results').classList.add('hidden');
+    $('bwds-sent').classList.add('hidden');
+    $('bwds-progress').classList.remove('hidden');
+    try {
+      setStatus(10, 'measuring latency and stability\u2026');
+      const { latency, jitter } = await measureLatency();
+      setStatus(40, 'measuring download speed\u2026');
+      const down = await measureDownload();
+      setStatus(75, 'measuring upload speed\u2026');
+      const up = await measureUpload();
+      setStatus(100, 'building your score\u2026');
+
+      const dS = Math.min(100, Math.round(down / 50 * 100));
+      const uS = Math.min(100, Math.round(up / 10 * 100));
+      const lS = Math.max(0, Math.min(100, Math.round(100 - (latency - 15) * 1.2 - jitter * 1.5)));
+      const subs = [
+        { key: 'download', score: dS, grade: gradeOf(dS), label: 'Download', value: down + ' Mbps', detail: down + ' Mbps down' },
+        { key: 'upload', score: uS, grade: gradeOf(uS), label: 'Upload', value: up + ' Mbps', detail: up + ' Mbps up' },
+        { key: 'stability', score: lS, grade: gradeOf(lS), label: 'Stability', value: latency + ' ms \u00b7 \u00b1' + jitter + ' ms', detail: latency + ' ms latency, ' + jitter + ' ms jitter' },
+      ];
+      const sorted = [...subs].sort((a, b) => a.score - b.score);
+      const overall = Math.round(sorted[0].score * .5 + sorted[1].score * .3 + sorted[2].score * .2);
+      const og = gradeOf(overall);
+      const worst = sorted[0];
+      const impacts = {
+        download: 'Streaming buffers, pages crawl, and big files take forever. This can be your internet plan \u2014 or WiFi losing half your speed before it reaches your devices. A survey tells you which.',
+        upload: 'Video calls freeze and cloud backups never finish. Weak upload over WiFi is a classic sign of signal or interference problems a survey can pinpoint.',
+        stability: 'Calls stutter and games lag even when speed looks fine. Unstable latency usually points to interference or roaming issues \u2014 exactly what a professional RF survey finds.',
+      };
+      lastResult = {
+        overall, overallGrade: og,
+        verdict: og === 'good' ? 'Your connection looks healthy' : og === 'fair' ? 'Usable, but working against you' : 'Your WiFi is costing you time',
+        subs: subs.map(s => ({ key: s.key, grade: s.grade, score: s.score, summary: s.label, detail: s.detail })),
+        topIssue: worst.grade === 'good' ? null : { title: 'Weak ' + worst.label.toLowerCase(), impact: impacts[worst.key] },
+      };
+      $('bwds-verdict').textContent = overall + ' \u2014 ' + lastResult.verdict;
+      $('bwds-verdict').style.color = colorOf(og);
+      $('bwds-verdict-sub').textContent = og === 'good'
+        ? 'No obvious symptoms from here. If specific rooms or devices still struggle, that\u2019s an RF-level problem worth a look.'
+        : 'These are the symptoms \u2014 a professional survey finds the cause.';
+      $('bwds-metrics').innerHTML = subs.map(s =>
+        '<div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">' +
+        '<div class="mx-auto mb-2.5 h-2.5 w-2.5 rounded-full" style="background:' + colorOf(s.grade) + '"></div>' +
+        '<p class="text-sm font-bold text-white">' + s.label + '</p>' +
+        '<p class="mt-1 font-mono text-xs text-slate-400">' + s.value + '</p></div>'
+      ).join('');
+      if (lastResult.topIssue) { $('bwds-impact').textContent = lastResult.topIssue.impact; $('bwds-cta').classList.remove('hidden'); }
+      else { $('bwds-cta').classList.add('hidden'); }
+      $('bwds-progress').classList.add('hidden');
+      $('bwds-results').classList.remove('hidden');
+    } catch (e) {
+      setStatus(0, 'test failed \u2014 please try again (' + e.message + ')');
+      $('bwds-run').classList.remove('hidden');
+    }
+  };
+
+  window.bwdsSendLead = function(ev){
+    ev.preventDefault();
+    const f = ev.target;
+    fetch(EP + '/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        source: 'web',
+        submittedAt: new Date().toISOString(),
+        form: { name: f.name.value, email: f.email.value, phone: f.phone.value, siteType: f.siteType.value, followUp: f.followUp.value },
+        scan: lastResult,
+      }),
+    }).then(r => { if (r.ok) { $('bwds-sent').classList.remove('hidden'); f.querySelector('button[type=submit]').disabled = true; } });
+    return false;
+  };
+})();
+</script>
 </body>
 </html>
