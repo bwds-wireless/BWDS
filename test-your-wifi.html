@@ -219,7 +219,13 @@
       <p class="text-slate-600 leading-relaxed">Paste the report you copied from the app. We reply within one business day.</p>
     </div>
 
-    <form id="reportForm" novalidate class="reveal bg-white rounded-3xl shadow-soft-lg border border-slate-100 p-6 sm:p-10">
+    <form id="reportForm" action="https://api.web3forms.com/submit" method="POST" novalidate class="reveal bg-white rounded-3xl shadow-soft-lg border border-slate-100 p-6 sm:p-10">
+      <!-- Web3Forms config: access key is safe to be public (it's an alias to the destination inbox, not a secret). Honeypot: hidden from real visitors, Web3Forms silently discards submissions where this checkbox is checked. -->
+      <input type="hidden" name="access_key" value="7668906b-e111-47ec-bef3-6db83c6d0641">
+      <input type="hidden" name="from_name" value="BWDS Website — WLAN Pros Toolbox Report">
+      <input type="hidden" name="subject" id="f-subject">
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true">
+
       <div class="grid sm:grid-cols-2 gap-5">
         <div>
           <label for="name" class="form-label">Your name <span class="text-teal-600">*</span></label>
@@ -259,7 +265,7 @@
         <button type="submit" id="send-btn" class="bg-teal-600 hover:bg-teal-700 text-white font-bold px-7 py-3.5 rounded-full shadow-soft transition-all hover:-translate-y-0.5">Send report to BWDS</button>
         <button type="button" id="copy-btn" class="bg-white border-1.5 border-navy-900 text-navy-900 hover:bg-slate-50 font-bold px-7 py-3.5 rounded-full transition-colors" style="border-width:1.5px">Copy message instead</button>
       </div>
-      <p class="text-xs text-slate-500 mt-4 leading-relaxed">&ldquo;Send&rdquo; opens your email app pre-addressed to <span class="intake-addr font-semibold text-navy-800"></span> with everything filled in &mdash; just press send. If the report doesn't appear in the email, use <b>Copy message instead</b> and paste it in. Prefer to email directly? Write to <a href="#" class="intake-link intake-addr text-teal-600 hover:text-teal-700 underline"></a> and paste your report in the body.</p>
+      <p class="text-xs text-slate-500 mt-4 leading-relaxed">&ldquo;Send&rdquo; submits your report straight to our team &mdash; no email app needed. If something goes wrong, use <b>Copy message instead</b> and email it to <a href="#" class="intake-link intake-addr text-teal-600 hover:text-teal-700 underline"></a> directly.</p>
     </form>
   </div>
 </section>
@@ -344,14 +350,15 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
   }
 })();
 
-/* ================= CONFIG ================= */
+/* ================= CONFIG =================
+   Submissions POST directly to Web3Forms (see the form's hidden access_key
+   field above) — CONFIG.intakeEmail is only used for the manual "copy
+   message" fallback and the error-path mailto link. */
 const CONFIG = {
   intakeEmail: "support@nadnetworkservices.com",
-  businessName: "BWDS",
-  // Leave "" for mailto-only mode. Set to a POST endpoint to submit automatically instead.
-  formEndpoint: ""
+  businessName: "BWDS"
 };
-/* ============================================ */
+/* =========================================== */
 
 document.querySelectorAll(".intake-addr").forEach(el => el.textContent = CONFIG.intakeEmail);
 document.querySelectorAll(".intake-link").forEach(el => el.href = "mailto:" + CONFIG.intakeEmail);
@@ -449,15 +456,16 @@ function showVerdict(p){
   metrics.style.display = chips.length ? "flex" : "none";
 }
 
-function setMsg(cls, text){
-  if (!text){ formMsg.classList.add("hidden"); return; }
+function setMsg(cls, text, html){
+  if (!text && !html){ formMsg.classList.add("hidden"); return; }
   const styles = {
     err:  "bg-red-50 text-red-700 border border-red-200",
     warn: "bg-amber-50 text-amber-700 border border-amber-200",
     ok:   "bg-teal-50 text-teal-700 border border-teal-200"
   };
+  formMsg.classList.remove("hidden");
   formMsg.className = "mt-4 rounded-xl px-4 py-3 text-sm font-medium " + (styles[cls] || "");
-  formMsg.textContent = text;
+  if (html) formMsg.innerHTML = html; else formMsg.textContent = text;
 }
 
 let debounce;
@@ -503,39 +511,51 @@ function validate(){
   return true;
 }
 
-$("reportForm").addEventListener("submit", async e => {
-  e.preventDefault();
-  if (!validate()) return;
-  const subject = "Wi-Fi Connection Report — " + $("name").value.trim() +
-                  ($("site").value.trim() ? " — " + $("site").value.trim() : "");
-  const body = buildMessage();
+const reportForm = $("reportForm");
+const sendBtn = $("send-btn");
+const sendBtnLabel = sendBtn.innerHTML;
 
-  if (CONFIG.formEndpoint){
-    try{
-      $("send-btn").disabled = true;
-      const res = await fetch(CONFIG.formEndpoint, {
-        method:"POST", headers:{ "Content-Type":"application/json", "Accept":"application/json" },
-        body: JSON.stringify({ name:$("name").value.trim(), email:$("email").value.trim(),
-          phone:$("phone").value.trim(), site:$("site").value.trim(), report:reportEl.value.trim(), subject })
-      });
-      if (!res.ok) throw new Error(res.status);
-      setMsg("ok","Thanks — your report is on its way. We'll be in touch within one business day.");
-      $("reportForm").reset(); $("verdict-card").style.display = "none";
-    }catch(err){
-      setMsg("err","Couldn't submit automatically — opening your email app instead.");
-      openMailto(subject, body);
-    }finally{ $("send-btn").disabled = false; }
-  } else {
-    openMailto(subject, body);
-    setMsg("ok","Your email app should open pre-filled — just press send. If the report is missing (some email apps truncate long messages), tap “Copy message instead” and paste it in.");
-  }
-});
-
-function openMailto(subject, body){
-  window.location.href = "mailto:" + CONFIG.intakeEmail +
+function mailtoHref(subject, body){
+  return "mailto:" + CONFIG.intakeEmail +
     "?subject=" + encodeURIComponent(subject) +
     "&body=" + encodeURIComponent(body);
 }
+
+reportForm.addEventListener("submit", async e => {
+  e.preventDefault();
+  if (!validate()) return;
+
+  const subject = "WLAN Pros Toolbox Report — " + $("name").value.trim() +
+                  ($("site").value.trim() ? " — " + $("site").value.trim() : "");
+  $("f-subject").value = subject;
+
+  sendBtn.disabled = true;
+  sendBtn.classList.add("opacity-60","cursor-not-allowed");
+  sendBtn.innerHTML = "Sending…";
+
+  try{
+    const fd = new FormData(reportForm);
+    const res = await fetch(reportForm.action, {
+      method: "POST",
+      body: fd,
+      headers: { "Accept": "application/json" }
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok || data.success === false) throw new Error("Web3Forms responded with status " + res.status + (data.message ? ": " + data.message : ""));
+
+    setMsg("ok","Thanks — your report is on its way. We'll be in touch within one business day.");
+    reportForm.reset();
+    $("verdict-card").style.display = "none";
+  }catch(err){
+    console.error("Wi-Fi report submission failed:", err);
+    const href = mailtoHref(subject, buildMessage());
+    setMsg("err", "", 'Couldn\'t submit automatically. Please try again, or <a href="' + href + '" class="underline font-semibold">email us directly</a> — or use <b>Copy message instead</b> below.');
+  }finally{
+    sendBtn.disabled = false;
+    sendBtn.classList.remove("opacity-60","cursor-not-allowed");
+    sendBtn.innerHTML = sendBtnLabel;
+  }
+});
 
 $("copy-btn").addEventListener("click", async () => {
   if (!validate()) return;
