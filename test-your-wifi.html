@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paste Your Wi-Fi Connection Report | BWDS</title>
+<meta name="description" content="Already ran the free WLAN Pros Toolbox test? Paste your Connection Report here for an instant, color-coded diagnosis of whether it's your Wi-Fi or your internet — then send it to BWDS for a plain-language read from a real engineer.">
+<meta name="author" content="Beersheba Wireless Design Solutions">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bwds4wifi.com/test-your-wifi.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Paste Your Wi-Fi Connection Report | BWDS">
+<meta property="og:description" content="Already ran the free WLAN Pros Toolbox test? Paste your Connection Report here for an instant diagnosis, then send it to BWDS for a plain-language read.">
+<meta property="og:url" content="https://bwds4wifi.com/test-your-wifi.html">
+<meta property="og:site_name" content="Beersheba Wireless Design Solutions">
+<meta property="og:image" content="https://bwds4wifi.com/images/og-image.jpg">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@BWDS_4WiFi">
+<meta name="twitter:title" content="Paste Your Wi-Fi Connection Report | BWDS">
+<meta name="twitter:description" content="Already ran the free WLAN Pros Toolbox test? Paste your Connection Report here for an instant diagnosis, then send it to BWDS for a plain-language read.">
+
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Paste Your Wi-Fi Connection Report",
+  "description": "Paste a WLAN Pros Toolbox Connection Report for an instant, color-coded diagnosis, then send it to BWDS for a plain-language read.",
+  "url": "https://bwds4wifi.com/test-your-wifi.html",
+  "isPartOf": { "@type": "WebSite", "name": "Beersheba Wireless Design Solutions", "url": "https://bwds4wifi.com/" },
+  "publisher": { "@type": "Organization", "name": "Beersheba Wireless Design Solutions", "logo": { "@type": "ImageObject", "url": "https://bwds4wifi.com/images/bwds-logo.png" } }
+}
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+        colors: {
+          navy: { 50:'#eef3f8', 100:'#d7e3ee', 200:'#b0c7dd', 300:'#82a4c6', 400:'#5680ab', 500:'#3a6390', 600:'#284c74', 700:'#1e3a5c', 800:'#152a45', 900:'#0d1c30', 950:'#070f1c' },
+          cyan: { 50:'#eafcfc', 100:'#cef7f7', 200:'#a0edee', 300:'#67dee0', 400:'#31c4c8', 500:'#1ba6ab', 600:'#16858c', 700:'#186a70', 800:'#19555a', 900:'#19484c' },
+          teal: { 50:'#eefbf8', 100:'#d3f5ed', 200:'#a8ebdc', 300:'#72dac6', 400:'#3fc0aa', 500:'#22a390', 600:'#178275', 700:'#16685f', 800:'#16534d', 900:'#154540' }
+        },
+        boxShadow: {
+          'soft': '0 4px 24px -4px rgba(13,28,48,0.10)',
+          'soft-lg': '0 20px 48px -12px rgba(13,28,48,0.20)',
+          'glow': '0 0 0 1px rgba(255,255,255,0.06), 0 8px 32px -8px rgba(27,166,171,0.35)'
+        }
+      }
+    }
+  }
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+  h1,h2,h3,h4,.font-display { font-family: 'Manrope', 'Inter', ui-sans-serif, system-ui, sans-serif; }
+  ::selection { background: #1ba6ab; color: #ffffff; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #31c4c8; outline-offset: 2px; border-radius: 4px; }
+  .skip-link { position: absolute; left: -9999px; top: 0; z-index: 100; background: #0d1c30; color: #fff; padding: 12px 20px; border-radius: 0 0 8px 0; }
+  .skip-link:focus { left: 0; }
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+  .bg-grid { background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.14) 1px, transparent 0); background-size: 28px 28px; }
+  textarea#report { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; white-space: pre; }
+  #verdict-card { display: none; }
+  #metrics-chips { display: none; }
+</style>
+<style type="text/tailwindcss">
+  .form-label { @apply block text-xs font-bold uppercase tracking-wide text-slate-500 mb-1.5; }
+  .form-input { @apply w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-navy-900 focus:border-teal-500 focus:ring-2 focus:ring-teal-100 transition-colors mb-4; }
+</style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+<a href="#main-content" class="skip-link font-semibold text-sm">Skip to main content</a>
+
+<header id="site-header" class="sticky top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-md shadow-soft">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-5 sm:px-8 py-3" aria-label="Primary">
+    <a href="index.html#home" class="flex items-center gap-3 group" aria-label="BWDS Home">
+      <img src="images/bwds-logo.png" alt="Beersheba Wireless Design Solutions logo" class="w-11 h-11 sm:w-12 sm:h-12 rounded-full shadow-soft transition-transform group-hover:scale-105" width="48" height="48" loading="eager">
+      <span class="leading-tight">
+        <span class="block font-display font-extrabold text-base sm:text-lg tracking-tight text-navy-900">BWDS</span>
+        <span class="block text-[10px] sm:text-[11px] uppercase tracking-[0.14em] font-semibold text-teal-600">Wireless Design Solutions</span>
+      </span>
+    </a>
+    <ul class="hidden lg:flex items-center gap-8 font-semibold text-sm">
+      <li><a href="index.html#home" class="text-navy-800 hover:text-teal-600 transition-colors">Home</a></li>
+      <li><a href="index.html#services" class="text-navy-800 hover:text-teal-600 transition-colors">Services</a></li>
+      <li><a href="index.html#industries" class="text-navy-800 hover:text-teal-600 transition-colors">Industries</a></li>
+      <li><a href="index.html#knowledge-base" class="text-navy-800 hover:text-teal-600 transition-colors">Knowledge Base</a></li>
+      <li><a href="index.html#wifi-check" class="text-teal-600 transition-colors">WiFi Health Check</a></li>
+      <li><a href="index.html#inquiry" class="text-navy-800 hover:text-teal-600 transition-colors">Contact</a></li>
+    </ul>
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="index.html#inquiry" class="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-sm px-5 py-2.5 rounded-full shadow-soft transition-all hover:shadow-soft-lg hover:-translate-y-0.5">Project Inquiry</a>
+    </div>
+    <a href="index.html#wifi-check" class="lg:hidden inline-flex items-center gap-1.5 text-navy-800 font-semibold text-sm">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      Back
+    </a>
+  </nav>
+</header>
+
+<main id="main-content">
+
+<!-- ================= HERO ================= -->
+<section class="py-20 sm:py-24 bg-navy-950 relative overflow-hidden">
+  <div class="absolute inset-0 bg-grid opacity-10 pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute inset-0 opacity-[0.08] pointer-events-none" aria-hidden="true" style="background-image:radial-gradient(circle at 20% 30%, #1ba6ab 0, transparent 40%), radial-gradient(circle at 80% 70%, #22a390 0, transparent 40%);"></div>
+  <div class="max-w-3xl mx-auto px-5 sm:px-8 relative text-center">
+    <p class="reveal text-xs font-bold uppercase tracking-[0.16em] text-teal-400 mb-4">
+      <a href="index.html#wifi-check" class="hover:underline">WiFi Health Check</a> &middot; Free 60-Second Self-Test
+    </p>
+    <h1 class="reveal font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight mb-5">Is It Your Wi&#8209;Fi &mdash; Or Your Internet?</h1>
+    <p class="reveal text-slate-300 leading-relaxed max-w-xl mx-auto">Run one free test with the <b class="text-white">WLAN Pros Toolbox</b> app, paste the report below, and get an instant, color-coded read on where the problem is &mdash; then send it to BWDS for a plain-language answer from a real engineer.</p>
+    <p class="reveal text-slate-500 text-xs mt-4 leading-relaxed">This is a self-test, not an Ekahau survey. It tells you where to look &mdash; a professional on-site survey tells you exactly what to fix.</p>
+    <a href="#steps" class="reveal mt-8 inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold px-7 py-3.5 rounded-full shadow-glow transition-all hover:-translate-y-0.5">
+      Show me how
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section id="steps" class="py-24 sm:py-28 bg-white">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8">
+    <div class="text-center mb-14 reveal">
+      <span class="text-teal-600 font-bold uppercase tracking-[0.16em] text-xs">How It Works</span>
+      <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-navy-900 mt-3 mb-4">Four steps, about a minute</h2>
+      <p class="text-slate-600 leading-relaxed">You'll use the free <b>WLAN Pros Toolbox</b> app &mdash; no account, no ads, nothing collected.</p>
+    </div>
+    <div class="grid gap-4">
+      <div class="reveal flex gap-5 items-start bg-white rounded-2xl shadow-soft p-5 sm:p-6">
+        <div class="shrink-0 w-9 h-9 rounded-full bg-navy-900 text-white font-bold flex items-center justify-center">1</div>
+        <div>
+          <h3 class="font-display font-bold text-navy-900 mb-1">Get the free app</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Install <b>WLAN Pros Toolbox</b> on the device with the Wi-Fi problem (links &amp; QR codes below), or open the web version in your browser.</p>
+        </div>
+      </div>
+      <div class="reveal flex gap-5 items-start bg-white rounded-2xl shadow-soft p-5 sm:p-6">
+        <div class="shrink-0 w-9 h-9 rounded-full bg-navy-900 text-white font-bold flex items-center justify-center">2</div>
+        <div>
+          <h3 class="font-display font-bold text-navy-900 mb-1">Run &ldquo;Check My Connection&rdquo;</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">It's the first button when the app opens. Stand where the Wi-Fi feels slow and tap it. The test takes about 30 seconds.</p>
+        </div>
+      </div>
+      <div class="reveal flex gap-5 items-start bg-white rounded-2xl shadow-soft p-5 sm:p-6">
+        <div class="shrink-0 w-9 h-9 rounded-full bg-navy-900 text-white font-bold flex items-center justify-center">3</div>
+        <div>
+          <h3 class="font-display font-bold text-navy-900 mb-1">Tap &ldquo;Copy&rdquo;</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">When the result appears, tap the <b>Copy</b> button (top right). Your full report is now on the clipboard as plain text.</p>
+        </div>
+      </div>
+      <div class="reveal flex gap-5 items-start bg-white rounded-2xl shadow-soft p-5 sm:p-6">
+        <div class="shrink-0 w-9 h-9 rounded-full bg-teal-600 text-white font-bold flex items-center justify-center">4</div>
+        <div>
+          <h3 class="font-display font-bold text-navy-900 mb-1">Paste it below and send</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Scroll down, paste the report into the box, add your contact details, and send. We'll review it and get back to you with a plain-language answer.</p>
+        </div>
+      </div>
+    </div>
+    <p class="reveal text-sm text-slate-500 bg-slate-50 border-l-4 border-teal-500 rounded-r-xl px-5 py-4 mt-6"><b class="text-navy-900">iPhone/iPad tip:</b> to include Wi-Fi signal details, tap <b>&ldquo;Capture Wi-Fi details&rdquo;</b> in the app when prompted (Apple restricts this data otherwise). <b>Android</b> captures it automatically. Either way, the report is still useful &mdash; send what you get.</p>
+  </div>
+</section>
+
+<!-- ================= GET THE APP ================= -->
+<section id="get-app" class="py-24 sm:py-28 bg-slate-50">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8">
+    <div class="text-center mb-14 reveal">
+      <span class="text-teal-600 font-bold uppercase tracking-[0.16em] text-xs">Free Third-Party App</span>
+      <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-navy-900 mt-3 mb-4">Get WLAN Pros Toolbox</h2>
+      <p class="text-slate-600 leading-relaxed">On a computer? Point your phone camera at a QR code. Or just tap a button.</p>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="reveal bg-white rounded-2xl shadow-soft hover:shadow-soft-lg transition-all p-6 text-center">
+        <img class="mx-auto w-28 h-28 rounded-xl border border-slate-200" src="https://toolbox.wlanpros.com/qr/launch-set/plain/02-ios-app-store.png" alt="QR code — iOS App Store" loading="lazy">
+        <h3 class="font-display font-bold text-navy-900 mt-4">iPhone &amp; iPad</h3>
+        <p class="text-slate-500 text-sm mb-4">App Store</p>
+        <a class="inline-flex items-center justify-center bg-navy-900 hover:bg-navy-800 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors" href="https://apps.apple.com/app/id6775594754" target="_blank" rel="noopener">Download for iOS</a>
+      </div>
+      <div class="reveal bg-white rounded-2xl shadow-soft hover:shadow-soft-lg transition-all p-6 text-center">
+        <img class="mx-auto w-28 h-28 rounded-xl border border-slate-200" src="https://toolbox.wlanpros.com/qr/launch-set/plain/03-android-google-play.png" alt="QR code — Google Play" loading="lazy">
+        <h3 class="font-display font-bold text-navy-900 mt-4">Android</h3>
+        <p class="text-slate-500 text-sm mb-4">Google Play</p>
+        <a class="inline-flex items-center justify-center bg-navy-900 hover:bg-navy-800 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors" href="https://play.google.com/store/apps/details?id=com.wlanpros.wlan_pros_toolbox" target="_blank" rel="noopener">Download for Android</a>
+      </div>
+      <div class="reveal bg-white rounded-2xl shadow-soft hover:shadow-soft-lg transition-all p-6 text-center">
+        <img class="mx-auto w-28 h-28 rounded-xl border border-slate-200" src="https://toolbox.wlanpros.com/qr/launch-set/plain/06-web-app.png" alt="QR code — web app" loading="lazy">
+        <h3 class="font-display font-bold text-navy-900 mt-4">Web version</h3>
+        <p class="text-slate-500 text-sm mb-4">Runs in your browser</p>
+        <a class="inline-flex items-center justify-center bg-navy-900 hover:bg-navy-800 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors" href="https://toolbox.wlanpros.com/app/" target="_blank" rel="noopener">Open web app</a>
+      </div>
+    </div>
+    <p class="reveal text-sm text-slate-500 mt-8 text-center max-w-2xl mx-auto">WLAN Pros Toolbox is a free third-party app by <a href="https://wlanprofessionals.com" target="_blank" rel="noopener" class="text-teal-600 hover:text-teal-700 underline">Wireless LAN Professionals, Inc.</a> &mdash; no ads, no account, no data collected. Curious what the report means? Read their <a href="https://toolbox.wlanpros.com/connection-report-guide/" target="_blank" rel="noopener" class="text-teal-600 hover:text-teal-700 underline">plain-language guide</a>.</p>
+  </div>
+</section>
+
+<!-- ================= PASTE REPORT ================= -->
+<section id="send-report" class="py-24 sm:py-28 bg-white">
+  <div class="max-w-3xl mx-auto px-5 sm:px-8">
+    <div class="text-center mb-12 reveal">
+      <span class="text-teal-600 font-bold uppercase tracking-[0.16em] text-xs">Last Step</span>
+      <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-navy-900 mt-3 mb-4">Send us your report</h2>
+      <p class="text-slate-600 leading-relaxed">Paste the report you copied from the app. We reply within one business day.</p>
+    </div>
+
+    <form id="reportForm" novalidate class="reveal bg-white rounded-3xl shadow-soft-lg border border-slate-100 p-6 sm:p-10">
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label for="name" class="form-label">Your name <span class="text-teal-600">*</span></label>
+          <input type="text" id="name" name="name" autocomplete="name" required class="form-input">
+        </div>
+        <div>
+          <label for="email" class="form-label">Email <span class="text-teal-600">*</span></label>
+          <input type="email" id="email" name="email" autocomplete="email" required class="form-input">
+        </div>
+        <div>
+          <label for="phone" class="form-label">Phone</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" class="form-input">
+        </div>
+        <div>
+          <label for="site" class="form-label">Site / address</label>
+          <input type="text" id="site" name="site" autocomplete="street-address" placeholder="Where the Wi-Fi problem is" class="form-input">
+        </div>
+      </div>
+
+      <label for="report" class="form-label mt-5">Your connection report <span class="text-teal-600">*</span></label>
+      <textarea id="report" name="report" spellcheck="false" required rows="10"
+        placeholder="Paste here — it should start with:&#10;WLAN Pros Toolbox: Connection Report"
+        class="form-input"></textarea>
+
+      <div id="form-msg" class="hidden mt-4 rounded-xl px-4 py-3 text-sm font-medium" role="alert"></div>
+
+      <!-- Instant verdict, parsed client-side -->
+      <div id="verdict-card" class="mt-5 rounded-2xl p-6 border">
+        <span id="vc-tag" class="inline-block text-[11px] font-bold uppercase tracking-[0.08em] rounded-full px-3 py-1 text-white mb-3"></span>
+        <h3 id="vc-title" class="font-display font-bold text-navy-900 text-lg mb-1.5"></h3>
+        <p id="vc-result" class="italic text-slate-500 text-sm mb-3"></p>
+        <p id="vc-next" class="text-slate-700 text-sm leading-relaxed"></p>
+        <div id="metrics-chips" class="mt-4 flex flex-wrap gap-2"></div>
+      </div>
+
+      <div class="mt-7 flex flex-wrap gap-3">
+        <button type="submit" id="send-btn" class="bg-teal-600 hover:bg-teal-700 text-white font-bold px-7 py-3.5 rounded-full shadow-soft transition-all hover:-translate-y-0.5">Send report to BWDS</button>
+        <button type="button" id="copy-btn" class="bg-white border-1.5 border-navy-900 text-navy-900 hover:bg-slate-50 font-bold px-7 py-3.5 rounded-full transition-colors" style="border-width:1.5px">Copy message instead</button>
+      </div>
+      <p class="text-xs text-slate-500 mt-4 leading-relaxed">&ldquo;Send&rdquo; opens your email app pre-addressed to <span class="intake-addr font-semibold text-navy-800"></span> with everything filled in &mdash; just press send. If the report doesn't appear in the email, use <b>Copy message instead</b> and paste it in. Prefer to email directly? Write to <a href="#" class="intake-link intake-addr text-teal-600 hover:text-teal-700 underline"></a> and paste your report in the body.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= CTA BANNER ================= -->
+<section class="py-16 sm:py-20 bg-gradient-to-r from-teal-600 via-teal-500 to-cyan-600">
+  <div class="max-w-5xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-8 text-center sm:text-left">
+    <div>
+      <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white mb-2">Not sure what the report means?</h2>
+      <p class="text-teal-50">Send it anyway &mdash; a BWDS engineer reads every submission and replies in plain language.</p>
+    </div>
+    <a href="index.html#inquiry" class="shrink-0 inline-flex items-center gap-2 bg-white text-teal-700 font-bold px-7 py-4 rounded-full shadow-soft-lg hover:-translate-y-0.5 transition-all">
+      Request a Professional Survey
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-navy-950 text-slate-400 pt-16 pb-8 mt-0">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-14 border-b border-white/10">
+      <div>
+        <a href="index.html#home" class="flex items-center gap-3 mb-5">
+          <img src="images/bwds-logo.png" alt="Beersheba Wireless Design Solutions logo" class="w-12 h-12 rounded-full" width="48" height="48" loading="lazy">
+          <span class="font-display font-extrabold text-white">BWDS</span>
+        </a>
+        <p class="text-sm leading-relaxed mb-5">Enterprise wireless design and network infrastructure engineering for organizations that cannot afford downtime.</p>
+      </div>
+      <div>
+        <p class="font-display font-bold text-white mb-4">Quick Links</p>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="index.html#home" class="hover:text-teal-400 transition-colors">Home</a></li>
+          <li><a href="index.html#industries" class="hover:text-teal-400 transition-colors">Industries</a></li>
+          <li><a href="index.html#knowledge-base" class="hover:text-teal-400 transition-colors">Knowledge Base</a></li>
+          <li><a href="index.html#wifi-check" class="hover:text-teal-400 transition-colors">WiFi Health Check</a></li>
+          <li><a href="index.html#inquiry" class="hover:text-teal-400 transition-colors">Project Inquiry</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-display font-bold text-white mb-4">Services</p>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="index.html#services" class="hover:text-teal-400 transition-colors">Wireless Site Surveys</a></li>
+          <li><a href="index.html#services" class="hover:text-teal-400 transition-colors">Predictive Wireless Design</a></li>
+          <li><a href="index.html#services" class="hover:text-teal-400 transition-colors">Wireless Validation</a></li>
+          <li><a href="index.html#services" class="hover:text-teal-400 transition-colors">AP Deployment Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-display font-bold text-white mb-4">Contact</p>
+        <ul class="space-y-2.5 text-sm">
+          <li>(240) 813-8030</li>
+          <li>support@nadnetworkservices.com</li>
+          <li>Serving MD &middot; DC &middot; VA &middot; Nationwide</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>&copy; <span id="footer-year"></span> NAD Network Services LLC | BWDS. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+"use strict";
+document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+/* ---------- Reveal-on-scroll ---------- */
+(function(){
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+})();
+
+/* ================= CONFIG ================= */
+const CONFIG = {
+  intakeEmail: "support@nadnetworkservices.com",
+  businessName: "BWDS",
+  // Leave "" for mailto-only mode. Set to a POST endpoint to submit automatically instead.
+  formEndpoint: ""
+};
+/* ============================================ */
+
+document.querySelectorAll(".intake-addr").forEach(el => el.textContent = CONFIG.intakeEmail);
+document.querySelectorAll(".intake-link").forEach(el => el.href = "mailto:" + CONFIG.intakeEmail);
+
+const $ = id => document.getElementById(id);
+const reportEl = $("report"), formMsg = $("form-msg");
+
+/* ---------- Report parsing (WLAN Pros Toolbox plain-text format) ----------
+   Fixed sections (Header, WI-FI, INTERNET, DNS, NETWORK, ISP, CLOUD APPS, VERDICT).
+   Fields the app couldn't measure read "Unavailable" / "Not measured" — that's normal. */
+function parseReport(text){
+  const t = text.trim();
+  const num = re => { const m = t.match(re); return m ? parseFloat(m[1]) : null; };
+  const line = re => { const m = t.match(re); return m ? m[1].trim() : null; };
+  const p = {
+    isToolbox: /WLAN\s*Pros\s*Toolbox/i.test(t) && /Connection\s*Report/i.test(t),
+    generated: line(/Generated[:\s]+(.+)/i),
+    summary:   line(/Summary[:\s]+(.+)/i),
+    result:    line(/Result[:\s]+(.+)/i),
+    comparison:line(/Comparison[:\s]+(.+)/i),
+    ssid:      line(/(?:Network \(SSID\)|SSID)[:\s]+(.+)/i),
+    rssi:      num(/RSSI[:\s]+(-?\d+(?:\.\d+)?)/i),
+    snr:       num(/SNR[:\s]+(\d+(?:\.\d+)?)/i),
+    down:      num(/Internet\s*Down[:\s]+([\d.]+)/i),
+    up:        num(/Internet\s*Up[:\s]+([\d.]+)/i),
+    latency:   num(/Latency[:\s]+([\d.]+)/i),
+    jitter:    num(/Jitter[:\s]+([\d.]+)/i),
+    loss:      num(/Loss[:\s]+([\d.]+)/i)
+  };
+  const r = (p.result || p.summary || "").toLowerCase();
+  if (/weak link/.test(r) || (/wi-?fi/.test(r) && /weak/.test(r))) p.verdict = "wifi";
+  else if (/internet is the limit/.test(r)) p.verdict = "internet";
+  else if (/keeping up|about the same|more headroom/.test(r)) p.verdict = "good";
+  else if (/could not read your wi-?fi/.test(r)) p.verdict = "partial";
+  else if (/did not complete/.test(r)) p.verdict = "incomplete";
+  else p.verdict = p.isToolbox ? "unknown" : null;
+  return p;
+}
+
+// Toolbox's published bands: down 100/25/5, up 20/5/1, latency 20/50/100 ms, jitter 5/15/30 ms, loss 0/1/2.5%
+function grade(v, bands, invert){
+  if (v == null) return null;
+  return invert
+    ? (v < bands[0] ? "good" : v < bands[1] ? "good" : v < bands[2] ? "fair" : "poor")
+    : (v >= bands[0] ? "good" : v >= bands[1] ? "good" : v >= bands[2] ? "fair" : "poor");
+}
+const GRADE_TEXT = { good: "text-teal-600", fair: "text-amber-600", poor: "text-red-600" };
+
+const VERDICT_UI = {
+  wifi: { accent:"red", tag:"Wi-Fi is the weak link", title:"Your Wi-Fi link is holding you back — good news: that's fixable.",
+    next:"This is exactly what BWDS fixes: coverage, access-point placement, channels and band steering. Send the report and we'll quote the right fix — often without touching your internet plan." },
+  internet: { accent:"amber", tag:"Internet is the limit", title:"Your Wi-Fi looks fine — your internet service is the bottleneck.",
+    next:"Send the report anyway: we'll confirm it, help you compare against the plan you pay for, and tell you what to ask your provider — or whether a router/QoS change would help." },
+  good: { accent:"teal", tag:"Both look healthy", title:"Wi-Fi and internet are both keeping up.",
+    next:"If something still feels slow, the culprit is likely a specific app, device, or service. Send the report with a note about what's slow, and we'll help you narrow it down." },
+  partial: { accent:"navy", tag:"Partial reading", title:"We got your internet numbers, but not your Wi-Fi details.",
+    next:"That's OK — send it anyway. Tip: on iPhone, tap “Capture Wi-Fi details” in the app and re-run for a fuller picture." },
+  incomplete: { accent:"amber", tag:"Test didn't finish", title:"You're online, but the speed test didn't complete.",
+    next:"Re-run the test once; if it still won't finish, send us what you have — that result is a clue in itself." },
+  unknown: { accent:"navy", tag:"Report received", title:"Report looks valid.",
+    next:"Add your contact details and send it over — we'll take it from here." }
+};
+const ACCENT_CLASSES = {
+  red:   { card:"bg-red-50 border-red-200",     tag:"bg-red-600" },
+  amber: { card:"bg-amber-50 border-amber-200", tag:"bg-amber-500" },
+  teal:  { card:"bg-teal-50 border-teal-200",   tag:"bg-teal-600" },
+  navy:  { card:"bg-navy-50 border-navy-200",   tag:"bg-navy-700" }
+};
+
+function showVerdict(p){
+  const card = $("verdict-card"), metrics = $("metrics-chips");
+  if (!p.verdict){ card.style.display = "none"; return; }
+  const ui = VERDICT_UI[p.verdict] || VERDICT_UI.unknown;
+  const accent = ACCENT_CLASSES[ui.accent] || ACCENT_CLASSES.navy;
+  card.className = "mt-5 rounded-2xl p-6 border " + accent.card;
+  card.style.display = "block";
+  $("vc-tag").textContent = ui.tag;
+  $("vc-tag").className = "inline-block text-[11px] font-bold uppercase tracking-[0.08em] rounded-full px-3 py-1 text-white mb-3 " + accent.tag;
+  $("vc-title").textContent = ui.title;
+  $("vc-result").textContent = p.result ? "App verdict: “" + p.result + "”" + (p.comparison ? " — " + p.comparison : "") : (p.summary ? "Summary: " + p.summary : "");
+  $("vc-next").textContent = ui.next;
+
+  const chips = [];
+  const chip = (label, val, unit, cls) =>
+    chips.push('<span class="text-xs bg-white border border-slate-200 rounded-full px-3 py-1.5 text-navy-800">' + label + ' <b class="' + (cls||"") + '">' + val + unit + "</b></span>");
+  if (p.ssid && !/unavailable/i.test(p.ssid)) chip("Network:", p.ssid, "", "");
+  if (p.rssi != null) chip("Signal:", p.rssi, " dBm", p.rssi > -67 ? GRADE_TEXT.good : p.rssi > -75 ? GRADE_TEXT.fair : GRADE_TEXT.poor);
+  if (p.snr  != null) chip("SNR:", p.snr, " dB", p.snr >= 25 ? GRADE_TEXT.good : p.snr >= 15 ? GRADE_TEXT.fair : GRADE_TEXT.poor);
+  if (p.down != null) chip("Down:", p.down, " Mbps", GRADE_TEXT[grade(p.down,[100,25,5])] || "");
+  if (p.up   != null) chip("Up:", p.up, " Mbps", GRADE_TEXT[grade(p.up,[20,5,1])] || "");
+  if (p.latency != null) chip("Latency:", p.latency, " ms", GRADE_TEXT[grade(p.latency,[20,50,100],true)] || "");
+  if (p.jitter  != null) chip("Jitter:", p.jitter, " ms", GRADE_TEXT[grade(p.jitter,[5,15,30],true)] || "");
+  if (p.loss    != null) chip("Loss:", p.loss, " %", p.loss === 0 ? GRADE_TEXT.good : p.loss < 1 ? GRADE_TEXT.good : p.loss < 2.5 ? GRADE_TEXT.fair : GRADE_TEXT.poor);
+  metrics.innerHTML = chips.join("");
+  metrics.style.display = chips.length ? "flex" : "none";
+}
+
+function setMsg(cls, text){
+  if (!text){ formMsg.classList.add("hidden"); return; }
+  const styles = {
+    err:  "bg-red-50 text-red-700 border border-red-200",
+    warn: "bg-amber-50 text-amber-700 border border-amber-200",
+    ok:   "bg-teal-50 text-teal-700 border border-teal-200"
+  };
+  formMsg.className = "mt-4 rounded-xl px-4 py-3 text-sm font-medium " + (styles[cls] || "");
+  formMsg.textContent = text;
+}
+
+let debounce;
+reportEl.addEventListener("input", () => {
+  clearTimeout(debounce);
+  debounce = setTimeout(() => {
+    const text = reportEl.value;
+    if (!text.trim()){ setMsg("", ""); $("verdict-card").style.display = "none"; return; }
+    const p = parseReport(text);
+    if (!p.isToolbox){
+      setMsg("warn","This doesn't look like a WLAN Pros Toolbox report (it should start with “WLAN Pros Toolbox: Connection Report”). You can still send it, but double-check you copied the whole result.");
+      $("verdict-card").style.display = "none";
+    } else {
+      setMsg("ok","Report recognized" + (p.generated ? " — generated " + p.generated : "") + ".");
+      showVerdict(p);
+    }
+  }, 250);
+});
+
+function buildMessage(){
+  return [
+    "Wi-Fi connection report submission — " + CONFIG.businessName,
+    "",
+    "Name:  " + $("name").value.trim(),
+    "Email: " + $("email").value.trim(),
+    "Phone: " + ($("phone").value.trim() || "—"),
+    "Site:  " + ($("site").value.trim() || "—"),
+    "",
+    "---------- REPORT ----------",
+    reportEl.value.trim()
+  ].join("\n");
+}
+
+function validate(){
+  if (!$("name").value.trim() || !$("email").value.trim() || !reportEl.value.trim()){
+    setMsg("err","Please fill in your name, email, and paste the report before sending.");
+    return false;
+  }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($("email").value.trim())){
+    setMsg("err","That email address doesn't look right — please double-check it.");
+    return false;
+  }
+  return true;
+}
+
+$("reportForm").addEventListener("submit", async e => {
+  e.preventDefault();
+  if (!validate()) return;
+  const subject = "Wi-Fi Connection Report — " + $("name").value.trim() +
+                  ($("site").value.trim() ? " — " + $("site").value.trim() : "");
+  const body = buildMessage();
+
+  if (CONFIG.formEndpoint){
+    try{
+      $("send-btn").disabled = true;
+      const res = await fetch(CONFIG.formEndpoint, {
+        method:"POST", headers:{ "Content-Type":"application/json", "Accept":"application/json" },
+        body: JSON.stringify({ name:$("name").value.trim(), email:$("email").value.trim(),
+          phone:$("phone").value.trim(), site:$("site").value.trim(), report:reportEl.value.trim(), subject })
+      });
+      if (!res.ok) throw new Error(res.status);
+      setMsg("ok","Thanks — your report is on its way. We'll be in touch within one business day.");
+      $("reportForm").reset(); $("verdict-card").style.display = "none";
+    }catch(err){
+      setMsg("err","Couldn't submit automatically — opening your email app instead.");
+      openMailto(subject, body);
+    }finally{ $("send-btn").disabled = false; }
+  } else {
+    openMailto(subject, body);
+    setMsg("ok","Your email app should open pre-filled — just press send. If the report is missing (some email apps truncate long messages), tap “Copy message instead” and paste it in.");
+  }
+});
+
+function openMailto(subject, body){
+  window.location.href = "mailto:" + CONFIG.intakeEmail +
+    "?subject=" + encodeURIComponent(subject) +
+    "&body=" + encodeURIComponent(body);
+}
+
+$("copy-btn").addEventListener("click", async () => {
+  if (!validate()) return;
+  const msg = buildMessage();
+  try{
+    await navigator.clipboard.writeText(msg);
+    setMsg("ok","Message copied. Paste it into an email to " + CONFIG.intakeEmail + " (or any chat) and send.");
+  }catch(err){
+    reportEl.focus(); reportEl.select();
+    setMsg("warn","Couldn't access the clipboard automatically. Select the text and copy it manually, then email it to " + CONFIG.intakeEmail + ".");
+  }
+});
+</script>
+</body>
+</html>
