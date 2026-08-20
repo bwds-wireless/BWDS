@@ -241,9 +241,9 @@
     </ul>
 
     <div class="hidden lg:flex items-center gap-3">
-      <a href="https://buy.stripe.com/REPLACE_WITH_YOUR_LINK" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border border-current font-semibold text-sm px-5 py-2.5 rounded-full transition-all hover:-translate-y-0.5 nav-link">
+      <button onclick="openPayModal()" class="inline-flex items-center gap-2 border border-current font-semibold text-sm px-5 py-2.5 rounded-full transition-all hover:-translate-y-0.5 nav-link">
         Pay Invoice
-      </a>
+      </button>
       <a href="#inquiry" class="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-sm px-5 py-2.5 rounded-full shadow-soft transition-all hover:shadow-soft-lg hover:-translate-y-0.5">
         Project Inquiry
       </a>
@@ -284,7 +284,7 @@
     <li><a href="test-your-wifi.html" class="mobile-nav-link block py-3 border-b border-white/10">WLAN Pros Toolbox Report</a></li>
     <li><a href="#about" class="mobile-nav-link block py-3 border-b border-white/10">About</a></li>
     <li><a href="#inquiry" class="mobile-nav-link block py-3 border-b border-white/10">Contact</a></li>
-    <li><a href="https://buy.stripe.com/REPLACE_WITH_YOUR_LINK" target="_blank" rel="noopener noreferrer" class="mobile-nav-link block py-3 border-b border-white/10">Pay Invoice</a></li>
+    <li><button onclick="openPayModal()" class="mobile-nav-link block w-full text-left py-3 border-b border-white/10 bg-transparent">Pay Invoice</button></li>
   </ul>
   <div class="px-5 mt-auto mb-10">
     <a href="#inquiry" class="mobile-nav-link block text-center bg-teal-600 text-white font-semibold py-3.5 rounded-full">Project Inquiry</a>
@@ -822,7 +822,7 @@
           <li>support@bwds4wifi.com</li>
           <li>Serving MD &middot; DC &middot; VA &middot; Nationwide</li>
           <li>Mon&ndash;Fri, 9:00 AM&ndash;5:00 PM</li>
-          <li><a href="https://buy.stripe.com/REPLACE_WITH_YOUR_LINK" target="_blank" rel="noopener noreferrer" class="footer-link text-teal-400 font-semibold">Pay Invoice &rarr;</a></li>
+          <li><button onclick="openPayModal()" class="footer-link text-teal-400 font-semibold bg-transparent p-0">Pay Invoice &rarr;</button></li>
         </ul>
       </div>
     </div>
@@ -1515,6 +1515,89 @@
     return false;
   };
 })();
+</script>
+
+<!-- Pay Invoice Modal -->
+<div id="pay-modal" role="dialog" aria-modal="true" aria-labelledby="pay-modal-title"
+  class="fixed inset-0 z-50 hidden items-center justify-center p-4"
+  style="background:rgba(0,0,0,0.7);">
+  <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl w-full max-w-md p-8 relative">
+    <button onclick="closePayModal()" aria-label="Close"
+      class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors text-xl leading-none">&times;</button>
+    <h2 id="pay-modal-title" class="text-2xl font-bold text-white mb-1">Pay Invoice</h2>
+    <p class="text-slate-400 text-sm mb-6">Enter your invoice details to pay securely via Stripe.</p>
+    <form id="pay-form" onsubmit="submitPayment(event)">
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-slate-300 mb-1" for="pay-invoice">Invoice Number</label>
+        <input id="pay-invoice" type="text" required placeholder="e.g. INV-0042"
+          class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-teal-500" />
+      </div>
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-slate-300 mb-1" for="pay-amount">Amount (USD)</label>
+        <div class="relative">
+          <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">$</span>
+          <input id="pay-amount" type="number" min="0.50" step="0.01" required placeholder="0.00"
+            class="w-full bg-slate-800 border border-slate-600 rounded-lg pl-7 pr-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-teal-500" />
+        </div>
+      </div>
+      <div class="mb-6">
+        <label class="block text-sm font-medium text-slate-300 mb-1" for="pay-email">Email (optional – for receipt)</label>
+        <input id="pay-email" type="email" placeholder="you@example.com"
+          class="w-full bg-slate-800 border border-slate-600 rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-teal-500" />
+      </div>
+      <p id="pay-error" class="text-red-400 text-sm mb-4 hidden"></p>
+      <button type="submit" id="pay-submit"
+        class="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-full transition-all">
+        Continue to Payment &rarr;
+      </button>
+      <p class="text-slate-500 text-xs text-center mt-4">Secured by Stripe. BWDS never stores your card details.</p>
+    </form>
+  </div>
+</div>
+
+<script>
+function openPayModal() {
+  const m = document.getElementById('pay-modal');
+  m.classList.remove('hidden');
+  m.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+}
+function closePayModal() {
+  const m = document.getElementById('pay-modal');
+  m.classList.add('hidden');
+  m.classList.remove('flex');
+  document.body.style.overflow = '';
+}
+document.getElementById('pay-modal').addEventListener('click', function(e) {
+  if (e.target === this) closePayModal();
+});
+async function submitPayment(e) {
+  e.preventDefault();
+  const errEl = document.getElementById('pay-error');
+  const btn = document.getElementById('pay-submit');
+  errEl.classList.add('hidden');
+  btn.disabled = true;
+  btn.textContent = 'Redirecting…';
+  try {
+    const res = await fetch('/create-checkout-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        invoiceNumber: document.getElementById('pay-invoice').value.trim(),
+        amountUsd: document.getElementById('pay-amount').value,
+        email: document.getElementById('pay-email').value.trim() || undefined,
+      }),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.url) throw new Error(data.error || 'Could not start payment. Please try again.');
+    window.location.href = data.url;
+  } catch (err) {
+    errEl.textContent = err.message;
+    errEl.classList.remove('hidden');
+    btn.disabled = false;
+    btn.textContent = 'Continue to Payment →';
+  }
+}
 </script>
 </body>
 </html>
