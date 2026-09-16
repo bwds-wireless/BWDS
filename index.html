@@ -10,6 +10,16 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://bwds4wifi.com/">
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-318089124"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-318089124');
+</script>
+
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="BWDS | Enterprise Wireless Design & Network Infrastructure Specialists">
@@ -38,8 +48,8 @@
   "name": "Beersheba Wireless Design Solutions",
   "alternateName": "BWDS",
   "url": "https://bwds4wifi.com/",
-  "telephone": "+1-240-813-8030",
-  "email": "support@nadnetworkservices.com",
+  "telephone": "+1-301-834-2974",
+  "email": "support@bwds4wifi.com",
   "description": "Enterprise wireless design and network infrastructure firm specializing in Ekahau-certified wireless site surveys, predictive RF design, Cisco enterprise Wi-Fi, healthcare and warehouse wireless deployment, AP deployment, and wireless troubleshooting.",
   "areaServed": [
     {"@type": "State", "name": "Maryland"},
@@ -225,11 +235,16 @@
       <li><a href="#services" class="nav-link transition-colors">Services</a></li>
       <li><a href="#industries" class="nav-link transition-colors">Industries</a></li>
       <li><a href="#knowledge-base" class="nav-link transition-colors">Knowledge Base</a></li>
+      <li><a href="#wifi-check" class="nav-link transition-colors">WiFi Health Check</a></li>
+      <li><a href="test-your-wifi.html" class="nav-link transition-colors">WLAN Pros Toolbox Report</a></li>
       <li><a href="#about" class="nav-link transition-colors">About</a></li>
       <li><a href="#inquiry" class="nav-link transition-colors">Contact</a></li>
     </ul>
 
     <div class="hidden lg:flex items-center gap-3">
+      <a href="https://buy.stripe.com/28E14p9kPbrn4f3chagbm00" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border border-current font-semibold text-sm px-5 py-2.5 rounded-full transition-all hover:-translate-y-0.5 nav-link">
+        Pay Invoice
+      </a>
       <a href="#inquiry" class="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-sm px-5 py-2.5 rounded-full shadow-soft transition-all hover:shadow-soft-lg hover:-translate-y-0.5">
         Project Inquiry
       </a>
@@ -267,12 +282,15 @@
     <li><a href="#services" class="mobile-nav-link block py-3 border-b border-white/10">Services</a></li>
     <li><a href="#industries" class="mobile-nav-link block py-3 border-b border-white/10">Industries</a></li>
     <li><a href="#knowledge-base" class="mobile-nav-link block py-3 border-b border-white/10">Knowledge Base</a></li>
+    <li><a href="#wifi-check" class="mobile-nav-link block py-3 border-b border-white/10">WiFi Health Check</a></li>
+    <li><a href="test-your-wifi.html" class="mobile-nav-link block py-3 border-b border-white/10">WLAN Pros Toolbox Report</a></li>
     <li><a href="#about" class="mobile-nav-link block py-3 border-b border-white/10">About</a></li>
     <li><a href="#inquiry" class="mobile-nav-link block py-3 border-b border-white/10">Contact</a></li>
+    <li><a href="https://buy.stripe.com/28E14p9kPbrn4f3chagbm00" target="_blank" rel="noopener noreferrer" class="mobile-nav-link block py-3 border-b border-white/10">Pay Invoice</a></li>
   </ul>
   <div class="px-5 mt-auto mb-10">
     <a href="#inquiry" class="mobile-nav-link block text-center bg-teal-600 text-white font-semibold py-3.5 rounded-full">Project Inquiry</a>
-    <p class="text-slate-400 text-sm text-center mt-5">(240) 813-8030</p>
+    <p class="text-slate-400 text-sm text-center mt-5">(301) 834-2974</p>
   </div>
 </div>
 
@@ -517,6 +535,54 @@
 </section>
 
 <!-- ================= PROJECT INQUIRY / CONTACT ================= -->
+
+<!-- ================= WIFI HEALTH CHECK ================= -->
+<section id="wifi-check" class="py-24 sm:py-28 bg-navy-950 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.06] pointer-events-none" aria-hidden="true" style="background-image:radial-gradient(circle at 20% 30%, #1ba6ab 0, transparent 40%), radial-gradient(circle at 80% 70%, #22a390 0, transparent 40%);"></div>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 relative text-center">
+    <span class="text-teal-400 font-bold uppercase tracking-[0.16em] text-xs">Free &middot; 30 Seconds &middot; No Install</span>
+    <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white mt-3 mb-5">Check Your WiFi&rsquo;s Health Right Now</h2>
+    <p class="text-slate-300 leading-relaxed">We&rsquo;ll measure your download speed, upload speed, and connection stability &mdash; then tell you what it means in plain language.</p>
+    <p class="text-slate-500 text-xs mt-3 leading-relaxed">This browser test reveals the symptoms. Full RF diagnosis &mdash; channels, interference, dead zones &mdash; requires a professional on-site survey.</p>
+
+    <button id="bwds-run" onclick="bwdsRunTest()" class="mt-9 inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold px-8 py-4 rounded-full shadow-glow transition-all hover:-translate-y-0.5">Run My WiFi Check</button>
+    <p class="mt-5 text-sm text-slate-400">Already ran a <b class="text-slate-200">WLAN Pros Toolbox</b> report? <a href="test-your-wifi.html" class="text-teal-400 font-semibold hover:text-teal-300 underline underline-offset-2">Paste it here for an instant diagnosis &rarr;</a></p>
+
+    <div id="bwds-progress" class="mt-9 hidden">
+      <div class="mx-auto h-1.5 max-w-sm overflow-hidden rounded-full bg-white/10"><div id="bwds-bar" class="h-full w-0 bg-gradient-to-r from-teal-500 to-cyan-400 transition-all duration-500"></div></div>
+      <p id="bwds-status" class="mt-3 font-mono text-xs text-slate-400">preparing&hellip;</p>
+    </div>
+
+    <div id="bwds-results" class="mt-10 hidden text-left">
+      <div class="text-center">
+        <p id="bwds-verdict" class="text-2xl font-extrabold"></p>
+        <p id="bwds-verdict-sub" class="mt-2 text-sm text-slate-300"></p>
+      </div>
+      <div id="bwds-metrics" class="mt-7 grid gap-4 sm:grid-cols-3"></div>
+      <div id="bwds-cta" class="mt-6 hidden rounded-2xl border border-amber-400/40 bg-amber-400/5 p-5">
+        <p class="font-bold text-amber-300">What this costs you</p>
+        <p id="bwds-impact" class="mt-1.5 text-sm leading-relaxed text-amber-50/90"></p>
+      </div>
+      <form id="bwds-lead" onsubmit="return bwdsSendLead(event)" class="mt-7 rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8">
+        <p class="font-bold text-white">Get the full picture &mdash; request a professional survey</p>
+        <p class="mt-1 font-mono text-xs text-teal-400">&#128206; your test results attach automatically</p>
+        <div class="mt-5 grid gap-3">
+          <input required name="name" placeholder="Name" autocomplete="name" class="rounded-xl border border-white/10 bg-navy-900/80 text-white px-4 py-3 text-sm placeholder:text-slate-500 focus:border-teal-500 focus:outline-none" />
+          <input required name="email" type="email" placeholder="Email" autocomplete="email" class="rounded-xl border border-white/10 bg-navy-900/80 text-white px-4 py-3 text-sm placeholder:text-slate-500 focus:border-teal-500 focus:outline-none" />
+          <input name="phone" type="tel" placeholder="Phone (optional)" autocomplete="tel" class="rounded-xl border border-white/10 bg-navy-900/80 text-white px-4 py-3 text-sm placeholder:text-slate-500 focus:border-teal-500 focus:outline-none" />
+          <div class="grid grid-cols-2 gap-3">
+            <select name="siteType" class="rounded-xl border border-white/10 bg-navy-900/80 text-white px-3 py-3 text-sm focus:border-teal-500 focus:outline-none"><option>Home</option><option>Office</option><option>Warehouse</option><option>Healthcare</option><option>School / campus</option><option>Other</option></select>
+            <select name="followUp" class="rounded-xl border border-white/10 bg-navy-900/80 text-white px-3 py-3 text-sm focus:border-teal-500 focus:outline-none"><option value="call">Call me</option><option value="email">Email me</option></select>
+          </div>
+          <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white font-bold px-6 py-3.5 rounded-full transition-all">Send to BWDS</button>
+          <p id="bwds-sent" class="hidden text-center text-sm font-bold text-teal-400">&#9989; Sent &mdash; a BWDS engineer will follow up within one business day.</p>
+        </div>
+      </form>
+      <div class="mt-5 text-center"><button onclick="bwdsRunTest()" class="rounded-full border border-white/15 px-6 py-2.5 text-sm text-slate-300 hover:bg-white/5 transition-colors">Test Again</button></div>
+    </div>
+  </div>
+</section>
+
 <section id="inquiry" class="py-24 sm:py-28 bg-slate-50">
   <div class="max-w-7xl mx-auto px-5 sm:px-8 grid lg:grid-cols-5 gap-12">
 
@@ -529,14 +595,14 @@
         <div class="reveal contact-card">
           <div class="contact-icon"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg></div>
           <div>
-            <p class="font-semibold text-navy-900">(240) 813-8030</p>
+            <p class="font-semibold text-navy-900">(301) 834-2974</p>
             <p class="text-slate-500 text-sm">Call or leave a voicemail</p>
           </div>
         </div>
         <div class="reveal contact-card">
           <div class="contact-icon"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
           <div>
-            <p class="font-semibold text-navy-900">support@nadnetworkservices.com</p>
+            <p class="font-semibold text-navy-900">support@bwds4wifi.com</p>
             <p class="text-slate-500 text-sm">General &amp; project inquiries</p>
           </div>
         </div>
@@ -587,13 +653,13 @@
         <div class="sm:col-span-2" id="form-success" role="status" hidden>
           <div class="flex items-start gap-3 bg-teal-50 border border-teal-200 text-teal-800 rounded-xl px-4 py-3 text-sm font-medium">
             <svg class="w-5 h-5 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span>Thanks &mdash; your inquiry has been sent to our team. We'll follow up shortly. Prefer not to wait? Call us directly at (240) 813-8030.</span>
+            <span>Thanks &mdash; your inquiry has been sent to our team. We'll follow up shortly. Prefer not to wait? Call us directly at (301) 834-2974.</span>
           </div>
         </div>
         <div class="sm:col-span-2" id="form-error" role="alert" hidden>
           <div class="flex items-start gap-3 bg-amber-50 border border-amber-200 text-amber-800 rounded-xl px-4 py-3 text-sm font-medium">
             <svg class="w-5 h-5 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/></svg>
-            <span>Something went wrong sending your inquiry. Please try again, or <a href="#" id="form-error-mailto" class="underline font-semibold">email us directly</a> / call (240) 813-8030.</span>
+            <span>Something went wrong sending your inquiry. Please try again, or <a href="#" id="form-error-mailto" class="underline font-semibold">email us directly</a> / call (301) 834-2974.</span>
           </div>
         </div>
 
@@ -696,7 +762,7 @@
         </form>
       </div>
       <p id="newsletter-success" class="text-teal-700 text-sm mt-3" role="status" hidden>Thanks for signing up &mdash; we'll be in touch.</p>
-      <p id="newsletter-error" class="text-red-600 text-sm mt-3" role="alert" hidden>Something went wrong signing up. Please try again, or email <a href="mailto:support@nadnetworkservices.com" class="underline font-semibold">support@nadnetworkservices.com</a> directly.</p>
+      <p id="newsletter-error" class="text-red-600 text-sm mt-3" role="alert" hidden>Something went wrong signing up. Please try again, or email <a href="mailto:support@bwds4wifi.com" class="underline font-semibold">support@bwds4wifi.com</a> directly.</p>
     </div>
   </div>
 </section>
@@ -755,10 +821,11 @@
       <div>
         <p class="font-display font-bold text-white mb-4">Contact</p>
         <ul class="space-y-2.5 text-sm">
-          <li>(240) 813-8030</li>
-          <li>support@nadnetworkservices.com</li>
+          <li>(301) 834-2974</li>
+          <li>support@bwds4wifi.com</li>
           <li>Serving MD &middot; DC &middot; VA &middot; Nationwide</li>
           <li>Mon&ndash;Fri, 9:00 AM&ndash;5:00 PM</li>
+          <li><a href="https://buy.stripe.com/28E14p9kPbrn4f3chagbm00" target="_blank" rel="noopener noreferrer" class="footer-link text-teal-400 font-semibold">Pay Invoice &rarr;</a></li>
         </ul>
       </div>
     </div>
@@ -1218,7 +1285,7 @@
     var subjectIndustry = (fd.get('industry') || '').toString().trim();
     var subject = encodeURIComponent('New Project Inquiry: ' + subjectName + (subjectIndustry ? ' (' + subjectIndustry + ')' : ''));
     var body = encodeURIComponent(lines.join('\n'));
-    return 'mailto:support@nadnetworkservices.com?subject=' + subject + '&body=' + body;
+    return 'mailto:support@bwds4wifi.com?subject=' + subject + '&body=' + body;
   }
 
   inquiryForm.addEventListener('submit', function(e){
@@ -1339,6 +1406,119 @@
   .faq-item { @apply bg-slate-50 rounded-2xl overflow-hidden border border-slate-100; }
   .faq-trigger { @apply w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-semibold text-navy-900; }
 </style>
+
+
+<script>
+(function(){
+  const EP = 'https://bwds-lead-webhook.nadnetworkservices.workers.dev';
+  let lastResult = null;
+  const $ = id => document.getElementById(id);
+  const setStatus = (pct, msg) => { $('bwds-bar').style.width = pct + '%'; $('bwds-status').textContent = msg; };
+  const gradeOf = s => s >= 75 ? 'good' : s >= 50 ? 'fair' : 'poor';
+  const colorOf = g => g === 'good' ? '#34d399' : g === 'fair' ? '#fbbf24' : '#f87171';
+
+  async function measureLatency() {
+    const t = [];
+    await fetch(EP + '/ping', { cache: 'no-store' });
+    for (let i = 0; i < 6; i++) {
+      const a = performance.now();
+      await fetch(EP + '/ping', { cache: 'no-store' });
+      t.push(performance.now() - a);
+    }
+    t.sort((a, b) => a - b);
+    const median = t[Math.floor(t.length / 2)];
+    const jitter = Math.round(Math.sqrt(t.reduce((s, x) => s + (x - median) ** 2, 0) / t.length));
+    return { latency: Math.round(median), jitter };
+  }
+  async function measureDownload() {
+    await (await fetch(EP + '/down?bytes=1000000', { cache: 'no-store' })).arrayBuffer();
+    const bytes = 10000000, a = performance.now();
+    await (await fetch(EP + '/down?bytes=' + bytes, { cache: 'no-store' })).arrayBuffer();
+    return Math.round((bytes * 8) / ((performance.now() - a) / 1000) / 1e6 * 10) / 10;
+  }
+  async function measureUpload() {
+    const bytes = 3000000, blob = new Uint8Array(bytes);
+    crypto.getRandomValues(blob.subarray(0, 65536));
+    const a = performance.now();
+    await fetch(EP + '/up', { method: 'POST', body: blob });
+    return Math.round((bytes * 8) / ((performance.now() - a) / 1000) / 1e6 * 10) / 10;
+  }
+
+  window.bwdsRunTest = async function(){
+    $('bwds-run').classList.add('hidden');
+    $('bwds-results').classList.add('hidden');
+    $('bwds-sent').classList.add('hidden');
+    $('bwds-progress').classList.remove('hidden');
+    try {
+      setStatus(10, 'measuring latency and stability\u2026');
+      const { latency, jitter } = await measureLatency();
+      setStatus(40, 'measuring download speed\u2026');
+      const down = await measureDownload();
+      setStatus(75, 'measuring upload speed\u2026');
+      const up = await measureUpload();
+      setStatus(100, 'building your score\u2026');
+
+      const dS = Math.min(100, Math.round(down / 50 * 100));
+      const uS = Math.min(100, Math.round(up / 10 * 100));
+      const lS = Math.max(0, Math.min(100, Math.round(100 - (latency - 15) * 1.2 - jitter * 1.5)));
+      const subs = [
+        { key: 'download', score: dS, grade: gradeOf(dS), label: 'Download', value: down + ' Mbps', detail: down + ' Mbps down' },
+        { key: 'upload', score: uS, grade: gradeOf(uS), label: 'Upload', value: up + ' Mbps', detail: up + ' Mbps up' },
+        { key: 'stability', score: lS, grade: gradeOf(lS), label: 'Stability', value: latency + ' ms \u00b7 \u00b1' + jitter + ' ms', detail: latency + ' ms latency, ' + jitter + ' ms jitter' },
+      ];
+      const sorted = [...subs].sort((a, b) => a.score - b.score);
+      const overall = Math.round(sorted[0].score * .5 + sorted[1].score * .3 + sorted[2].score * .2);
+      const og = gradeOf(overall);
+      const worst = sorted[0];
+      const impacts = {
+        download: 'Streaming buffers, pages crawl, and big files take forever. This can be your internet plan \u2014 or WiFi losing half your speed before it reaches your devices. A survey tells you which.',
+        upload: 'Video calls freeze and cloud backups never finish. Weak upload over WiFi is a classic sign of signal or interference problems a survey can pinpoint.',
+        stability: 'Calls stutter and games lag even when speed looks fine. Unstable latency usually points to interference or roaming issues \u2014 exactly what a professional RF survey finds.',
+      };
+      lastResult = {
+        overall, overallGrade: og,
+        verdict: og === 'good' ? 'Your connection looks healthy' : og === 'fair' ? 'Usable, but working against you' : 'Your WiFi is costing you time',
+        subs: subs.map(s => ({ key: s.key, grade: s.grade, score: s.score, summary: s.label, detail: s.detail })),
+        topIssue: worst.grade === 'good' ? null : { title: 'Weak ' + worst.label.toLowerCase(), impact: impacts[worst.key] },
+      };
+      $('bwds-verdict').textContent = overall + ' \u2014 ' + lastResult.verdict;
+      $('bwds-verdict').style.color = colorOf(og);
+      $('bwds-verdict-sub').textContent = og === 'good'
+        ? 'No obvious symptoms from here. If specific rooms or devices still struggle, that\u2019s an RF-level problem worth a look.'
+        : 'These are the symptoms \u2014 a professional survey finds the cause.';
+      $('bwds-metrics').innerHTML = subs.map(s =>
+        '<div class="rounded-2xl border border-white/10 bg-white/5 p-5 text-center">' +
+        '<div class="mx-auto mb-2.5 h-2.5 w-2.5 rounded-full" style="background:' + colorOf(s.grade) + '"></div>' +
+        '<p class="text-sm font-bold text-white">' + s.label + '</p>' +
+        '<p class="mt-1 font-mono text-xs text-slate-400">' + s.value + '</p></div>'
+      ).join('');
+      if (lastResult.topIssue) { $('bwds-impact').textContent = lastResult.topIssue.impact; $('bwds-cta').classList.remove('hidden'); }
+      else { $('bwds-cta').classList.add('hidden'); }
+      $('bwds-progress').classList.add('hidden');
+      $('bwds-results').classList.remove('hidden');
+    } catch (e) {
+      setStatus(0, 'test failed \u2014 please try again (' + e.message + ')');
+      $('bwds-run').classList.remove('hidden');
+    }
+  };
+
+  window.bwdsSendLead = function(ev){
+    ev.preventDefault();
+    const f = ev.target;
+    fetch(EP + '/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        source: 'web',
+        submittedAt: new Date().toISOString(),
+        form: { name: f.name.value, email: f.email.value, phone: f.phone.value, siteType: f.siteType.value, followUp: f.followUp.value },
+        scan: lastResult,
+      }),
+    }).then(r => { if (r.ok) { $('bwds-sent').classList.remove('hidden'); f.querySelector('button[type=submit]').disabled = true; } });
+    return false;
+  };
+})();
+</script>
 
 </body>
 </html>
