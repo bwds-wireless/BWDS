@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Subcontract &amp; Overflow Support for VARs, MSPs &amp; Integrators | BWDS</title>
+<meta name="description" content="White-label wireless site surveys, RF design, and deployment support for VARs, MSPs, and integrators who need overflow field capacity &mdash; NDA-protected, fixed-fee, no channel conflict.">
+<meta name="author" content="Beersheba Wireless Design Solutions">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bwds4wifi.com/subcontract-overflow-support.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Subcontract &amp; Overflow Support for VARs, MSPs &amp; Integrators | BWDS">
+<meta property="og:description" content="White-label wireless site surveys, RF design, and deployment support for VARs, MSPs, and integrators who need overflow field capacity &mdash; NDA-protected, fixed-fee, no channel conflict.">
+<meta property="og:url" content="https://bwds4wifi.com/subcontract-overflow-support.html">
+<meta property="og:site_name" content="Beersheba Wireless Design Solutions">
+<meta property="og:image" content="https://bwds4wifi.com/images/og-image.jpg">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@BWDS_4WiFi">
+<meta name="twitter:title" content="Subcontract &amp; Overflow Support for VARs, MSPs &amp; Integrators | BWDS">
+<meta name="twitter:description" content="White-label wireless site surveys, RF design, and deployment support for VARs, MSPs, and integrators who need overflow field capacity.">
+
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+        colors: {
+          navy: { 50:'#eef3f8', 100:'#d7e3ee', 200:'#b0c7dd', 300:'#82a4c6', 400:'#5680ab', 500:'#3a6390', 600:'#284c74', 700:'#1e3a5c', 800:'#152a45', 900:'#0d1c30', 950:'#070f1c' },
+          cyan: { 50:'#eafcfc', 100:'#cef7f7', 200:'#a0edee', 300:'#67dee0', 400:'#31c4c8', 500:'#1ba6ab', 600:'#16858c', 700:'#186a70', 800:'#19555a', 900:'#19484c' },
+          teal: { 50:'#eefbf8', 100:'#d3f5ed', 200:'#a8ebdc', 300:'#72dac6', 400:'#3fc0aa', 500:'#22a390', 600:'#178275', 700:'#16685f', 800:'#16534d', 900:'#154540' }
+        },
+        boxShadow: {
+          'soft': '0 4px 24px -4px rgba(13,28,48,0.10)',
+          'soft-lg': '0 20px 48px -12px rgba(13,28,48,0.20)',
+          'glow': '0 0 0 1px rgba(255,255,255,0.06), 0 8px 32px -8px rgba(27,166,171,0.35)'
+        }
+      }
+    }
+  }
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+  h1,h2,h3,h4,.font-display { font-family: 'Manrope', 'Inter', ui-sans-serif, system-ui, sans-serif; }
+  ::selection { background: #1ba6ab; color: #ffffff; }
+  a:focus-visible, button:focus-visible { outline: 3px solid #31c4c8; outline-offset: 2px; border-radius: 4px; }
+  .skip-link { position: absolute; left: -9999px; top: 0; z-index: 100; background: #0d1c30; color: #fff; padding: 12px 20px; border-radius: 0 0 8px 0; }
+  .skip-link:focus { left: 0; }
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+  .bg-grid { background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.14) 1px, transparent 0); background-size: 28px 28px; }
+</style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+<a href="#main-content" class="skip-link font-semibold text-sm">Skip to main content</a>
+
+<header id="site-header" class="sticky top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-md shadow-soft">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-5 sm:px-8 py-3" aria-label="Primary">
+    <a href="index.html#home" class="flex items-center gap-3 group" aria-label="BWDS Home">
+      <img src="images/bwds-logo.png" alt="Beersheba Wireless Design Solutions logo" class="w-11 h-11 sm:w-12 sm:h-12 rounded-full shadow-soft transition-transform group-hover:scale-105" width="48" height="48" loading="eager">
+      <span class="leading-tight">
+        <span class="block font-display font-extrabold text-base sm:text-lg tracking-tight text-navy-900">BWDS</span>
+        <span class="block text-[10px] sm:text-[11px] uppercase tracking-[0.14em] font-semibold text-teal-600">Wireless Design Solutions</span>
+      </span>
+    </a>
+    <ul class="hidden lg:flex items-center gap-7 font-semibold text-sm">
+      <li><a href="index.html#home" class="text-navy-800 hover:text-teal-600 transition-colors">Home</a></li>
+      <li><a href="subcontract-overflow-support.html" class="text-teal-600 transition-colors">Subcontract/Overflow Support</a></li>
+      <li><a href="index.html#services" class="text-navy-800 hover:text-teal-600 transition-colors">Services</a></li>
+      <li><a href="index.html#industries" class="text-navy-800 hover:text-teal-600 transition-colors">Industries</a></li>
+      <li><a href="index.html#knowledge-base" class="text-navy-800 hover:text-teal-600 transition-colors">Knowledge Base</a></li>
+      <li><a href="index.html#about" class="text-navy-800 hover:text-teal-600 transition-colors">About</a></li>
+      <li><a href="index.html#inquiry" class="text-navy-800 hover:text-teal-600 transition-colors">Contact</a></li>
+    </ul>
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="#partner-inquiry" class="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold text-sm px-5 py-2.5 rounded-full shadow-soft transition-all hover:shadow-soft-lg hover:-translate-y-0.5">Partner With Us</a>
+    </div>
+    <a href="index.html#home" class="lg:hidden inline-flex items-center gap-1.5 text-navy-800 font-semibold text-sm">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      Home
+    </a>
+  </nav>
+</header>
+
+<main id="main-content">
+
+<!-- ================= HERO ================= -->
+<section class="relative bg-navy-950 overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="images/planning-table.jpg" alt="" class="w-full h-full object-cover" role="presentation">
+    <div class="absolute inset-0 bg-gradient-to-br from-navy-950/95 via-navy-950/90 to-navy-800/75"></div>
+    <div class="absolute inset-0 bg-grid opacity-20"></div>
+  </div>
+  <div class="relative max-w-5xl mx-auto px-5 sm:px-8 pt-20 pb-20 sm:pt-24 sm:pb-24 text-center">
+    <span class="reveal inline-flex items-center gap-2 bg-white/10 border border-white/15 text-teal-300 text-xs font-bold uppercase tracking-[0.16em] px-4 py-2 rounded-full mb-6">
+      <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
+      B2B Partner Program &middot; Subcontract &amp; Overflow Support
+    </span>
+    <h1 class="reveal font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight mb-6">
+      Field capacity your VAR, MSP, or integrator can put its own logo on.
+    </h1>
+    <p class="reveal text-slate-200 text-base sm:text-lg leading-relaxed mb-9 max-w-2xl mx-auto">
+      When a project's site count, timeline, or RF complexity outgrows your bench, BWDS steps in as the wireless engineering subcontractor behind the scenes &mdash; white-label surveys, design, and deployment support, delivered under NDA, while you stay in front of the customer.
+    </p>
+    <div class="reveal flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#partner-inquiry" class="inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold px-7 py-4 rounded-full shadow-glow transition-all hover:-translate-y-0.5">
+        Request Partner Info
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <a href="#engagements" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 border border-white/20 text-white font-semibold px-7 py-4 rounded-full transition-all">
+        See What We Take Off Your Plate
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST BAR ================= -->
+<section class="bg-navy-900 py-10 sm:py-12">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+    <div class="reveal">
+      <p class="font-display font-extrabold text-2xl sm:text-3xl text-white">12+</p>
+      <p class="text-slate-400 text-xs sm:text-sm mt-1">Years Field Experience</p>
+    </div>
+    <div class="reveal">
+      <p class="font-display font-extrabold text-2xl sm:text-3xl text-white">Ekahau</p>
+      <p class="text-slate-400 text-xs sm:text-sm mt-1">Certified Survey Toolchain</p>
+    </div>
+    <div class="reveal">
+      <p class="font-display font-extrabold text-2xl sm:text-3xl text-white">NDA</p>
+      <p class="text-slate-400 text-xs sm:text-sm mt-1">On File Before Site Walk One</p>
+    </div>
+    <div class="reveal">
+      <p class="font-display font-extrabold text-2xl sm:text-3xl text-white">MD&middot;DC&middot;VA</p>
+      <p class="text-slate-400 text-xs sm:text-sm mt-1">+ Nationwide by Engagement</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHO THIS IS FOR ================= -->
+<section class="py-24 sm:py-28 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="max-w-2xl mx-auto text-center mb-14 reveal">
+      <span class="text-teal-600 font-bold uppercase tracking-[0.16em] text-xs">Built for Partners</span>
+      <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-navy-900 mt-3 mb-4">We are the subcontractor you bring back.</h2>
+      <p class="text-slate-600 leading-relaxed">You own the customer relationship. We own the wireless engineering deliverable. That split is the whole point.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+      <div class="reveal bg-white rounded-2xl p-6 shadow-soft text-center">
+        <p class="font-display font-bold text-navy-900 text-sm">VARs &amp; Systems Integrators</p>
+      </div>
+      <div class="reveal bg-white rounded-2xl p-6 shadow-soft text-center">
+        <p class="font-display font-bold text-navy-900 text-sm">Managed Service Providers</p>
+      </div>
+      <div class="reveal bg-white rounded-2xl p-6 shadow-soft text-center">
+        <p class="font-display font-bold text-navy-900 text-sm">General &amp; Electrical Contractors</p>
+      </div>
+      <div class="reveal bg-white rounded-2xl p-6 shadow-soft text-center">
+        <p class="font-display font-bold text-navy-900 text-sm">AV &amp; Low-Voltage Integrators</p>
+      </div>
+      <div class="reveal bg-white rounded-2xl p-6 shadow-soft text-center">
+        <p class="font-display font-bold text-navy-900 text-sm">Structured Cabling Contractors</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AVAILABLE AS A SUBCONTRACT ENGAGEMENT ================= -->
+<section id="engagements" class="py-24 sm:py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="max-w-2xl mx-auto text-center mb-16 reveal">
+      <span class="text-teal-600 font-bold uppercase tracking-[0.16em] text-xs">One Engagement, Your Bench</span>
+      <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-navy-900 mt-3 mb-4">Available as a subcontract engagement</h2>
+      <p class="text-slate-600 leading-relaxed">Bring us in for one phase of a project or the whole wireless scope &mdash; sized and priced per engagement, not a headcount commitment.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="reveal bg-slate-50 rounded-2xl p-7 border border-slate-100">
+        <p class="text-teal-600 font-display font-extrabold text-sm mb-2">01</p>
+        <p class="font-display font-bold text-navy-900 mb-2">Ekahau Site Surveys</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-3">Active and passive RF surveys with Ekahau Sidekick 2, delivered as a white-labeled heatmap report under your cover page.</p>
+        <p class="text-xs font-semibold text-slate-400">Use when: overflow site count or no in-house RF tech.</p>
+      </div>
+      <div class="reveal bg-slate-50 rounded-2xl p-7 border border-slate-100">
+        <p class="text-teal-600 font-display font-extrabold text-sm mb-2">02</p>
+        <p class="font-display font-bold text-navy-900 mb-2">Predictive Wireless Design</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-3">AP placement and channel planning modeled against architectural floor plans &mdash; ready before drywall or an RFP deadline.</p>
+        <p class="text-xs font-semibold text-slate-400">Use when: bidding a job that needs a real design, fast.</p>
+      </div>
+      <div class="reveal bg-slate-50 rounded-2xl p-7 border border-slate-100">
+        <p class="text-teal-600 font-display font-extrabold text-sm mb-2">03</p>
+        <p class="font-display font-bold text-navy-900 mb-2">Post-Deployment Validation</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-3">Independent as-built validation confirming coverage and roaming meet spec before your team signs off to the customer.</p>
+        <p class="text-xs font-semibold text-slate-400">Use when: closing out a punch list or a warranty claim.</p>
+      </div>
+      <div class="reveal bg-slate-50 rounded-2xl p-7 border border-slate-100">
+        <p class="text-teal-600 font-display font-extrabold text-sm mb-2">04</p>
+        <p class="font-display font-bold text-navy-900 mb-2">AP Deployment Support</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-3">Mounting guidance, cable-drop coordination, and configuration support so your install crew isn't guessing at final placement.</p>
+        <p class="text-xs font-semibold text-slate-400">Use when: your crew handles install, not RF.</p>
+      </div>
+      <div class="reveal bg-slate-50 rounded-2xl p-7 border border-slate-100">
+        <p class="text-teal-600 font-display font-extrabold text-sm mb-2">05</p>
+        <p class="font-display font-bold text-navy-900 mb-2">Wireless Troubleshooting</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-3">Root-cause RF diagnostics for dead zones, roaming failures, or interference &mdash; brought in as a second set of eyes on an open ticket.</p>
+        <p class="text-xs font-semibold text-slate-400">Use when: an escalation has stalled internally.</p>
+      </div>
+      <div class="reveal bg-slate-50 rounded-2xl p-7 border border-slate-100">
+        <p class="text-teal-600 font-display font-extrabold text-sm mb-2">06</p>
+        <p class="font-display font-bold text-navy-900 mb-2">Cabling &amp; GC Coordination</p>
+        <p class="text-slate-600 text-sm leading-relaxed mb-3">Cable-drop planning coordinated directly with electricians and general contractors so AP locations get cabled correctly the first time.</p>
+        <p class="text-xs font-semibold text-slate-400">Use when: RF and construction schedules need to sync.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY PARTNERS BRING US IN ================= -->
+<section class="py-24 sm:py-28 bg-navy-950 relative overflow-hidden">
+  <div class="absolute inset-0 bg-grid opacity-10"></div>
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 relative">
+    <div class="max-w-2xl mx-auto text-center mb-16 reveal">
+      <span class="text-teal-400 font-bold uppercase tracking-[0.16em] text-xs">Why Partners Bring Us In</span>
+      <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white mt-3 mb-4">Built so we're never a threat to the account.</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-7">
+        <p class="text-teal-400 font-display font-extrabold text-sm mb-3">01</p>
+        <p class="font-display font-bold text-white mb-2">White-label deliverables</p>
+        <p class="text-slate-400 text-sm leading-relaxed">Your cover page, your branding, your project manager leading the customer conversation. We supply the RF expertise behind it.</p>
+      </div>
+      <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-7">
+        <p class="text-teal-400 font-display font-extrabold text-sm mb-3">02</p>
+        <p class="font-display font-bold text-white mb-2">Mutual NDA on file</p>
+        <p class="text-slate-400 text-sm leading-relaxed">Signed before the first site walk. Client names, floor plans, and findings never leave the engagement.</p>
+      </div>
+      <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-7">
+        <p class="text-teal-400 font-display font-extrabold text-sm mb-3">03</p>
+        <p class="font-display font-bold text-white mb-2">We stay in our lane</p>
+        <p class="text-slate-400 text-sm leading-relaxed">Wireless surveys, design, and deployment support only. We don't sell hardware or managed services, so we're never competing with you on the account.</p>
+      </div>
+      <div class="reveal bg-white/5 border border-white/10 rounded-2xl p-7">
+        <p class="text-teal-400 font-display font-extrabold text-sm mb-3">04</p>
+        <p class="font-display font-bold text-white mb-2">Fixed-fee, fast scoping</p>
+        <p class="text-slate-400 text-sm leading-relaxed">Priced by site count, square footage, and scope &mdash; not time-and-materials guesswork. Scoped quotes back to you within 24 hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="py-24 sm:py-28 bg-white">
+  <div class="max-w-4xl mx-auto px-5 sm:px-8">
+    <div class="max-w-2xl mx-auto text-center mb-16 reveal">
+      <span class="text-teal-600 font-bold uppercase tracking-[0.16em] text-xs">How It Works</span>
+      <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-navy-900 mt-3 mb-4">Four steps from scope call to handoff</h2>
+    </div>
+    <ol class="reveal space-y-6">
+      <li class="flex gap-5 items-start">
+        <span class="shrink-0 w-10 h-10 rounded-full bg-teal-600 text-white font-display font-bold flex items-center justify-center">1</span>
+        <div><p class="font-display font-bold text-navy-900 mb-1">Scope call</p><p class="text-slate-600 text-sm leading-relaxed">Tell us site count, square footage, vertical, and timeline. We size the engagement in one call.</p></div>
+      </li>
+      <li class="flex gap-5 items-start">
+        <span class="shrink-0 w-10 h-10 rounded-full bg-teal-600 text-white font-display font-bold flex items-center justify-center">2</span>
+        <div><p class="font-display font-bold text-navy-900 mb-1">NDA &amp; fixed-fee quote</p><p class="text-slate-600 text-sm leading-relaxed">Mutual NDA signed, scope and price confirmed in writing &mdash; typically within 24 hours.</p></div>
+      </li>
+      <li class="flex gap-5 items-start">
+        <span class="shrink-0 w-10 h-10 rounded-full bg-teal-600 text-white font-display font-bold flex items-center justify-center">3</span>
+        <div><p class="font-display font-bold text-navy-900 mb-1">Field engagement</p><p class="text-slate-600 text-sm leading-relaxed">Our engineers execute the survey, design, or deployment support work on your schedule, on-site or remote as scoped.</p></div>
+      </li>
+      <li class="flex gap-5 items-start">
+        <span class="shrink-0 w-10 h-10 rounded-full bg-teal-600 text-white font-display font-bold flex items-center justify-center">4</span>
+        <div><p class="font-display font-bold text-navy-900 mb-1">White-label handoff</p><p class="text-slate-600 text-sm leading-relaxed">You receive a client-ready deliverable under your branding. You present it &mdash; we stay behind the curtain.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= PARTNER INQUIRY ================= -->
+<section id="partner-inquiry" class="py-24 sm:py-28 bg-slate-50">
+  <div class="max-w-2xl mx-auto px-5 sm:px-8">
+    <div class="text-center mb-10 reveal">
+      <span class="text-teal-600 font-bold uppercase tracking-[0.16em] text-xs">Get In Touch</span>
+      <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-navy-900 mt-3 mb-4">Request Partner Info</h2>
+      <p class="text-slate-600 leading-relaxed">Tell us about your firm and the type of engagement you need &mdash; we'll follow up with a scoped quote or a short call.</p>
+    </div>
+
+    <form id="partner-inquiry-form" class="reveal bg-white rounded-3xl shadow-soft p-7 sm:p-9 space-y-5" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="7668906b-e111-47ec-bef3-6db83c6d0641">
+      <input type="hidden" name="from_name" value="BWDS Website — Partner Inquiry">
+      <input type="hidden" name="subject" value="Subcontract/Overflow Support Inquiry">
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none">
+
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label for="partner-company" class="block text-sm font-semibold text-navy-900 mb-1.5">Company / Firm Name</label>
+          <input type="text" id="partner-company" name="Company" required class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-teal-500 focus:ring-2 focus:ring-teal-100 outline-none transition">
+        </div>
+        <div>
+          <label for="partner-name" class="block text-sm font-semibold text-navy-900 mb-1.5">Contact Name</label>
+          <input type="text" id="partner-name" name="Contact Name" required class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-teal-500 focus:ring-2 focus:ring-teal-100 outline-none transition">
+        </div>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label for="partner-email" class="block text-sm font-semibold text-navy-900 mb-1.5">Email</label>
+          <input type="email" id="partner-email" name="email" required class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-teal-500 focus:ring-2 focus:ring-teal-100 outline-none transition">
+        </div>
+        <div>
+          <label for="partner-phone" class="block text-sm font-semibold text-navy-900 mb-1.5">Phone</label>
+          <input type="tel" id="partner-phone" name="Phone" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-teal-500 focus:ring-2 focus:ring-teal-100 outline-none transition">
+        </div>
+      </div>
+      <div>
+        <label for="partner-type" class="block text-sm font-semibold text-navy-900 mb-1.5">Partner Type</label>
+        <select id="partner-type" name="Partner Type" class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-teal-500 focus:ring-2 focus:ring-teal-100 outline-none transition bg-white">
+          <option>VAR / Systems Integrator</option>
+          <option>Managed Service Provider</option>
+          <option>General / Electrical Contractor</option>
+          <option>AV / Low-Voltage Integrator</option>
+          <option>Structured Cabling Contractor</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div>
+        <label for="partner-message" class="block text-sm font-semibold text-navy-900 mb-1.5">Project Scope</label>
+        <textarea id="partner-message" name="Message" rows="4" placeholder="Site count, square footage, timeline, and the type of engagement you're looking for." class="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-teal-500 focus:ring-2 focus:ring-teal-100 outline-none transition resize-none"></textarea>
+      </div>
+      <button type="submit" class="w-full inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold px-7 py-4 rounded-full shadow-soft transition-all hover:-translate-y-0.5">
+        Submit Partner Inquiry
+      </button>
+      <p id="partner-form-status" class="text-sm text-center" role="status"></p>
+      <p class="text-xs text-slate-400 text-center">Prefer email? Reach us directly at <a href="mailto:support@nadnetworkservices.com" class="text-teal-600 hover:underline">support@nadnetworkservices.com</a> or (240) 813-8030.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="bg-navy-950 text-slate-400 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-14 border-b border-white/10">
+      <div>
+        <a href="index.html#home" class="flex items-center gap-3 mb-5">
+          <img src="images/bwds-logo.png" alt="Beersheba Wireless Design Solutions logo" class="w-12 h-12 rounded-full" width="48" height="48" loading="lazy">
+          <span class="font-display font-extrabold text-white">BWDS</span>
+        </a>
+        <p class="text-sm leading-relaxed mb-5">Enterprise wireless design and network infrastructure engineering for organizations that cannot afford downtime.</p>
+      </div>
+      <div>
+        <p class="font-display font-bold text-white mb-4">Quick Links</p>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="index.html#home" class="hover:text-teal-400 transition-colors">Home</a></li>
+          <li><a href="subcontract-overflow-support.html" class="hover:text-teal-400 transition-colors">Subcontract/Overflow Support</a></li>
+          <li><a href="index.html#industries" class="hover:text-teal-400 transition-colors">Industries</a></li>
+          <li><a href="index.html#knowledge-base" class="hover:text-teal-400 transition-colors">Knowledge Base</a></li>
+          <li><a href="index.html#about" class="hover:text-teal-400 transition-colors">About BWDS</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-display font-bold text-white mb-4">Services</p>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="index.html#services" class="hover:text-teal-400 transition-colors">Wireless Site Surveys</a></li>
+          <li><a href="index.html#services" class="hover:text-teal-400 transition-colors">Predictive Wireless Design</a></li>
+          <li><a href="index.html#services" class="hover:text-teal-400 transition-colors">Wireless Validation</a></li>
+          <li><a href="index.html#services" class="hover:text-teal-400 transition-colors">AP Deployment Support</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-display font-bold text-white mb-4">Contact</p>
+        <ul class="space-y-2.5 text-sm">
+          <li>(240) 813-8030</li>
+          <li>support@nadnetworkservices.com</li>
+          <li>Serving MD &middot; DC &middot; VA &middot; Nationwide</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <p>&copy; <span id="footer-year"></span> NAD Network Services LLC | BWDS. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) { entry.target.classList.add('is-visible'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('is-visible'); });
+  }
+
+  /* ---------- Partner inquiry form (Web3Forms) ---------- */
+  var partnerForm = document.getElementById('partner-inquiry-form');
+  var partnerStatus = document.getElementById('partner-form-status');
+  partnerForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    partnerStatus.textContent = 'Sending...';
+    partnerStatus.className = 'text-sm text-center text-slate-500';
+    var formData = new FormData(partnerForm);
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: formData
+    }).then(function(res){ return res.json().then(function(data){ return { ok: res.ok, data: data }; }); })
+      .then(function(result){
+        if (result.ok && result.data.success !== false) {
+          partnerStatus.textContent = 'Thanks — we\'ll follow up shortly.';
+          partnerStatus.className = 'text-sm text-center text-teal-600 font-semibold';
+          partnerForm.reset();
+        } else {
+          throw new Error(result.data.message || 'Submission failed');
+        }
+      })
+      .catch(function(){
+        partnerStatus.textContent = 'Something went wrong. Please email support@nadnetworkservices.com directly.';
+        partnerStatus.className = 'text-sm text-center text-red-600 font-semibold';
+      });
+  });
+</script>
+</body>
+</html>
