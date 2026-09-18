@@ -74,7 +74,8 @@
   }
 
   /* ── Step wizard ── */
-  .step-panel { display: none; }
+  .wizard-viewport { position: relative; overflow: hidden; min-height: 200px; }
+  .step-panel { display: none; position: relative; }
   .step-panel.active { display: block; }
 
   /* Progress bar fill */
@@ -115,9 +116,15 @@
   .eq-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
   @media (max-width: 520px) { .eq-row { grid-template-columns: 1fr; } }
 
-  /* Step animation */
-  @keyframes stepIn { from { opacity:0; transform:translateX(16px); } to { opacity:1; transform:translateX(0); } }
-  .step-panel.active { animation: stepIn 0.28s ease forwards; }
+  /* Step slide animations */
+  @keyframes slideInRight  { from { opacity:0; transform:translateX(60px); }  to { opacity:1; transform:translateX(0); } }
+  @keyframes slideOutLeft  { from { opacity:1; transform:translateX(0); }  to { opacity:0; transform:translateX(-60px); } }
+  @keyframes slideInLeft   { from { opacity:0; transform:translateX(-60px); } to { opacity:1; transform:translateX(0); } }
+  @keyframes slideOutRight { from { opacity:1; transform:translateX(0); }  to { opacity:0; transform:translateX(60px); } }
+  .step-panel.slide-in-right  { animation: slideInRight  0.32s cubic-bezier(.4,0,.2,1) forwards; }
+  .step-panel.slide-out-left  { animation: slideOutLeft  0.28s cubic-bezier(.4,0,.2,1) forwards; }
+  .step-panel.slide-in-left   { animation: slideInLeft   0.32s cubic-bezier(.4,0,.2,1) forwards; }
+  .step-panel.slide-out-right { animation: slideOutRight 0.28s cubic-bezier(.4,0,.2,1) forwards; }
 
   /* Fade for success */
   @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
@@ -663,10 +670,28 @@
   const TOTAL_STEPS = 7;
   let currentStep = 1;
 
+  let _slideDir = 1; // 1 = forward, -1 = back
+
   function showStep(n) {
-    document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
-    const panel = document.getElementById('step-' + n);
-    if (panel) panel.classList.add('active');
+    const outgoing = document.querySelector('.step-panel.active');
+    const incoming = document.getElementById('step-' + n);
+    if (!incoming) return;
+
+    const outClass = _slideDir > 0 ? 'slide-out-left'  : 'slide-out-right';
+    const inClass  = _slideDir > 0 ? 'slide-in-right'  : 'slide-in-left';
+
+    if (outgoing && outgoing !== incoming) {
+      outgoing.classList.add(outClass);
+      outgoing.addEventListener('animationend', () => {
+        outgoing.classList.remove('active', outClass);
+      }, { once: true });
+    }
+
+    incoming.classList.remove('slide-in-right','slide-in-left','slide-out-left','slide-out-right');
+    incoming.classList.add('active', inClass);
+    incoming.addEventListener('animationend', () => {
+      incoming.classList.remove(inClass);
+    }, { once: true });
 
     // Progress
     const pct = Math.round((n / TOTAL_STEPS) * 100);
@@ -722,11 +747,13 @@
     if (!validateStep(currentStep)) return;
     if (currentStep === TOTAL_STEPS - 1) buildSummary();
     currentStep = Math.min(currentStep + 1, TOTAL_STEPS);
+    _slideDir = 1;
     showStep(currentStep);
   }
 
   function wizardBack() {
     currentStep = Math.max(currentStep - 1, 1);
+    _slideDir = -1;
     showStep(currentStep);
   }
 
