@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start a Wireless Project | BWDS</title>
+<meta name="description" content="Tell us about your wireless design, site survey, or deployment project. BWDS will review your answers and send a tailored proposal — free, no obligation.">
+<meta name="author" content="Beersheba Wireless Design Solutions">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://bwds4wifi.com/project-intake.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Start a Wireless Project | BWDS">
+<meta property="og:description" content="Answer a few questions about your wireless project and BWDS will send you a tailored proposal — Ekahau surveys, RF design, AP deployment, validation, and more.">
+<meta property="og:url" content="https://bwds4wifi.com/project-intake.html">
+<meta property="og:site_name" content="Beersheba Wireless Design Solutions">
+<meta property="og:image" content="https://bwds4wifi.com/images/og-image.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@BWDS_4WiFi">
+<meta name="twitter:title" content="Start a Wireless Project | BWDS">
+<meta name="twitter:description" content="Tell BWDS about your wireless project and receive a tailored proposal — surveys, RF design, deployment, and validation.">
+
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-318089124"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-318089124');
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','sans-serif'] },
+        colors: {
+          navy: { 50:'#eef3f8',100:'#d7e3ee',200:'#b0c7dd',300:'#82a4c6',400:'#5680ab',500:'#3a6390',600:'#284c74',700:'#1e3a5c',800:'#152a45',900:'#0d1c30',950:'#070f1c' },
+          cyan: { 50:'#eafcfc',100:'#cef7f7',200:'#a0edee',300:'#67dee0',400:'#31c4c8',500:'#1ba6ab',600:'#16858c',700:'#186a70',800:'#19555a',900:'#19484c' },
+          teal: { 50:'#eefbf8',100:'#d3f5ed',200:'#a8ebdc',300:'#72dac6',400:'#3fc0aa',500:'#22a390',600:'#178275',700:'#16685f',800:'#16534d',900:'#154540' }
+        },
+        boxShadow: {
+          soft:'0 4px 24px -4px rgba(13,28,48,0.10)',
+          'soft-lg':'0 20px 48px -12px rgba(13,28,48,0.20)',
+          glow:'0 0 0 1px rgba(255,255,255,0.06), 0 8px 32px -8px rgba(27,166,171,0.35)'
+        }
+      }
+    }
+  }
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+  h1,h2,h3,h4,.font-display { font-family: 'Manrope', 'Inter', ui-sans-serif, system-ui, sans-serif; }
+  ::selection { background: #1ba6ab; color: #fff; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid #31c4c8; outline-offset: 2px; border-radius: 4px;
+  }
+  .skip-link { position:absolute;left:-9999px;top:0;z-index:100;background:#0d1c30;color:#fff;padding:12px 20px;border-radius:0 0 8px 0; }
+  .skip-link:focus { left:0; }
+  .bg-grid { background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.14) 1px, transparent 0); background-size: 28px 28px; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration:0.01ms!important; transition-duration:0.01ms!important; }
+  }
+
+  /* ── Step wizard ── */
+  .step-panel { display: none; }
+  .step-panel.active { display: block; }
+
+  /* Progress bar fill */
+  #progress-fill { transition: width 0.4s ease; }
+
+  /* Choice cards */
+  .choice-card {
+    cursor: pointer;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px 16px;
+    transition: border-color 0.18s, background 0.18s, box-shadow 0.18s;
+    user-select: none;
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .choice-card:hover { border-color: #1ba6ab; background: #f0fdfc; }
+  .choice-card.selected { border-color: #1ba6ab; background: #eafcfc; box-shadow: 0 0 0 3px rgba(27,166,171,0.15); }
+  .choice-card input[type="checkbox"], .choice-card input[type="radio"] { accent-color: #1ba6ab; width: 18px; height: 18px; flex-shrink: 0; margin-top: 1px; }
+
+  /* Form fields */
+  .field-input {
+    width: 100%; border: 1.5px solid #e2e8f0; border-radius: 10px;
+    padding: 11px 14px; font-size: 0.9rem; color: #1e293b;
+    background: #f8fafc; outline: none; transition: border-color 0.18s, box-shadow 0.18s;
+  }
+  .field-input:focus { border-color: #1ba6ab; box-shadow: 0 0 0 3px rgba(27,166,171,0.12); background: #fff; }
+  .field-input.invalid { border-color: #ef4444; box-shadow: 0 0 0 3px rgba(239,68,68,0.12); }
+
+  select.field-input { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; background-size: 20px; padding-right: 36px; }
+
+  /* Number stepper */
+  .stepper { display: flex; align-items: center; gap: 0; border: 1.5px solid #e2e8f0; border-radius: 10px; overflow: hidden; width: fit-content; }
+  .stepper button { background: #f8fafc; border: none; padding: 9px 14px; font-size: 1.1rem; color: #0d1c30; cursor: pointer; transition: background 0.15s; line-height: 1; }
+  .stepper button:hover { background: #e2e8f0; }
+  .stepper input { border: none; border-left: 1.5px solid #e2e8f0; border-right: 1.5px solid #e2e8f0; width: 64px; text-align: center; font-size: 0.9rem; font-weight: 600; color: #0d1c30; padding: 9px 6px; outline: none; background: #fff; }
+
+  /* Equipment row */
+  .eq-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 520px) { .eq-row { grid-template-columns: 1fr; } }
+
+  /* Step animation */
+  @keyframes stepIn { from { opacity:0; transform:translateX(16px); } to { opacity:1; transform:translateX(0); } }
+  .step-panel.active { animation: stepIn 0.28s ease forwards; }
+
+  /* Fade for success */
+  @keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+  #success-panel { animation: fadeUp 0.45s ease forwards; }
+</style>
+<script async src="https://assets.endorsely.com/endorsely.js" data-endorsely="a728fd73-4086-4770-b2d0-da179cb2e14f"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+<a href="#main-content" class="skip-link font-semibold text-sm">Skip to main content</a>
+
+<!-- Nav -->
+<header class="sticky top-0 inset-x-0 z-50 bg-white/95 backdrop-blur-md shadow-soft">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-5 sm:px-8 py-3" aria-label="Primary">
+    <a href="index.html" class="flex items-center gap-3 group" aria-label="BWDS Home">
+      <img src="images/bwds-logo.png" alt="Beersheba Wireless Design Solutions logo" class="w-11 h-11 sm:w-12 sm:h-12 rounded-full shadow-soft transition-transform group-hover:scale-105" width="48" height="48" loading="eager">
+      <span class="leading-tight">
+        <span class="block font-display font-extrabold text-base sm:text-lg tracking-tight text-navy-900">BWDS</span>
+        <span class="block text-[10px] sm:text-[11px] uppercase tracking-[0.14em] font-semibold text-teal-600">Wireless Design Solutions</span>
+      </span>
+    </a>
+    <ul class="hidden lg:flex items-center gap-7 font-semibold text-sm">
+      <li><a href="index.html" class="text-navy-800 hover:text-teal-600 transition-colors">Home</a></li>
+      <li><a href="index.html#services" class="text-navy-800 hover:text-teal-600 transition-colors">Services</a></li>
+      <li><a href="gallery.html" class="text-navy-800 hover:text-teal-600 transition-colors">Gallery</a></li>
+      <li><a href="subcontract-overflow-support.html" class="text-navy-800 hover:text-teal-600 transition-colors">Partner Support</a></li>
+      <li><a href="project-intake.html" class="text-teal-600 transition-colors">Start a Project</a></li>
+    </ul>
+    <a href="index.html#inquiry" class="hidden lg:inline-flex items-center gap-2 bg-navy-900 hover:bg-navy-800 text-white font-semibold text-sm px-5 py-2.5 rounded-full shadow-soft transition-all">
+      Contact Us
+    </a>
+    <a href="index.html" class="lg:hidden inline-flex items-center gap-1.5 text-navy-800 font-semibold text-sm">
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      Home
+    </a>
+  </nav>
+</header>
+
+<main id="main-content">
+
+  <!-- Hero -->
+  <section class="bg-navy-900 bg-grid pt-14 pb-10 text-white">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <span class="inline-flex items-center gap-2 bg-cyan-500/15 text-cyan-300 text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5 border border-cyan-500/20">
+        <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        Free Project Assessment
+      </span>
+      <h1 class="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight tracking-tight mb-4">
+        Tell Us About<br>Your Wireless Project
+      </h1>
+      <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-xl mx-auto">
+        Answer a few questions about your site and requirements. We'll review your submission and follow up with a tailored scope and proposal — no obligation.
+      </p>
+    </div>
+  </section>
+
+  <!-- Progress bar -->
+  <div class="bg-white border-b border-slate-100 sticky top-[68px] z-40">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8 py-3 flex items-center gap-4">
+      <span id="step-label" class="text-xs font-semibold text-slate-500 whitespace-nowrap w-20">Step 1 of 7</span>
+      <div class="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
+        <div id="progress-fill" class="h-full bg-gradient-to-r from-cyan-500 to-teal-500 rounded-full" style="width:14%"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wizard Form -->
+  <section class="max-w-3xl mx-auto px-5 sm:px-8 py-10 pb-20">
+
+    <form id="intake-form" novalidate>
+      <!-- Hidden Web3Forms key -->
+      <input type="hidden" name="access_key" value="7668906b-e111-47ec-bef3-6db83c6d0641">
+      <input type="hidden" name="from_name" value="BWDS Website — New Project Intake">
+      <input type="hidden" name="subject" value="New Wireless Project Inquiry">
+      <input type="checkbox" name="botcheck" class="hidden" style="display:none" tabindex="-1">
+
+      <!-- ═══════════════ STEP 1 · Contact Info ═══════════════ -->
+      <div class="step-panel active" id="step-1">
+        <div class="bg-white rounded-2xl shadow-soft border border-slate-100 p-6 sm:p-8">
+          <h2 class="font-display font-bold text-navy-900 text-xl mb-1">Who should we follow up with?</h2>
+          <p class="text-slate-500 text-sm mb-6">We'll use this to send you a scoped proposal — your information is never shared.</p>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold text-navy-900 mb-1.5" for="contact-name">Full Name <span class="text-red-500">*</span></label>
+              <input class="field-input" type="text" id="contact-name" name="Full Name" placeholder="Jane Smith" required>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-navy-900 mb-1.5" for="contact-company">Company / Organization <span class="text-red-500">*</span></label>
+              <input class="field-input" type="text" id="contact-company" name="Company" placeholder="Acme Corp" required>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-navy-900 mb-1.5" for="contact-email">Email Address <span class="text-red-500">*</span></label>
+              <input class="field-input" type="email" id="contact-email" name="email" placeholder="jane@example.com" required>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-navy-900 mb-1.5" for="contact-phone">Phone Number</label>
+              <input class="field-input" type="tel" id="contact-phone" name="Phone" placeholder="(301) 000-0000">
+            </div>
+            <div class="sm:col-span-2">
+              <label class="block text-sm font-semibold text-navy-900 mb-1.5" for="contact-role">Your Role</label>
+              <select class="field-input" id="contact-role" name="Role">
+                <option value="">— Select your role —</option>
+                <option>IT Manager / Director</option>
+                <option>Network Engineer</option>
+                <option>Facilities / Operations Manager</option>
+                <option>Project Manager</option>
+                <option>General / Electrical Contractor</option>
+                <option>Architect / Engineer</option>
+                <option>Business Owner</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════ STEP 2 · Project Type ═══════════════ -->
+      <div class="step-panel" id="step-2">
+        <div class="bg-white rounded-2xl shadow-soft border border-slate-100 p-6 sm:p-8">
+          <h2 class="font-display font-bold text-navy-900 text-xl mb-1">What type of project is this?</h2>
+          <p class="text-slate-500 text-sm mb-6">Select all that apply — many projects involve more than one service.</p>
+
+          <div class="grid sm:grid-cols-2 gap-3" id="project-type-group">
+            <label class="choice-card">
+              <input type="checkbox" name="Service: Ekahau Site Survey" value="Yes">
+              <div>
+                <p class="font-semibold text-navy-900 text-sm">Ekahau Site Survey</p>
+                <p class="text-slate-500 text-xs mt-0.5">Active &amp; passive RF survey with heatmap deliverable</p>
+              </div>
+            </label>
+            <label class="choice-card">
+              <input type="checkbox" name="Service: Predictive RF Design" value="Yes">
+              <div>
+                <p class="font-semibold text-navy-900 text-sm">Predictive RF Design</p>
+                <p class="text-slate-500 text-xs mt-0.5">AP placement and channel planning from floor plans</p>
+              </div>
+            </label>
+            <label class="choice-card">
+              <input type="checkbox" name="Service: AP Deployment" value="Yes">
+              <div>
+                <p class="font-semibold text-navy-900 text-sm">AP Deployment</p>
+                <p class="text-slate-500 text-xs mt-0.5">Physical installation, mounting, and configuration</p>
+              </div>
+            </label>
+            <label class="choice-card">
+              <input type="checkbox" name="Service: Post-Deployment Validation" value="Yes">
+              <div>
+                <p class="font-semibold text-navy-900 text-sm">Post-Deployment Validation</p>
+                <p class="text-slate-500 text-xs mt-0.5">As-built verification that coverage meets spec</p>
+              </div>
+            </label>
+            <label class="choice-card">
+              <input type="checkbox" name="Service: Wireless Troubleshooting" value="Yes">
+              <div>
+                <p class="font-semibold text-navy-900 text-sm">Wireless Troubleshooting</p>
+                <p class="text-slate-500 text-xs mt-0.5">Diagnosing and resolving connectivity issues</p>
+              </div>
+            </label>
+            <label class="choice-card">
+              <input type="checkbox" name="Service: Managed Wireless Services" value="Yes">
+              <div>
+                <p class="font-semibold text-navy-900 text-sm">Managed Wireless Services</p>
+                <p class="text-slate-500 text-xs mt-0.5">Ongoing monitoring, support, and performance management</p>
+              </div>
+            </label>
+          </div>
+          <p id="type-error" class="text-red-500 text-xs mt-3 hidden">Please select at least one service type.</p>
+        </div>
+      </div>
+
+      <!-- ═══════════════ STEP 3 · Industry & Venue ═══════════════ -->
+      <div class="step-panel" id="step-3">
+        <div class="bg-white rounded-2xl shadow-soft border border-slate-100 p-6 sm:p-8">
+          <h2 class="font-display font-bold text-navy-900 text-xl mb-1">What kind of environment is this?</h2>
+          <p class="text-slate-500 text-sm mb-6">Different venues have very different RF challenges — this helps us prepare the right approach.</p>
+
+          <div class="grid sm:grid-cols-2 gap-3" id="industry-group">
+            <label class="choice-card">
+              <input type="radio" name="Industry" value="Healthcare / Hospital">
+              <div>
+                <p class="font-semibold text-navy-900 text-sm">Healthcare / Hospital</p>
+                <p class="text-slate-500 text-xs mt-0.5">Clinics, medical centers, patient floors</p>
+              </div>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="Industry" value="Warehouse / Distribution">
+              <div>
+                <p class="font-semibold text-navy-900 text-sm">Warehouse / Distribution</p>
+                <p class="text-slate-500 text-xs mt-0.5">High-bay racking, forklifts, inventory systems</p>
+              </div>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="Industry" value="Corporate Office">
+              <div>
+                <p class="font-semibold text-navy-900 text-sm">Corporate Office</p>
+                <p class="text-slate-500 text-xs mt-0.5">Open floor plans, conference rooms, dense users</p>
+              </div>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="Industry" value="Education / Campus">
+              <div>
+                <p class="font-semibold text-navy-900 text-sm">Education / Campus</p>
+                <p class="text-slate-500 text-xs mt-0.5">Schools, universities, auditoriums</p>
+              </div>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="Industry" value="Government / Federal">
+              <div>
+                <p class="font-semibold text-navy-900 text-sm">Government / Federal</p>
+                <p class="text-slate-500 text-xs mt-0.5">Agencies, secure facilities, compliance requirements</p>
+              </div>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="Industry" value="Retail / Hospitality">
+              <div>
+                <p class="font-semibold text-navy-900 text-sm">Retail / Hospitality</p>
+                <p class="text-slate-500 text-xs mt-0.5">Stores, hotels, restaurants, venues</p>
+              </div>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="Industry" value="Construction / Industrial">
+              <div>
+                <p class="font-semibold text-navy-900 text-sm">Construction / Industrial</p>
+                <p class="text-slate-500 text-xs mt-0.5">Active build sites, manufacturing floors</p>
+              </div>
+            </label>
+            <label class="choice-card">
+              <input type="radio" name="Industry" value="Other">
+              <div>
+                <p class="font-semibold text-navy-900 text-sm">Other / Mixed-Use</p>
+                <p class="text-slate-500 text-xs mt-0.5">Multi-purpose or unlisted venue type</p>
+              </div>
+            </label>
+          </div>
+          <p id="industry-error" class="text-red-500 text-xs mt-3 hidden">Please select an environment type.</p>
+        </div>
+      </div>
+
+      <!-- ═══════════════ STEP 4 · Size & Scope ═══════════════ -->
+      <div class="step-panel" id="step-4">
+        <div class="bg-white rounded-2xl shadow-soft border border-slate-100 p-6 sm:p-8 space-y-6">
+          <div>
+            <h2 class="font-display font-bold text-navy-900 text-xl mb-1">How large is the site?</h2>
+            <p class="text-slate-500 text-sm">Approximate figures are fine — we'll confirm during discovery.</p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm font-semibold text-navy-900 mb-2" for="sq-footage">Approximate Square Footage</label>
+              <select class="field-input" id="sq-footage" name="Square Footage">
+                <option value="">— Select a range —</option>
+                <option>Under 5,000 sq ft</option>
+                <option>5,000 – 20,000 sq ft</option>
+                <option>20,000 – 50,000 sq ft</option>
+                <option>50,000 – 100,000 sq ft</option>
+                <option>100,000 – 250,000 sq ft</option>
+                <option>Over 250,000 sq ft</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-navy-900 mb-2">Number of Floors / Levels</label>
+              <div class="stepper">
+                <button type="button" onclick="stepperChange('floors',-1)" aria-label="Decrease floors">−</button>
+                <input type="number" id="floors-input" name="Number of Floors" value="1" min="1" max="100" readonly>
+                <button type="button" onclick="stepperChange('floors',1)" aria-label="Increase floors">+</button>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-navy-900 mb-2">Estimated Number of Users / Devices</label>
+              <select class="field-input" name="Concurrent Devices">
+                <option value="">— Select a range —</option>
+                <option>Fewer than 25</option>
+                <option>25 – 100</option>
+                <option>100 – 300</option>
+                <option>300 – 1,000</option>
+                <option>Over 1,000</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-navy-900 mb-2">Number of Buildings / Locations</label>
+              <div class="stepper">
+                <button type="button" onclick="stepperChange('buildings',-1)" aria-label="Decrease buildings">−</button>
+                <input type="number" id="buildings-input" name="Number of Buildings" value="1" min="1" max="999" readonly>
+                <button type="button" onclick="stepperChange('buildings',1)" aria-label="Increase buildings">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold text-navy-900 mb-1.5" for="site-address">Site Address or General Location</label>
+            <input class="field-input" type="text" id="site-address" name="Site Location" placeholder="e.g. Washington, D.C. or 123 Main St, Bethesda MD">
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════ STEP 5 · Equipment ═══════════════ -->
+      <div class="step-panel" id="step-5">
+        <div class="bg-white rounded-2xl shadow-soft border border-slate-100 p-6 sm:p-8 space-y-6">
+          <div>
+            <h2 class="font-display font-bold text-navy-900 text-xl mb-1">Equipment — Existing &amp; Required</h2>
+            <p class="text-slate-500 text-sm">Tell us what you already have in place and what the project will need. Leave blank if unknown.</p>
+          </div>
+
+          <!-- Existing -->
+          <div>
+            <h3 class="font-semibold text-navy-800 text-sm uppercase tracking-wide mb-3 flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center text-xs font-bold">✓</span>
+              Currently Installed
+            </h3>
+            <div class="eq-row">
+              <div>
+                <label class="block text-xs font-semibold text-slate-600 mb-1.5" for="exist-ap">Access Points (brand / model)</label>
+                <input class="field-input" type="text" id="exist-ap" name="Existing APs" placeholder="e.g. Cisco Catalyst 9136, qty 12">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-600 mb-1.5" for="exist-switch">Switches (brand / model)</label>
+                <input class="field-input" type="text" id="exist-switch" name="Existing Switches" placeholder="e.g. Cisco 9300, 48-port">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-600 mb-1.5" for="exist-ctrl">Wireless Controllers / Cloud Platform</label>
+                <input class="field-input" type="text" id="exist-ctrl" name="Existing Controller" placeholder="e.g. Cisco DNA Center, Meraki, Aruba Central">
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-600 mb-1.5" for="exist-other">Other Existing Infrastructure</label>
+                <input class="field-input" type="text" id="exist-other" name="Other Existing Equipment" placeholder="e.g. UPS, cabling plant, fiber backbone">
+              </div>
+            </div>
+          </div>
+
+          <div class="border-t border-slate-100 pt-5">
+            <h3 class="font-semibold text-navy-800 text-sm uppercase tracking-wide mb-3 flex items-center gap-2">
+              <span class="w-5 h-5 rounded-full bg-cyan-100 text-cyan-700 flex items-center justify-center text-xs font-bold">+</span>
+              Required for This Project
+            </h3>
+            <div class="eq-row">
+              <div>
+                <label class="block text-xs font-semibold text-slate-600 mb-1.5">Access Points Needed</label>
+                <div class="stepper">
+                  <button type="button" onclick="stepperChange('aps-needed',-1)" aria-label="Decrease APs">−</button>
+                  <input type="number" id="aps-needed-input" name="APs Required" value="0" min="0" max="9999" readonly>
+                  <button type="button" onclick="stepperChange('aps-needed',1)" aria-label="Increase APs">+</button>
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Enter 0 if unknown</p>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-600 mb-1.5">Switches Needed</label>
+                <div class="stepper">
+                  <button type="button" onclick="stepperChange('sw-needed',-1)" aria-label="Decrease switches">−</button>
+                  <input type="number" id="sw-needed-input" name="Switches Required" value="0" min="0" max="9999" readonly>
+                  <button type="button" onclick="stepperChange('sw-needed',1)" aria-label="Increase switches">+</button>
+                </div>
+                <p class="text-xs text-slate-400 mt-1">Enter 0 if unknown</p>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-600 mb-1.5" for="req-vendor">Preferred Vendor / Platform</label>
+                <select class="field-input" id="req-vendor" name="Preferred Vendor">
+                  <option value="">— No preference / Open —</option>
+                  <option>Cisco / Meraki</option>
+                  <option>Aruba / HPE</option>
+                  <option>Ubiquiti (UniFi)</option>
+                  <option>Extreme Networks</option>
+                  <option>Ruckus</option>
+                  <option>Juniper Mist</option>
+                  <option>Other (specify in notes)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-semibold text-slate-600 mb-1.5" for="req-other">Other Equipment Needed</label>
+                <input class="field-input" type="text" id="req-other" name="Other Equipment Required" placeholder="e.g. PoE switches, controllers, cabling">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════ STEP 6 · Timeline & Budget ═══════════════ -->
+      <div class="step-panel" id="step-6">
+        <div class="bg-white rounded-2xl shadow-soft border border-slate-100 p-6 sm:p-8 space-y-6">
+          <div>
+            <h2 class="font-display font-bold text-navy-900 text-xl mb-1">Timeline, Budget &amp; Floor Plans</h2>
+            <p class="text-slate-500 text-sm">This helps us prioritize and tailor the proposal to your constraints.</p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="block text-sm font-semibold text-navy-900 mb-1.5" for="timeline">When do you need this completed?</label>
+              <select class="field-input" id="timeline" name="Timeline">
+                <option value="">— Select a timeframe —</option>
+                <option>ASAP / Urgent (within 2 weeks)</option>
+                <option>Within 1 month</option>
+                <option>1 – 3 months</option>
+                <option>3 – 6 months</option>
+                <option>Flexible / Planning phase</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-navy-900 mb-1.5" for="budget">Approximate Project Budget</label>
+              <select class="field-input" id="budget" name="Budget Range">
+                <option value="">— Select a range (optional) —</option>
+                <option>Under $5,000</option>
+                <option>$5,000 – $15,000</option>
+                <option>$15,000 – $50,000</option>
+                <option>$50,000 – $150,000</option>
+                <option>Over $150,000</option>
+                <option>Not yet defined</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold text-navy-900 mb-2">Do you have floor plans or architectural drawings available?</label>
+            <div class="grid sm:grid-cols-3 gap-3" id="floorplan-group">
+              <label class="choice-card">
+                <input type="radio" name="Floor Plans Available" value="Yes — digital (CAD/PDF)">
+                <div>
+                  <p class="font-semibold text-navy-900 text-sm">Yes — Digital</p>
+                  <p class="text-slate-500 text-xs mt-0.5">CAD, PDF, or BIM files</p>
+                </div>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="Floor Plans Available" value="Yes — paper / as-built only">
+                <div>
+                  <p class="font-semibold text-navy-900 text-sm">Yes — Paper Only</p>
+                  <p class="text-slate-500 text-xs mt-0.5">As-built or printed drawings</p>
+                </div>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="Floor Plans Available" value="No — not yet available">
+                <div>
+                  <p class="font-semibold text-navy-900 text-sm">Not Yet Available</p>
+                  <p class="text-slate-500 text-xs mt-0.5">We can work with site photos</p>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold text-navy-900 mb-2">Are you interested in ongoing wireless management after project completion?</label>
+            <div class="grid sm:grid-cols-3 gap-3">
+              <label class="choice-card">
+                <input type="radio" name="Ongoing Managed Services Interest" value="Yes — very interested">
+                <div>
+                  <p class="font-semibold text-navy-900 text-sm">Yes, Interested</p>
+                  <p class="text-slate-500 text-xs mt-0.5">Monitoring, support, and troubleshooting retainer</p>
+                </div>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="Ongoing Managed Services Interest" value="Maybe — tell me more">
+                <div>
+                  <p class="font-semibold text-navy-900 text-sm">Maybe</p>
+                  <p class="text-slate-500 text-xs mt-0.5">I'd like to know more about what's included</p>
+                </div>
+              </label>
+              <label class="choice-card">
+                <input type="radio" name="Ongoing Managed Services Interest" value="No — one-time project only">
+                <div>
+                  <p class="font-semibold text-navy-900 text-sm">No</p>
+                  <p class="text-slate-500 text-xs mt-0.5">One-time project only</p>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════ STEP 7 · Notes & Submit ═══════════════ -->
+      <div class="step-panel" id="step-7">
+        <div class="bg-white rounded-2xl shadow-soft border border-slate-100 p-6 sm:p-8 space-y-5">
+          <div>
+            <h2 class="font-display font-bold text-navy-900 text-xl mb-1">Anything else we should know?</h2>
+            <p class="text-slate-500 text-sm">Special requirements, compliance needs, vendor preferences, or anything else that helps us scope this accurately.</p>
+          </div>
+
+          <div>
+            <label class="block text-sm font-semibold text-navy-900 mb-1.5" for="notes">Additional Notes</label>
+            <textarea class="field-input resize-none" id="notes" name="Additional Notes" rows="5" placeholder="e.g. The site has a concrete construction with metal shelving. We currently have interference issues in zones 3 and 4. We need 802.11ax compliance and full roaming coverage for VoIP handsets..."></textarea>
+          </div>
+
+          <!-- Review summary -->
+          <div class="bg-navy-50 rounded-xl border border-navy-100 p-4">
+            <p class="text-xs font-bold text-navy-700 uppercase tracking-wide mb-2">Your submission includes:</p>
+            <ul id="summary-list" class="text-sm text-navy-800 space-y-1 list-disc list-inside"></ul>
+          </div>
+
+          <button type="submit" id="submit-btn" class="w-full inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-bold px-8 py-4 rounded-full shadow-soft transition-all hover:-translate-y-0.5 text-base">
+            Submit Project Inquiry
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </button>
+          <p id="form-status" class="text-sm text-center" role="status"></p>
+          <p class="text-xs text-slate-400 text-center">By submitting you agree to be contacted by BWDS regarding your project. We never sell or share your information.</p>
+        </div>
+      </div>
+
+    </form>
+
+    <!-- Success panel (hidden until submit) -->
+    <div id="success-panel" class="hidden bg-white rounded-2xl shadow-soft border border-slate-100 p-8 text-center">
+      <div class="w-16 h-16 rounded-full bg-teal-50 flex items-center justify-center mx-auto mb-5">
+        <svg class="w-8 h-8 text-teal-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+      <h2 class="font-display font-bold text-navy-900 text-2xl mb-2">We've received your inquiry!</h2>
+      <p class="text-slate-600 text-sm leading-relaxed mb-6 max-w-md mx-auto">Our team will review your project details and follow up within one business day with a scoped proposal or a request for a short discovery call.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="index.html" class="inline-flex items-center justify-center gap-2 bg-navy-900 hover:bg-navy-800 text-white font-semibold px-6 py-3 rounded-full transition-all text-sm">Back to Home</a>
+        <a href="subcontract-overflow-support.html" class="inline-flex items-center justify-center gap-2 border border-slate-200 text-navy-800 hover:border-teal-500 hover:text-teal-600 font-semibold px-6 py-3 rounded-full transition-all text-sm">Partner Program</a>
+      </div>
+      <p class="text-xs text-slate-400 mt-6">Questions? Call us at <a href="tel:3018342974" class="text-teal-600 hover:underline">(301) 834-2974</a> or email <a href="mailto:support@bwds4wifi.com" class="text-teal-600 hover:underline">support@bwds4wifi.com</a></p>
+    </div>
+
+    <!-- Navigation buttons -->
+    <div id="wizard-nav" class="flex items-center justify-between mt-6">
+      <button type="button" id="btn-back" onclick="wizardBack()" class="hidden items-center gap-2 text-navy-700 font-semibold text-sm hover:text-teal-600 transition-colors px-4 py-2 rounded-xl hover:bg-slate-100">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"/></svg>
+        Back
+      </button>
+      <div></div>
+      <button type="button" id="btn-next" onclick="wizardNext()" class="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-600 text-white font-bold px-6 py-3 rounded-full shadow-soft transition-all hover:-translate-y-0.5 text-sm">
+        Continue
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-navy-950 text-slate-400 pt-12 pb-8 mt-0">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 text-center">
+    <a href="index.html" class="inline-flex items-center gap-3 mb-4">
+      <img src="images/bwds-logo.png" alt="BWDS" class="w-9 h-9 rounded-full" width="36" height="36">
+      <span class="font-display font-bold text-white text-base">BWDS</span>
+    </a>
+    <p class="text-xs text-slate-500 mt-2">© 2025 Beersheba Wireless Design Solutions · NAD Network Services LLC</p>
+    <p class="text-xs mt-1"><a href="index.html#inquiry" class="hover:text-teal-400 transition-colors">support@bwds4wifi.com</a> · (301) 834-2974</p>
+  </div>
+</footer>
+
+<script>
+  /* ── Wizard state ── */
+  const TOTAL_STEPS = 7;
+  let currentStep = 1;
+
+  function showStep(n) {
+    document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+    const panel = document.getElementById('step-' + n);
+    if (panel) panel.classList.add('active');
+
+    // Progress
+    const pct = Math.round((n / TOTAL_STEPS) * 100);
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('step-label').textContent = 'Step ' + n + ' of ' + TOTAL_STEPS;
+
+    // Back button
+    const btnBack = document.getElementById('btn-back');
+    if (n === 1) btnBack.classList.add('hidden'), btnBack.classList.remove('inline-flex');
+    else btnBack.classList.remove('hidden'), btnBack.classList.add('inline-flex');
+
+    // Next/Submit button
+    const btnNext = document.getElementById('btn-next');
+    if (n === TOTAL_STEPS) btnNext.classList.add('hidden');
+    else btnNext.classList.remove('hidden');
+
+    // Show/hide submit in form
+    const submitBtn = document.getElementById('submit-btn');
+    if (submitBtn) submitBtn.style.display = (n === TOTAL_STEPS) ? 'flex' : 'none';
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function validateStep(n) {
+    if (n === 1) {
+      const name = document.getElementById('contact-name');
+      const company = document.getElementById('contact-company');
+      const email = document.getElementById('contact-email');
+      let ok = true;
+      [name, company, email].forEach(el => {
+        if (!el.value.trim()) { el.classList.add('invalid'); ok = false; }
+        else el.classList.remove('invalid');
+      });
+      if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+        email.classList.add('invalid'); ok = false;
+      }
+      return ok;
+    }
+    if (n === 2) {
+      const checked = document.querySelectorAll('#project-type-group input:checked').length > 0;
+      document.getElementById('type-error').classList.toggle('hidden', checked);
+      return checked;
+    }
+    if (n === 3) {
+      const checked = document.querySelector('#industry-group input:checked');
+      document.getElementById('industry-error').classList.toggle('hidden', !!checked);
+      return !!checked;
+    }
+    return true;
+  }
+
+  function wizardNext() {
+    if (!validateStep(currentStep)) return;
+    if (currentStep === TOTAL_STEPS - 1) buildSummary();
+    currentStep = Math.min(currentStep + 1, TOTAL_STEPS);
+    showStep(currentStep);
+  }
+
+  function wizardBack() {
+    currentStep = Math.max(currentStep - 1, 1);
+    showStep(currentStep);
+  }
+
+  /* ── Steppers ── */
+  function stepperChange(id, delta) {
+    const input = document.getElementById(id + '-input');
+    if (!input) return;
+    const min = parseInt(input.min) || 0;
+    const max = parseInt(input.max) || 9999;
+    const newVal = Math.min(max, Math.max(min, (parseInt(input.value) || 0) + delta));
+    input.value = newVal;
+  }
+
+  /* ── Choice card toggle ── */
+  document.addEventListener('change', function(e) {
+    const card = e.target.closest('.choice-card');
+    if (!card) return;
+    const isCheckbox = e.target.type === 'checkbox';
+    if (isCheckbox) {
+      card.classList.toggle('selected', e.target.checked);
+    } else {
+      // radio: deselect siblings in same group
+      const group = card.closest('[id$="-group"]') || card.closest('div');
+      group.querySelectorAll('.choice-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+    }
+  });
+
+  /* ── Live field validation clear ── */
+  document.querySelectorAll('.field-input').forEach(el => {
+    el.addEventListener('input', () => el.classList.remove('invalid'));
+  });
+
+  /* ── Summary builder ── */
+  function buildSummary() {
+    const list = document.getElementById('summary-list');
+    list.innerHTML = '';
+    const add = (text) => {
+      const li = document.createElement('li');
+      li.textContent = text;
+      list.appendChild(li);
+    };
+
+    const name = document.getElementById('contact-name').value.trim();
+    const company = document.getElementById('contact-company').value.trim();
+    if (name) add('Contact: ' + name + (company ? ' — ' + company : ''));
+
+    const services = [...document.querySelectorAll('#project-type-group input:checked')].map(i => i.closest('.choice-card').querySelector('p').textContent);
+    if (services.length) add('Services: ' + services.join(', '));
+
+    const industry = document.querySelector('#industry-group input:checked');
+    if (industry) add('Environment: ' + industry.value);
+
+    const sqft = document.getElementById('sq-footage').value;
+    if (sqft) add('Site size: ' + sqft);
+
+    const floors = document.getElementById('floors-input').value;
+    add('Floors: ' + floors);
+
+    const timeline = document.getElementById('timeline').value;
+    if (timeline) add('Timeline: ' + timeline);
+
+    const budget = document.getElementById('budget').value;
+    if (budget) add('Budget: ' + budget);
+  }
+
+  /* ── Form submission ── */
+  document.getElementById('intake-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!validateStep(currentStep)) return;
+
+    const btn = document.getElementById('submit-btn');
+    const status = document.getElementById('form-status');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    status.textContent = '';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: new FormData(this)
+    })
+    .then(r => r.json().then(d => ({ ok: r.ok, data: d })))
+    .then(result => {
+      if (result.ok) {
+        document.getElementById('intake-form').style.display = 'none';
+        document.getElementById('wizard-nav').style.display = 'none';
+        document.getElementById('success-panel').classList.remove('hidden');
+        document.getElementById('progress-fill').style.width = '100%';
+        document.getElementById('step-label').textContent = 'Complete';
+      } else {
+        throw new Error(result.data.message || 'Submission failed');
+      }
+    })
+    .catch(() => {
+      btn.disabled = false;
+      btn.innerHTML = 'Submit Project Inquiry <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>';
+      status.textContent = 'Something went wrong. Please email support@bwds4wifi.com directly.';
+      status.className = 'text-sm text-center text-red-600 font-semibold';
+    });
+  });
+
+  /* ── Init ── */
+  showStep(1);
+</script>
+
+</body>
+</html>
