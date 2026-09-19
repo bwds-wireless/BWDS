@@ -1,6 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "bwds-deploy",
+  "account_id": "YOUR_CLOUDFLARE_ACCOUNT_ID",
   "compatibility_date": "2026-07-12",
   "main": "src/worker.js",
   "assets": {
