@@ -202,35 +202,35 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5" id="app-platform-grid">
 
       <div class="reveal bg-white rounded-2xl shadow-soft hover:shadow-soft-lg transition-all p-6 text-center flex flex-col items-center">
-        <canvas id="qr-ios" class="rounded-xl border border-slate-200" width="112" height="112" aria-label="QR code — iPhone &amp; iPad App Store"></canvas>
+        <div id="qr-ios" class="rounded-xl border border-slate-200 w-28 h-28 overflow-hidden flex items-center justify-center" aria-label="QR code — iPhone &amp; iPad App Store"></div>
         <h3 class="font-display font-bold text-navy-900 mt-4">iPhone &amp; iPad</h3>
         <p class="text-slate-500 text-sm mb-4 flex-1">App Store</p>
         <a class="inline-flex items-center justify-center bg-navy-900 hover:bg-navy-800 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors" href="https://apps.apple.com/app/id6775594754" target="_blank" rel="noopener">Download for iOS</a>
       </div>
 
       <div class="reveal bg-white rounded-2xl shadow-soft hover:shadow-soft-lg transition-all p-6 text-center flex flex-col items-center">
-        <canvas id="qr-android" class="rounded-xl border border-slate-200" width="112" height="112" aria-label="QR code — Android Google Play"></canvas>
+        <div id="qr-android" class="rounded-xl border border-slate-200 w-28 h-28 overflow-hidden flex items-center justify-center" aria-label="QR code — Android Google Play"></div>
         <h3 class="font-display font-bold text-navy-900 mt-4">Android</h3>
         <p class="text-slate-500 text-sm mb-4 flex-1">Google Play</p>
         <a class="inline-flex items-center justify-center bg-navy-900 hover:bg-navy-800 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors" href="https://play.google.com/store/apps/details?id=com.wlanpros.wlan_pros_toolbox" target="_blank" rel="noopener">Download for Android</a>
       </div>
 
       <div class="reveal bg-white rounded-2xl shadow-soft hover:shadow-soft-lg transition-all p-6 text-center flex flex-col items-center">
-        <canvas id="qr-windows" class="rounded-xl border border-slate-200" width="112" height="112" aria-label="QR code — Windows Microsoft Store"></canvas>
+        <div id="qr-windows" class="rounded-xl border border-slate-200 w-28 h-28 overflow-hidden flex items-center justify-center" aria-label="QR code — Windows Microsoft Store"></div>
         <h3 class="font-display font-bold text-navy-900 mt-4">Windows</h3>
         <p class="text-slate-500 text-sm mb-4 flex-1">Microsoft Store</p>
         <a class="inline-flex items-center justify-center bg-navy-900 hover:bg-navy-800 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors" href="https://apps.microsoft.com/detail/9NCVHM6ZL4X0" target="_blank" rel="noopener">Download for Windows</a>
       </div>
 
       <div class="reveal bg-white rounded-2xl shadow-soft hover:shadow-soft-lg transition-all p-6 text-center flex flex-col items-center">
-        <canvas id="qr-mac" class="rounded-xl border border-slate-200" width="112" height="112" aria-label="QR code — Mac"></canvas>
+        <div id="qr-mac" class="rounded-xl border border-slate-200 w-28 h-28 overflow-hidden flex items-center justify-center" aria-label="QR code — Mac"></div>
         <h3 class="font-display font-bold text-navy-900 mt-4">Mac</h3>
         <p class="text-slate-500 text-sm mb-4 flex-1">macOS app</p>
         <a class="inline-flex items-center justify-center bg-navy-900 hover:bg-navy-800 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors" href="https://toolbox.wlanpros.com/" target="_blank" rel="noopener">Download for Mac</a>
       </div>
 
       <div class="reveal bg-white rounded-2xl shadow-soft hover:shadow-soft-lg transition-all p-6 text-center flex flex-col items-center">
-        <canvas id="qr-web" class="rounded-xl border border-slate-200" width="112" height="112" aria-label="QR code — Web app, no install"></canvas>
+        <div id="qr-web" class="rounded-xl border border-slate-200 w-28 h-28 overflow-hidden flex items-center justify-center" aria-label="QR code — Web app, no install"></div>
         <h3 class="font-display font-bold text-navy-900 mt-4">Web version</h3>
         <p class="text-slate-500 text-sm mb-4 flex-1">Runs in your browser &mdash; no install</p>
         <a class="inline-flex items-center justify-center bg-teal-600 hover:bg-teal-700 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition-colors" href="https://toolbox.wlanpros.com/app" target="_blank" rel="noopener">Open web app</a>
@@ -242,11 +242,10 @@
   </div>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.4/build/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 <script>
 (function () {
-  /* QR codes are generated from the actual download URLs so they never go stale.
-     To update: change the url value here — the QR code updates automatically. */
+  /* QR codes generated from the actual URLs — update a URL here and the QR auto-updates. */
   var platforms = [
     { id: 'qr-ios',     url: 'https://apps.apple.com/app/id6775594754' },
     { id: 'qr-android', url: 'https://play.google.com/store/apps/details?id=com.wlanpros.wlan_pros_toolbox' },
@@ -254,10 +253,17 @@
     { id: 'qr-mac',     url: 'https://toolbox.wlanpros.com/' },
     { id: 'qr-web',     url: 'https://toolbox.wlanpros.com/app' }
   ];
-  var opts = { width: 112, margin: 1, color: { dark: '#0f172a', light: '#ffffff' } };
   platforms.forEach(function (p) {
-    var canvas = document.getElementById(p.id);
-    if (canvas) QRCode.toCanvas(canvas, p.url, opts);
+    var el = document.getElementById(p.id);
+    if (!el) return;
+    new QRCode(el, {
+      text: p.url,
+      width: 112,
+      height: 112,
+      colorDark: '#0f172a',
+      colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.M
+    });
   });
 })();
 </script>
